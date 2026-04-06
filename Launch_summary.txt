@@ -1,0 +1,419 @@
+=== SCENARIO : buzzreports1 / Launch ===
+Actionable requests : 61
+Methods used        : GET, POST
+Has auth headers    : False
+Has cookies         : False
+Has POST body       : True
+Servers             :
+  - https://api.zebra.connexus.com:443
+  - https://test-smoketest.zebra-next.connexus.com:443
+  - https://testpcx-cdn-uistyleguide.v3test.connexus.com:443
+Header keys used    : Content-Type, Origin, Referer
+
+--- [001] Launch | 4 | GET /login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-… ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports
+  Assert   : 200 OK
+
+--- [002] Launch | 6 | GET /chunk-JKVZOXFQ.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-JKVZOXFQ.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [003] Launch | 14 | GET /chunk-B3E2CSSM.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-B3E2CSSM.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [004] Launch | 15 | GET /chunk-HNE2ZTXX.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-HNE2ZTXX.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [005] Launch | 16 | GET /chunk-VNONIMU6.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-VNONIMU6.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [006] Launch | 17 | GET /chunk-LASJYQA7.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-LASJYQA7.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [007] Launch | 18 | GET /chunk-WSXIG372.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-WSXIG372.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [008] Launch | 19 | GET /chunk-ZFUAZHX6.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-ZFUAZHX6.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [009] Launch | 20 | GET /chunk-TSRGIXR5.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-TSRGIXR5.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [010] Launch | 21 | GET /polyfills-OYCL3O3F.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /polyfills-OYCL3O3F.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [011] Launch | 22 | GET /scripts-JP7N7C6N.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /scripts-JP7N7C6N.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [012] Launch | 23 | GET /main-EM5JKFUY.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /main-EM5JKFUY.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [013] Launch | 24 | GET /media/Roboto-Regular-I5N2TZHC.woff2 ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /media/Roboto-Regular-I5N2TZHC.woff2
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [014] Launch | 25 | GET /styles-54XCBFB7.css ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /styles-54XCBFB7.css
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [015] Launch | 26 | GET /favicon.ico ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /favicon.ico
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [016] Launch | 28 | POST /dlap.ashx ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getdomainsettings", "domainid": "//test-smoketest", "path": "public/shadow/app/buzz/settings.xml", "includesource": "true"}
+  Body(xml) : <settings>
+  <activity-template-list key="id" />
+  <activity-toolbarbutton-list key="id" />
+  <autobadge-list key="id" />
+  <avatar-list key="path" />
+  <bookmark-list key="url" />
+  <clipboardtab-list key="id" />
+  <content-list key="id" />
+  <communitypages-list key="id" />
+  <coursemetadata-list key="id" />
+  <customtype-list key="id" />
+  <domainmetadata-list key="id" />
+  <editor>
+      <foldertemplate-list key="id" />
+  </editor>
+  <help-list key="id" />
+  <itemmetadata-list key="id" />
+  <library-list key="id" />
+  <menuentry-list key="id" />
+  <override-list key="id" />
+  <privatetheme-list key="id" />
+  <prohibited-file-list key="extension" />
+  <questionmetadata-list key="id" />
+  <redirect-list key="id" />
+  <rubric-list key="title" />
+  <schoolyear-list key="id" />
+  <scoring-objective-list key="guid" />
+  <string-list key="id" />
+  <style>
+      <file-list key="path" />
+  </style>
+  <toolbarbutton-list key="id" />
+  <template-list key="id" />
+  <usermetadata-list key="id" />
+</settings>
+  Headers  : {"Content-Type": "text/plain;charset=UTF-8", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [017] Launch | 32 | GET /src-VR4PIFME.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-VR4PIFME.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/main-EM5JKFUY.js"}
+  Assert   : 200 OK
+
+--- [018] Launch | 33 | GET /src-PQFZOT3C.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-PQFZOT3C.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/main-EM5JKFUY.js"}
+  Assert   : 200 OK
+
+--- [019] Launch | 34 | GET /src-KXSQXKGS.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-KXSQXKGS.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/main-EM5JKFUY.js"}
+  Assert   : 200 OK
+
+--- [020] Launch | 35 | GET /src-PMLSIDIY.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-PMLSIDIY.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/main-EM5JKFUY.js"}
+  Assert   : 200 OK
+
+--- [021] Launch | 36 | GET /src-TW7QAB6T.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-TW7QAB6T.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/main-EM5JKFUY.js"}
+  Assert   : 200 OK
+
+--- [022] Launch | 37 | GET /src-AM63IJXF.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-AM63IJXF.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/main-EM5JKFUY.js"}
+  Assert   : 200 OK
+
+--- [023] Launch | 40 | GET /mockups/login-iframe.html ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  Path     : /mockups/login-iframe.html
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [024] Launch | 41 | GET /css/login-iframe.css ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  Path     : /css/login-iframe.css
+  Headers  : {"Referer": "https://testpcx-cdn-uistyleguide.v3test.connexus.com/mockups/login-iframe.html"}
+  Assert   : 200 OK
+
+--- [025] Launch | 46 | GET /chunk-RB5BR256.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-RB5BR256.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-VR4PIFME.js"}
+  Assert   : 200 OK
+
+--- [026] Launch | 47 | GET /images/background-small.jpg ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  Path     : /images/background-small.jpg
+  Headers  : {"Referer": "https://testpcx-cdn-uistyleguide.v3test.connexus.com/css/login-iframe.css"}
+  Assert   : 200 OK
+
+--- [027] Launch | 51 | GET /images/pearson-connexus-logo-stacked.png ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  Path     : /images/pearson-connexus-logo-stacked.png
+  Headers  : {"Referer": "https://testpcx-cdn-uistyleguide.v3test.connexus.com/css/login-iframe.css"}
+  Assert   : 200 OK
+
+--- [028] Launch | 52 | GET /chunk-UX5NQWXI.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-UX5NQWXI.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-TW7QAB6T.js"}
+  Assert   : 200 OK
+
+--- [029] Launch | 53 | GET /chunk-53HBEZGA.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-53HBEZGA.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-TW7QAB6T.js"}
+  Assert   : 200 OK
+
+--- [030] Launch | 54 | GET /chunk-2BFL473C.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-2BFL473C.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-PMLSIDIY.js"}
+  Assert   : 200 OK
+
+--- [031] Launch | 55 | GET /chunk-OBTTMOAR.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-OBTTMOAR.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-PMLSIDIY.js"}
+  Assert   : 200 OK
+
+--- [032] Launch | 56 | GET /chunk-MVIUKFDT.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-MVIUKFDT.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-PMLSIDIY.js"}
+  Assert   : 200 OK
+
+--- [033] Launch | 59 | GET /images/background.jpg ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  Path     : /images/background.jpg
+  Headers  : {"Referer": "https://testpcx-cdn-uistyleguide.v3test.connexus.com/mockups/login-iframe.html"}
+  Assert   : 200 OK
+
+--- [034] Launch | 60 | GET /images/paper-plane.png ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  Path     : /images/paper-plane.png
+  Headers  : {"Referer": "https://testpcx-cdn-uistyleguide.v3test.connexus.com/mockups/login-iframe.html"}
+  Assert   : 200 OK
+
+--- [035] Launch | 62 | POST /report ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /report
+  Body(json) : [{"type":"Buzz","level":"Info","usage":"page","page":"login","service":"BuzzPearson3","referer":"https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports","requestedHost":"test-smoketest.zebra-next.connexus.com","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","language":"en"}]
+  Headers  : {"Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [036] Launch | 63 | GET /images/shadow-plane.png ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  Path     : /images/shadow-plane.png
+  Headers  : {"Referer": "https://testpcx-cdn-uistyleguide.v3test.connexus.com/mockups/login-iframe.html"}
+  Assert   : 200 OK
+
+--- [037] Launch | 64 | GET /src-HVJLFE5Z.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-HVJLFE5Z.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-KXSQXKGS.js"}
+  Assert   : 200 OK
+
+--- [038] Launch | 65 | GET /src-53D5GLJO.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-53D5GLJO.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-KXSQXKGS.js"}
+  Assert   : 200 OK
+
+--- [039] Launch | 66 | GET /src-BP2GJ22M.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-BP2GJ22M.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-KXSQXKGS.js"}
+  Assert   : 200 OK
+
+--- [040] Launch | 67 | GET /src-ST5GQO6M.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-ST5GQO6M.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-KXSQXKGS.js"}
+  Assert   : 200 OK
+
+--- [041] Launch | 68 | GET /src-323DTEG4.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-323DTEG4.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-KXSQXKGS.js"}
+  Assert   : 200 OK
+
+--- [042] Launch | 69 | GET /src-O3QH62NH.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-O3QH62NH.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-KXSQXKGS.js"}
+  Assert   : 200 OK
+
+--- [043] Launch | 70 | GET /src-WXVUDY6O.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-WXVUDY6O.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-KXSQXKGS.js"}
+  Assert   : 200 OK
+
+--- [044] Launch | 71 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/main.css"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [045] Launch | 72 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/student-notes.css"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [046] Launch | 73 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/calendar-hide-folder-completion-count.css"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [047] Launch | 74 | GET /src-F5CXN6IP.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-F5CXN6IP.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-KXSQXKGS.js"}
+  Assert   : 200 OK
+
+--- [048] Launch | 75 | GET /src-27YRH5AG.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-27YRH5AG.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-KXSQXKGS.js"}
+  Assert   : 200 OK
+
+--- [049] Launch | 76 | GET /src-PCWF7B6H.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /src-PCWF7B6H.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-VR4PIFME.js"}
+  Assert   : 200 OK
+
+--- [050] Launch | 77 | GET /chunk-MOG5FPQP.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-MOG5FPQP.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-BP2GJ22M.js"}
+  Assert   : 200 OK
+
+--- [051] Launch | 78 | GET /chunk-PDNWXBHZ.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-PDNWXBHZ.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-BP2GJ22M.js"}
+  Assert   : 200 OK
+
+--- [052] Launch | 79 | GET /chunk-PJRPU4SW.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-PJRPU4SW.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-BP2GJ22M.js"}
+  Assert   : 200 OK
+
+--- [053] Launch | 80 | GET /chunk-T4VQJLFN.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-T4VQJLFN.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-BP2GJ22M.js"}
+  Assert   : 200 OK
+
+--- [054] Launch | 81 | GET /chunk-EWRSEGFN.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-EWRSEGFN.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-323DTEG4.js"}
+  Assert   : 200 OK
+
+--- [055] Launch | 82 | GET /chunk-IXGX4HIP.js ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /chunk-IXGX4HIP.js
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/src-53D5GLJO.js"}
+  Assert   : 200 OK
+
+--- [056] Launch | 83 | GET /css/buzz/testpcx.css ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  Path     : /css/buzz/testpcx.css
+  Headers  : {"Referer": "https://api.zebra.connexus.com/"}
+  Assert   : 200 OK
+
+--- [057] Launch | 86 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/pearson-connexus-login-logo.png"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [058] Launch | 87 | GET /media/material-icons-LEZCGFVT.woff2 ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /media/material-icons-LEZCGFVT.woff2
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/styles-54XCBFB7.css"}
+  Assert   : 200 OK
+
+--- [059] Launch | 88 | GET /media/Roboto-Medium-IV2TEAZM.woff2 ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /media/Roboto-Medium-IV2TEAZM.woff2
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/styles-54XCBFB7.css"}
+  Assert   : 200 OK
+
+--- [060] Launch | 90 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/pearson-touch-icon.png"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [061] Launch | 91 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/pearson-connexus-icon.png"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK

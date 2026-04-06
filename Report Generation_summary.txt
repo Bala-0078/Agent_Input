@@ -1,0 +1,101 @@
+=== SCENARIO : buzzreports1 / Report Generation ===
+Actionable requests : 13
+Methods used        : GET, POST
+Has auth headers    : False
+Has cookies         : False
+Has POST body       : True
+Servers             :
+  - https://testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  - https://testpcx-webmailservice.v3test.connexus.com:443
+Header keys used    : Content-Type, Origin, Referer
+
+--- [001] Report Generation | 246 | POST /Report/OverallUsage ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/OverallUsage
+  Body(json) : {"Token":"~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports","UserId":"29774583","Format":"CSV","domainId":12596144,"studentIds":"12702954,12702955,12702958,12702961,14486696,14486742,14486746,14486875,14487001,14487010,14494448,14549306,14561204,14561206,14562222,14562481,14570393,14600173,14748472,14774139,14774350,14774457,14774466,14774474,14774481,15742209,15742214,15742431,15742482,15742492,15748754,15764700,15787943,15841005,15854007,15859012,15859039,15862830,15872631,15897395,15948209,15948211,15967636,16014576,16041190,16199405,16279411,16281946,16281948,16281951,16281954,16281958,16281959,16281964,16281968,16281973,16282019,16312252,16312255,16553651,16575204,16580098,16742602,16742606,16742674,16742676,16742677,16742679,16742842,16742888,16742891,16742892,16742994,16775446,16788153,16788949,16788950,16788951,16890654,16913484,16913496,17012278,17012911,17029842,17030150,17030228,17068189,17068638,17103043,17105546,17112952,17112953,17113011,17113012,17125732,17139375,17195947,17210665,17210667,17243050,17243051,17294047,17297070,17297876,17298317,17310471,17319400,17325169,17331519,17342709,17350117,17673563,17699760,17713823,17713824,17717988,17717989,17717990,17717991,17717992,17747499,17881121,17882569,17892050,18116383,18116444,18116445,18116509,18123649,18155277,18219930,18246534,18253638,18272157,18272200,18289433,18289435,18289525,18289526,18452236,18606200,18670267,18670268,18670279,18670635,18670636,18670696,18671109,18671154,18671447,18672918,18678679,18678687,18678948,18678949,18688797,18688798,18688799,18688813,18688814,18689313,18689748,18689749,18689750,18689751,18694620,18694621,18739216,18739217,18748056,18752175,18752202,18752213,18754466,18754752,18756736,18756752,18756753,18777248,18777438,18800807,18800808,18800809,18800813,18801424,18814301,18825646,18825647,18825648,18825649,18844816,18853067,18853068,18860963,18862944,18865394,18873221,18882687,18882688,18901276,18919148,18936220,18942570,18944213,18944214,18944679,18968292,18968293,18968294,18968295,18968296,18968297,18968298,18968299,18969215,18977174,18978805,18979547,18979548,18979549,18979551,18979710,18979711,18979712,18979765,18979785,18979786,18979787,18986012,18990142,18992346,19267456,19280926,19408742,19425339,19484787,19507402,19908396,19921411,19963861,20052544,20414352,20601537,20623314,20623491,20623494,20623553,20623557,20623558,20623564,20633048,20647186,20811428,20811962,20811964,21081547,21096100,21110619,21126775,21143001,21145976,21152904,21207091,21227180,21252334,21326538,21327382,21330839,21356534,21367323,21406133,21412530,21412572,21437480,21447090,21447356,21483955,21487868,21501921,21526264,21585906,21591280,21603764,21629453,21646163,21652268,21652269,21686363,21687779,21688841,21690313,21711946,21711947,21728347,21728513,21728569,21729321,21755533,21778983,21784920,21793452,21800645,21813638,21813641,21813642,21813643,21813758,21813759,21813760,21813761,21837078,21872596,21896723,21912480,21942459,21957057,21961021,21962650,21976953,21978476,21979967,21991736,22011408,22046005,22046074,22046075,22046076,22055429,22055432,22076715,22201662,22201670,22205313,22212643,22218970,22229149,22243230,22243246,22243258,22243259,22243260,22277702,22281036,22287289,22290053,22308200,22399330,22437175,22487873,22489184,22526906,22526907,22526909,22598248,22617031,22682553,22705474,22709716,22709717,22709718,22713225,22755114,22755116,22755117,22755119,22809916,22809938,22867730,22876680,22893222,22901659,22901660,22901664,22903656,22975997,22986161,22992094,23006376,23019743,23024408,23024417,23029616,23029738,23031161,23032018,23032166,23035043,23077023,23078394,23168906,23168925,23236794,23236931,23236955,23238084,23267496,23270578,23314534,23380884,23461464,23478559,23582391,23611999,23730954,23767810,23774123,23774124,23774125,23774126,23774127,24084914,24095235,24095623,24095640,24096896,24100386,24102705,24110145,24111511,24129448,24132295,24141850,24146551,24148002,24148003,24148057,24150363,24150364,24150365,24150366,24150373,24151220,24152141,24152644,24158181,24163493,24165397,24167087,24167091,24181271,24184602,24184611,24185520,24187651,24191140,24191272,24191274,24192415,24193532,24193558,24193584,24193643,24197562,24197570,24206949,24206980,24206981,24207485,24209067,24209071,24210314,24217549,24219061,24240155,24240156,24242513,24262540,24297807,24298539,24299323,24308537,24308538,24310072,24310073,24310074,24310075,24310076,24366155,24368125,24463287,24521102,24522700,24522701,24525326,24525327,24582471,24585193,24586033,24586034,24586035,24586042,24792032,25055121,25067647,25067648,25277111,25348186,25348260,25348802,25389360,25437565,25460325,25460463,25523349,25550029,25550063,25618585,25879411,25881275,26260088,26289911,26308786,26343203,26356533,26368859,26368862,26370663,26386571,26416021,26416942,26417223,26420017,26421709,26440284,26449326,26450458,26450459,26454022,26890790,26992911,29488878,29488991,29488992,29570884,29611213,29615577,29615743,29615745,29723939,29723941","teacherIds":"12702954,12702955,12702958,12702959,13141543,14561208,14562221,14562455,14748479,15742211,15742348,15841021,15854010,15858987,15872631,15897398,15897560,15948219,16014576,16041191,16281986,16361238,16418916,16575193,16575197,16575198,16575199,16575200,16575201,16575202,16575203,16580932,16742601,16742679,16742902,16775446,16788155,16788929,16788932,16788948,16890653,16903853,16913482,16913483,17012278,17012330,17012911,17013148,17034541,17068188,17068641,17103043,17112950,17112951,17125720,17139382,17195948,17210660,17294045,17297071,17319400,17319401,17331520,17673563,17699761,17702665,17713824,17719353,17882562,17892050,18116381,18116594,18123650,18219931,18272158,18289435,18289527,18670269,18670644,18672919,18678704,18678952,18688814,18689752,18694625,18752176,18777249,18777439,18800770,18825640,18853069,18860964,18862963,18865396,18873222,18901277,18919149,18944214,18979557,18990264,18992347,19267457,19408742,19425452,19921404,19966392,20151425,20580289,20603753,20623491,20623747,20633047,20738628,21096104,21110619,21207092,21252335,21326540,21356533,21367324,21387789,21406135,21483955,21501921,21585904,21586392,21591592,21601177,21602614,21603765,21619793,21629453,21631975,21631976,21652270,21655622,21686362,21711948,21728348,21728512,21728566,21729321,21729329,21729880,21729927,21729970,21755534,21778983,21784920,21799771,21805261,21869816,21869819,21872545,21896728,21912479,21957069,21960851,21962671,21979967,22055038,22090383,22205298,22212641,22218969,22243245,22243261,22243262,22243263,22267926,22277701,22295341,22399331,22399333,22437176,22437177,22487874,22489185,22526910,22617032,22646352,22682584,22705474,22755120,22755143,22755190,22755199,22755255,22809917,22809939,22975998,22986162,22992096,23006377,23031162,23031163,23032019,23032020,23035045,23077024,23078404,23170032,23236962,23314537,23380885,23390061,23461463,23582392,23582394,23582396,23612000,23632238,23782074,24084914,24102706,24110146,24111512,24141851,24151219,24152134,24152645,24163495,24165398,24167088,24181272,24187654,24191236,24191273,24191276,24192414,24192415,24193559,24193585,24197563,24197572,24203679,24203689,24206951,24206981,24207486,24210315,24217547,24219064,24240156,24242538,24262541,24297808,24298534,24300919,24310077,24310078,24366155,24463996,24585193,24586035,25056071,25067648,25277111,25437566,25448189,25523353,25550031,25558352,25618586,25881290,26289915,26308787,26309169,26343204,26356534,26373191,26381927,26386569,26416022,26416938,26417224,26449325,26450463,26454023,26890791,29488880,29488990,29566104,29611214,29615578,29615744","allTeachers":"false","enrollmentStatus":1,"display":"USAGE","startDate":"2021-07-01T00:00:00.000Z","endDate":"2026-04-02T00:00:00.000Z","timezoneOffset":330}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [002] Report Generation | 247 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:51:21.1213175Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":null,"status":1,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [003] Report Generation | 250 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:51:21.1213175Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":null,"status":1,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [004] Report Generation | 251 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:51:51.9129157Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":"OverallUsageReport","status":2,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [005] Report Generation | 252 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:51:53.9911042Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":"OverallUsageReport","status":2,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [006] Report Generation | 253 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:52:14.1186007Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":"OverallUsageReport","status":2,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [007] Report Generation | 254 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:52:24.1658493Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":"OverallUsageReport","status":2,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [008] Report Generation | 255 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:52:34.21309Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":"OverallUsageReport","status":2,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [009] Report Generation | 256 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:52:44.2847722Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":"OverallUsageReport","status":2,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [010] Report Generation | 258 | GET /signalr/ping ---
+  Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443
+  Path     : /signalr/ping
+  QParams  : {"_token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "_": "1775130480444"}
+  Headers  : {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [011] Report Generation | 259 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:52:54.3217921Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":"OverallUsageReport","status":2,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [012] Report Generation | 260 | POST /Report/PollReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/PollReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:53:04.3704447Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":"OverallUsageReport","status":2,"percentComplete":0,"resourceLocation":null,"resourceFileExtension":null,"expirationTime":"0001-01-01T00:00:00Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [013] Report Generation | 261 | POST /Report/DownloadReport ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Report/DownloadReport
+  Body(json) : {"id":"Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=","createdDateTime":"2026-04-02T11:51:21.1213175Z","lastActionDateTime":"2026-04-02T11:53:14.4644315Z","reportId":"8452b6c4-e540-42ec-b473-3849d5243669","reportName":"OverallUsageReport","status":3,"percentComplete":100,"resourceLocation":"https://api.powerbi.com/v1.0/myorg/groups/3703c3af-08d8-4b61-aa99-b5468d46ed29/reports/8452b6c4-e540-42ec-b473-3849d5243669/exports/Mi9CbG9iSWRWMi04ZDQ1NzQwMi0yN2IyLTRhMzMtODMyMi1hZTAyOWY1ZWIzZGQyTzRjTnlGRGJFVll4NnBjNmRyNU1NMVB0d2ZaamVhcnlucDBaakdyazVRPS4=/file","resourceFileExtension":".csv","expirationTime":"2026-04-03T11:51:23.7505878Z"}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK

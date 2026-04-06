@@ -1,0 +1,579 @@
+=== SCENARIO : buzzreports1 / Login ===
+Actionable requests : 83
+Methods used        : GET, POST
+Has auth headers    : True
+Has cookies         : False
+Has POST body       : True
+Servers             :
+  - https://api.zebra.connexus.com:443
+  - https://test-smoketest.zebra-next.connexus.com:443
+  - https://testcurrent.connexus.com:443
+  - https://testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  - https://testpcx-cdn-common.v3test.connexus.com:443
+  - https://testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  - https://testpcx-cdn-webmail.v3test.connexus.com:443
+  - https://testpcx-webmailservice.v3test.connexus.com:443
+Header keys used    : Authorization, Content-Type, CurrentApplication, Origin, Referer, Sec-WebSocket-Extensions, Sec-WebSocket-Key, Sec-WebSocket-Version, Upgrade
+
+--- [001] Login | 96 | POST /cmd ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd
+  Body(json) : {"request":{"cmd":"login3","username":"test-smoketest/admin_test1","password":"gz4QpPF.e9Hdk_!"}}
+  Headers  : {"Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [002] Login | 99 | POST /cmd/setsessionapplication ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/setsessionapplication
+  QParams  : {"application": "Buzz/3.0.501"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [003] Login | 101 | POST /cmd/createscopedtoken ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/createscopedtoken
+  Body(json) : {"request":{"scope":"Resource"}}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [004] Login | 106 | GET /cmd/getuser2 ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getuser2
+  QParams  : {"select": "data(feature,blti,notifications),securityconfig", "userid": "29774583"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [005] Login | 108 | GET /status.json ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /status.json
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
+  Assert   : 200 OK
+
+--- [006] Login | 111 | GET /cmd/getpersonas ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getpersonas
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [007] Login | 112 | GET /cmd/getresource ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getresource
+  QParams  : {"entityid": "29774583", "path": "Assets/BuzzTheme.json"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 404 Not Found
+
+--- [008] Login | 113 | POST /cmd ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd
+  Body(json) : {"request":{"cmd":"extendsession"}}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [009] Login | 114 | GET /cmd/getpersonas ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getpersonas
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [010] Login | 118 | GET /cmd/getdomainfeatures ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getdomainfeatures
+  QParams  : {"domainid": "12596144"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [011] Login | 119 | GET /cmd/geteffectiverights ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/geteffectiverights
+  QParams  : {"entityid": "//test-smoketest"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [012] Login | 121 | POST /cmd/getdomainsettings ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getdomainsettings
+  QParams  : {"domainid": "12596144", "path": "public/shadow/app/xli/settings.xml"}
+  Body(xml) : <settings>
+  <blackoutdate-list key="start" />
+  <creator-upload-filter-list key="filetype" />
+  <student-upload-filter-list key="filetype" />
+  <notifications>
+    <variable-list key="name" />
+  </notifications>
+</settings>
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "text/xml", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [013] Login | 123 | GET /cmd/geteffectiverights ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/geteffectiverights
+  QParams  : {"entityid": "//root"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [014] Login | 128 | GET /cmd/getdomain2 ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getdomain2
+  QParams  : {"select": "data", "domainid": "12596144"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [015] Login | 129 | GET /cmd/listroles ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/listroles
+  QParams  : {"domainid": "12596144"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [016] Login | 130 | GET /cmd/getsystemlicense ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getsystemlicense
+  QParams  : {"domainid": "12596144"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [017] Login | 131 | GET /cmd/geteffectiverights ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/geteffectiverights
+  QParams  : {"entityid": "12596144"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [018] Login | 132 | POST /report ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /report
+  Body(json) : [{"type":"Buzz","level":"Info","usage":"page","appMode":"admin","page":"admin/:domainId/custom/faster-other-reports","service":"BuzzPearson3","referer":"https://test-smoketest.zebra-next.connexus.com/admin/12596144/custom/faster-other-reports","requestedHost":"test-smoketest.zebra-next.connexus.com","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","language":"en"}]
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [019] Login | 140 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/pearson-connexus-menu-logo.png"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [020] Login | 141 | GET /cmd/getprofilepicture ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getprofilepicture
+  QParams  : {"entityid": "29774583", "usedefault": "true", "_token": "~0.oIbgQC1itDs3LlxB.K.ArDhOR9QNqyzktCu0ftLbX_rOBD3WXsy_bMUa5v7LHE", "once": "1775130426568"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 302 Found
+
+--- [021] Login | 142 | GET /media/fa-solid-900-WQK4QZF6.woff2 ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /media/fa-solid-900-WQK4QZF6.woff2
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/styles-54XCBFB7.css"}
+  Assert   : 200 OK
+
+--- [022] Login | 145 | GET /cmd/getexternaldomainrights ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getexternaldomainrights
+  QParams  : {"limit": "10", "domainid": "12596142", "ignoreproxy": "true"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [023] Login | 146 | GET /cmd/getdomainparentlist ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getdomainparentlist
+  QParams  : {"domainid": "12596144"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [024] Login | 147 | GET /cmd/getuserannouncementlist ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getuserannouncementlist
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [025] Login | 148 | GET /cmd/listdomains ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/listdomains
+  QParams  : {"domainid": "12596144"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [026] Login | 149 | GET /cmd/getexternaldomainrights ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getexternaldomainrights
+  QParams  : {"limit": "10", "domainid": "12596144", "ignoreproxy": "true"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [027] Login | 153 | GET /cmd/getexternaldomainrights ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd/getexternaldomainrights
+  QParams  : {"limit": "10", "domainid": "12596144", "ignoreproxy": "true"}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [028] Login | 154 | GET /Resource/12596142/public/shadow/app/buzz/secureContent… ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /Resource/12596142/public/shadow/app/buzz/secureContentCookieFetcher.html
+  QParams  : {"token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzhi1"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [029] Login | 156 | GET /index.html ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
+  Path     : /index.html
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [030] Login | 162 | GET /lmu/migration/contentauth/lmscontentcookiehandler.ashx ---
+  Method   : GET  Protocol : https  Server   : testcurrent.connexus.com:443
+  Path     : /lmu/migration/contentauth/lmscontentcookiehandler.ashx
+  QParams  : {"pcxauthtoken": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzhi1"}
+  Headers  : {"Origin": "https://api.zebra.connexus.com", "Referer": "https://api.zebra.connexus.com/"}
+  Assert   : 204 No Content
+
+--- [031] Login | 163 | GET / ---
+  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /
+  QParams  : {"TOKEN": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports", "USERID": "29774583", "ADMINDOMAINID": "12596144"}
+  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [032] Login | 164 | GET /node_modules/@connections-education/domain-selector/di… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
+  Path     : /node_modules/@connections-education/domain-selector/dist/css/connections.domainselector.css
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
+  Assert   : 200 OK
+
+--- [033] Login | 172 | GET /css/app-d93e524553.css ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
+  Path     : /css/app-d93e524553.css
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
+  Assert   : 200 OK
+
+--- [034] Login | 173 | GET /node_modules/ckeditor/ckeditor.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
+  Path     : /node_modules/ckeditor/ckeditor.js
+  QParams  : {"hash": "cda4a13925"}
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
+  Assert   : 200 OK
+
+--- [035] Login | 174 | GET /node_modules/@connections-education/domain-selector/co… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
+  Path     : /node_modules/@connections-education/domain-selector/connections.domainselector.js
+  QParams  : {"hash": "b9f80aa90b"}
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
+  Assert   : 200 OK
+
+--- [036] Login | 175 | GET /js/constants.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
+  Path     : /js/constants.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
+  Assert   : 200 OK
+
+--- [037] Login | 176 | GET /js/app-1dfb7091d5.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
+  Path     : /js/app-1dfb7091d5.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
+  Assert   : 200 OK
+
+--- [038] Login | 177 | GET /pkgs/angular/1.5.11/angular.min.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular/1.5.11/angular.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [039] Login | 178 | GET /pkgs/angular-animate/1.5.11/angular-animate.min.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-animate/1.5.11/angular-animate.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [040] Login | 179 | GET /pkgs/angular-dynamic-locale/0.1.37/tmhDynamicLocale.mi… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-dynamic-locale/0.1.37/tmhDynamicLocale.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [041] Login | 180 | GET /pkgs/angular-aria/1.5.11/angular-aria.min.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-aria/1.5.11/angular-aria.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [042] Login | 181 | GET /pkgs/angular-message-format/1.5.11/angular-message-for… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-message-format/1.5.11/angular-message-format.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [043] Login | 182 | GET /pkgs/moment/2.22.2/min/moment.min.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/moment/2.22.2/min/moment.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [044] Login | 183 | GET /pkgs/angular-moment/0.10.3/angular-moment.min.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-moment/0.10.3/angular-moment.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [045] Login | 184 | GET /pkgs/angular-sanitize/1.5.11/angular-sanitize.min.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-sanitize/1.5.11/angular-sanitize.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [046] Login | 185 | GET /pkgs/angular-smart-table/2.1.11/dist/smart-table.min.j… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-smart-table/2.1.11/dist/smart-table.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [047] Login | 186 | GET /pkgs/angular-toastr/2.1.1/dist/angular-toastr.tpls.min… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-toastr/2.1.1/dist/angular-toastr.tpls.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [048] Login | 187 | GET /pkgs/angular-translate/2.11.1/dist/angular-translate.m… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-translate/2.11.1/dist/angular-translate.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [049] Login | 188 | GET /pkgs/angular-translate-handler-log/2.11.1/angular-tran… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-translate-handler-log/2.11.1/angular-translate-handler-log.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [050] Login | 189 | GET /pkgs/angular-translate-loader-static-files/2.11.1/angu… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-translate-loader-static-files/2.11.1/angular-translate-loader-static-files.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [051] Login | 190 | GET /pkgs/angular-ui-bootstrap/1.3.3/dist/ui-bootstrap-tpls… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-ui-bootstrap/1.3.3/dist/ui-bootstrap-tpls.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [052] Login | 191 | GET /pkgs/angular-ui-router/0.2.15/release/angular-ui-route… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-ui-router/0.2.15/release/angular-ui-router.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [053] Login | 192 | GET /pkgs/ui-select/0.19.8/dist/select.min.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/ui-select/0.19.8/dist/select.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [054] Login | 193 | GET /pkgs/angular-uuid/0.0.4/angular-uuid.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/angular-uuid/0.0.4/angular-uuid.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [055] Login | 194 | GET /pkgs/applicationinsights-js/1.0.21/dist/ai.0.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/applicationinsights-js/1.0.21/dist/ai.0.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [056] Login | 195 | GET /pkgs/@connections-education/authentication/8.2.0/conne… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/@connections-education/authentication/8.2.0/connections.authentication.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [057] Login | 196 | GET /pkgs/@connections-education/common/7.3.1/connections.c… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/@connections-education/common/7.3.1/connections.common.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [058] Login | 197 | GET /pkgs/@connections-education/constants/9.1.0/connection… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/@connections-education/constants/9.1.0/connections.constants.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [059] Login | 198 | GET /pkgs/@connections-education/core/8.0.0/connections.cor… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/@connections-education/core/8.0.0/connections.core.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [060] Login | 199 | GET /pkgs/@connections-education/data-access/5.4.0/connecti… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/@connections-education/data-access/5.4.0/connections.dataaccess.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [061] Login | 200 | GET /pkgs/@connections-education/instrumentation/6.2.0/conn… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/@connections-education/instrumentation/6.2.0/connections.instrumentation.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [062] Login | 201 | GET /pkgs/@connections-education/i18n/5.2.1/extlib/messagef… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/@connections-education/i18n/5.2.1/extlib/messageformat/messageformat.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [063] Login | 202 | GET /pkgs/@connections-education/i18n/5.2.1/extlib/angular-… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/@connections-education/i18n/5.2.1/extlib/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [064] Login | 203 | GET /pkgs/@connections-education/i18n/5.2.1/connections.i18… ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/@connections-education/i18n/5.2.1/connections.i18n.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [065] Login | 204 | GET /static/js/main.ee8752d8.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /static/js/main.ee8752d8.js
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports&USERID=29774583&ADMINDOMAINID=12596144"}
+  Assert   : 200 OK
+
+--- [066] Login | 206 | GET /static/css/main.452a383f.css ---
+  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /static/css/main.452a383f.css
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports&USERID=29774583&ADMINDOMAINID=12596144"}
+  Assert   : 200 OK
+
+--- [067] Login | 207 | GET /pkgs/jquery/3.3.1/dist/jquery.min.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/jquery/3.3.1/dist/jquery.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [068] Login | 208 | GET /pkgs/signalr/2.3.0/jquery.signalR.min.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
+  Path     : /pkgs/signalr/2.3.0/jquery.signalR.min.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [069] Login | 211 | GET /Home/GetSettings ---
+  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Home/GetSettings
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports&USERID=29774583&ADMINDOMAINID=12596144", "Content-Type": "application/json"}
+  Assert   : 200 OK
+
+--- [070] Login | 212 | GET /static/media/Roboto-Regular.64cfb66c866ea50cad47.64cfb… ---
+  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /static/media/Roboto-Regular.64cfb66c866ea50cad47.64cfb66c866ea50cad47.woff2
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/static/css/main.452a383f.css"}
+  Assert   : 200 OK
+
+--- [071] Login | 213 | GET /i18n/localizations/angular-locale_en-US.js ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
+  Path     : /i18n/localizations/angular-locale_en-US.js
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
+  Assert   : 200 OK
+
+--- [072] Login | 214 | GET /i18n/translations/en-US.json ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
+  Path     : /i18n/translations/en-US.json
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
+  Assert   : 200 OK
+
+--- [073] Login | 215 | GET /css/connexus.css ---
+  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  Path     : /css/connexus.css
+  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [074] Login | 224 | GET /Home/GetSettings ---
+  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /Home/GetSettings
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports&USERID=29774583&ADMINDOMAINID=12596144", "Content-Type": "application/json"}
+  Assert   : 200 OK
+
+--- [075] Login | 225 | POST /cmd ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd
+  Body(json) : {"request":{"userid":null,"select":"domain","cmd":"getuser2","_token":"~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports"}}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [076] Login | 226 | POST /cmd ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd
+  Body(json) : {"request":{"userid":null,"select":"domain","cmd":"getuser2","_token":"~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports"}}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [077] Login | 228 | POST /cmd ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd
+  Body(json) : {"request":{"entityid":"12596144","cmd":"geteffectiverights","_token":"~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports"}}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [078] Login | 229 | POST /cmd ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd
+  Body(json) : {"request":{"entityid":"12596144","cmd":"geteffectiverights","_token":"~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports"}}
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Assert   : 200 OK
+
+--- [079] Login | 231 | GET /static/media/Roboto-Bold.92fbd4e93cf0a5dbebaa.92fbd4e9… ---
+  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /static/media/Roboto-Bold.92fbd4e93cf0a5dbebaa.92fbd4e93cf0a5dbebaa.woff2
+  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/static/css/main.452a383f.css"}
+  Assert   : 200 OK
+
+--- [080] Login | 233 | GET /signalr/negotiate ---
+  Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443
+  Path     : /signalr/negotiate
+  QParams  : {"clientProtocol": "1.5", "_token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "connectionData": "[{\"name\":\"webmailhub\"}]", "_": "1775130480442"}
+  Headers  : {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK
+
+--- [081] Login | 234 | GET /v1/messages/getunreadmessagecount ---
+  Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443
+  Path     : /v1/messages/getunreadmessagecount
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "CurrentApplication": "Admin", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [082] Login | 236 | GET /signalr/connect ---
+  Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443
+  Path     : /signalr/connect
+  QParams  : {"transport": "webSockets", "clientProtocol": "1.5", "_token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "connectionToken": "UwO8M/5+MxyaU/Ov16/VAwSb0xugX9sm31CGqXphVlcq8zHexQ2iRTIjKkqqcgsjJ6/6hjDZTEU66ihxFJMuTnBRPHPMke7Wl1U1vchpai7uSnGmyUM6FG8aSOyUIVBQ", "connectionData": "[{\"name\":\"webmailhub\"}]", "tid": "0"}
+  Headers  : {"Sec-WebSocket-Version": "13", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Sec-WebSocket-Extensions": "permessage-deflate", "Sec-WebSocket-Key": "5MDK8GzM8v01IyRwOuOOTQ==", "Upgrade": "websocket"}
+  Assert   : 101 Switching Protocols
+
+--- [083] Login | 237 | GET /signalr/start ---
+  Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443
+  Path     : /signalr/start
+  QParams  : {"transport": "webSockets", "clientProtocol": "1.5", "_token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "connectionToken": "UwO8M/5+MxyaU/Ov16/VAwSb0xugX9sm31CGqXphVlcq8zHexQ2iRTIjKkqqcgsjJ6/6hjDZTEU66ihxFJMuTnBRPHPMke7Wl1U1vchpai7uSnGmyUM6FG8aSOyUIVBQ", "connectionData": "[{\"name\":\"webmailhub\"}]", "_": "1775130480443"}
+  Headers  : {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200 OK

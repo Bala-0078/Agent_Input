@@ -1,0 +1,33 @@
+=== SCENARIO : buzzreports1 / Logout ===
+Actionable requests : 3
+Methods used        : POST
+Has auth headers    : True
+Has cookies         : False
+Has POST body       : True
+Servers             :
+  - https://api.zebra.connexus.com:443
+Header keys used    : Authorization, Content-Type, Origin, Referer
+
+--- [001] Logout | 263 | POST /cmd ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd
+  Body(json) : {"request":{"cmd":"extendsession"}}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [002] Logout | 264 | POST /report ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /report
+  Body(json) : [{"type":"Buzz","level":"Info","usage":"page","page":"login","service":"BuzzPearson3","referer":"https://test-smoketest.zebra-next.connexus.com/login;action=logout","requestedHost":"test-smoketest.zebra-next.connexus.com","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","language":"en"}]
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK
+
+--- [003] Logout | 266 | POST /cmd ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd
+  Body(json) : {"request":{"cmd":"logout"}}
+  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200 OK

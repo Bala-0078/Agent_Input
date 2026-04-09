@@ -1,579 +1,760 @@
-=== SCENARIO : buzzreports1 / Login ===
-Actionable requests : 83
+=== SCENARIO : CarrerspaFiddler1 / Login ===
+Actionable requests : 101
 Methods used        : GET, POST
-Has auth headers    : True
-Has cookies         : False
+Has auth headers    : False
+Has cookies         : True
 Has POST body       : True
 Servers             :
-  - https://api.zebra.connexus.com:443
-  - https://test-smoketest.zebra-next.connexus.com:443
-  - https://testcurrent.connexus.com:443
-  - https://testpcx-buzzotherreports-ui.v3test.connexus.com:443
-  - https://testpcx-cdn-common.v3test.connexus.com:443
-  - https://testpcx-cdn-uistyleguide.v3test.connexus.com:443
-  - https://testpcx-cdn-webmail.v3test.connexus.com:443
-  - https://testpcx-webmailservice.v3test.connexus.com:443
-Header keys used    : Authorization, Content-Type, CurrentApplication, Origin, Referer, Sec-WebSocket-Extensions, Sec-WebSocket-Key, Sec-WebSocket-Version, Upgrade
+  - https://bam.nr-data.net:443
+  - https://e2e-comms-stg.pearson.com:443
+  - https://iam-ppe.pearson.com:443
+  - https://test.connexus.com:443
+Header keys used    : Accept, Content-Type, Cookie, Origin, Referer, Sec-Fetch-Storage-Access, X-NewRelic-ID, X-Requested-With, content-type, newrelic, traceparent, tracestate
 
---- [001] Login | 96 | POST /cmd ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd
-  Body(json) : {"request":{"cmd":"login3","username":"test-smoketest/admin_test1","password":"gz4QpPF.e9Hdk_!"}}
-  Headers  : {"Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Assert   : 200 OK
+--- [001] Login | 24 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "31893", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/login", "ptid": "cc85a748c88fea9b"}
+  Body(raw) : bel.6;e,'lcp,qu,b;6,'timeToFirstByte,700.;6,'resourceLoadDelay,0.;6,'resourceLoadDuration,0.;6,'resourceLoadTime,0.;6,'elementRenderDelay,266.;6,'size,8569.;5,'eid;5,'elTag,'H1;5,'element,'#loginContent>div.loginWrapper>div.loginContent>div.loginMain>div.loginMessaging>h1.welcomeTitle;5,'pageUrl,'https://test.connexus.com/login;8,'webdriverDetected;e,'fi,dby,5;5,'type,'pointerdown;5,'eventTarget,'input#usernameInput.field.firstField;5,'loadState,'complete;5,c,d;8,e
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none"}
+  Assert   : 200 
 
---- [002] Login | 99 | POST /cmd/setsessionapplication ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/setsessionapplication
-  QParams  : {"application": "Buzz/3.0.501"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
+--- [002] Login | 25 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "31894", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/login", "ptid": "cc85a748c88fea9b"}
+  Body(json) : {"xhr":[{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/events/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":2,"txSize":{"t":616,"min":183,"max":433,"sos":220978,"c":2},"rxSize":{"t":48,"min":24,"max":24,"sos":1152,"c":2},"duration":{"t":639,"min":253,"max":386,"sos":213005,"c":2},"cbTime":{"t":0,"min":0,"max":0,"sos":0,"c":2},"time":{"t":3777,"min":1887,"max":1890,"sos":7132869,"c":2}}},{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/jserrors/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":878},"rxSize":{"t":24},"duration":{"t":403},"cbTime":{"t":0},"time":{"t":1888}}}]}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none"}
+  Assert   : 200 
 
---- [003] Login | 101 | POST /cmd/createscopedtoken ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/createscopedtoken
-  Body(json) : {"request":{"scope":"Resource"}}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
+--- [003] Login | 26 | POST /ins/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /ins/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "31895", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/login", "ptid": "cc85a748c88fea9b", "at": "HRBUGwtLQQ8UTRATURZ7URsLEgJZAgJXAAhUVgVbCQdUVQVBGRw="}
+  Body(json) : {"ins":[{"timestamp":1775647804926,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"focus","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"window"},{"timestamp":1775647807219,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"blur","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"window"},{"timestamp":1775647820081,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"focus","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"window"},{"timestamp":1775647821449,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"click","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"html>body>div>div>div#loginContent>div>div>div>form>fieldset#adLoginForm>div>input#usernameInput:nth-of-type(1)","targetId":"usernameInput","targetClass":"field firstField","targetTag":"INPUT","targetType":"text","nearestId":"usernameInput","nearestClass":"field firstField","nearestTag":"INPUT","nearestType":"text"},{"timestamp":1775647823405,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"blur","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"window"},{"timestamp":1775647834076,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"focus","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"window"},{"timestamp":1775647834699,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"keydown","actionCount":3,"actionDuration":515,"actionMs":"[0,484,515]","target":"html>body>div>div>div#loginContent>div>div>div>form>fieldset#adLoginForm>div>input#usernameInput:nth-of-type(1)","targetId":"usernameInput","targetClass":"field firstField","targetTag":"INPUT","targetType":"text","nearestId":"usernameInput","nearestClass":"field firstField","nearestTag":"INPUT","nearestType":"text"}]}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none"}
+  Assert   : 204 
 
---- [004] Login | 106 | GET /cmd/getuser2 ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getuser2
-  QParams  : {"select": "data(feature,blti,notifications),securityconfig", "userid": "29774583"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [005] Login | 108 | GET /status.json ---
-  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
-  Path     : /status.json
-  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports"}
-  Assert   : 200 OK
-
---- [006] Login | 111 | GET /cmd/getpersonas ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getpersonas
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [007] Login | 112 | GET /cmd/getresource ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getresource
-  QParams  : {"entityid": "29774583", "path": "Assets/BuzzTheme.json"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 404 Not Found
-
---- [008] Login | 113 | POST /cmd ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd
-  Body(json) : {"request":{"cmd":"extendsession"}}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [009] Login | 114 | GET /cmd/getpersonas ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getpersonas
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [010] Login | 118 | GET /cmd/getdomainfeatures ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getdomainfeatures
-  QParams  : {"domainid": "12596144"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [011] Login | 119 | GET /cmd/geteffectiverights ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/geteffectiverights
-  QParams  : {"entityid": "//test-smoketest"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [012] Login | 121 | POST /cmd/getdomainsettings ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getdomainsettings
-  QParams  : {"domainid": "12596144", "path": "public/shadow/app/xli/settings.xml"}
-  Body(xml) : <settings>
-  <blackoutdate-list key="start" />
-  <creator-upload-filter-list key="filetype" />
-  <student-upload-filter-list key="filetype" />
-  <notifications>
-    <variable-list key="name" />
-  </notifications>
-</settings>
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "text/xml", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [013] Login | 123 | GET /cmd/geteffectiverights ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/geteffectiverights
-  QParams  : {"entityid": "//root"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [014] Login | 128 | GET /cmd/getdomain2 ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getdomain2
-  QParams  : {"select": "data", "domainid": "12596144"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [015] Login | 129 | GET /cmd/listroles ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/listroles
-  QParams  : {"domainid": "12596144"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [016] Login | 130 | GET /cmd/getsystemlicense ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getsystemlicense
-  QParams  : {"domainid": "12596144"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [017] Login | 131 | GET /cmd/geteffectiverights ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/geteffectiverights
-  QParams  : {"entityid": "12596144"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [018] Login | 132 | POST /report ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /report
-  Body(json) : [{"type":"Buzz","level":"Info","usage":"page","appMode":"admin","page":"admin/:domainId/custom/faster-other-reports","service":"BuzzPearson3","referer":"https://test-smoketest.zebra-next.connexus.com/admin/12596144/custom/faster-other-reports","requestedHost":"test-smoketest.zebra-next.connexus.com","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","language":"en"}]
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [019] Login | 140 | GET /dlap.ashx ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /dlap.ashx
-  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/pearson-connexus-menu-logo.png"}
-  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Assert   : 200 OK
-
---- [020] Login | 141 | GET /cmd/getprofilepicture ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getprofilepicture
-  QParams  : {"entityid": "29774583", "usedefault": "true", "_token": "~0.oIbgQC1itDs3LlxB.K.ArDhOR9QNqyzktCu0ftLbX_rOBD3WXsy_bMUa5v7LHE", "once": "1775130426568"}
-  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+--- [004] Login | 27 | POST /login/IesLogin/DetermineLandingPage ---
+  Method   : POST  Protocol : https  Server   : test.connexus.com:443
+  Path     : /login/IesLogin/DetermineLandingPage
+  Body(form) : sendTo=&partner=&landingPageData.Username=VP999YA%40pedev.com
+  Headers  : {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Referer": "https://test.connexus.com/login", "Content-Type": "application/x-www-form-urlencoded", "Origin": "https://test.connexus.com", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront="}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": ""}
   Assert   : 302 Found
 
---- [021] Login | 142 | GET /media/fa-solid-900-WQK4QZF6.woff2 ---
-  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
-  Path     : /media/fa-solid-900-WQK4QZF6.woff2
-  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/styles-54XCBFB7.css"}
+--- [005] Login | 28 | GET /login/IesLogin/IesAuthentication ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /login/IesLogin/IesAuthentication
+  QParams  : {"username": "VP999YA@pedev.com"}
+  Headers  : {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Referer": "https://test.connexus.com/login", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront="}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": ""}
+  Assert   : 302 Found
+
+--- [006] Login | 30 | GET /auth/oauth2/realms/pearson/authorize ---
+  Method   : GET  Protocol : https  Server   : iam-ppe.pearson.com:443
+  Path     : /auth/oauth2/realms/pearson/authorize
+  QParams  : {"response_type": "code", "client_id": "PVS-Client", "redirect_uri": "https://test.connexus.com/ieslogin", "scope": "profile openid federationID pearsonUID", "state": "a9cf9e47-2109-4c26-9f6f-f271168c122a", "code_challenge": "-Bq8QGL7pz2ALMqHD8eXLW8KGCESOiNLfY5cTcVPCkg", "code_challenge_method": "S256", "service": "AuthN", "poidata": "VlA5OTlZQUBwZWRldi5jb20="}
+  Headers  : {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Referer": "https://test.connexus.com/", "Cookie": "JSESSIONID=DA7EF0192DD2D9C850515C80F175BB7F; AWSALB=iybXWZf0UfhbbH+U8FL5YV3i4IUqVs9dswzKgez4O1UFdyAXj0n1bgMHol0plHC24WZCOE1+LvkyR6Dv29pi+Ws6SFaLnQNoq4oOlry0pwfxaP6a+I6zfUOH0lWT; AWSALBCORS=iybXWZf0UfhbbH+U8FL5YV3i4IUqVs9dswzKgez4O1UFdyAXj0n1bgMHol0plHC24WZCOE1+LvkyR6Dv29pi+Ws6SFaLnQNoq4oOlry0pwfxaP6a+I6zfUOH0lWT; OptanonConsent=isGpcEnabled=0&datestamp=Tue+Apr+07+2026+09%3A40%3A14+GMT-0700+(Pacific+Daylight+Time)&version=202601.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&genVendors=&consentId=c36baa57-7d23-4087-85ee-cff7662b0500&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&intType=1&crTime=1774518504831&geolocation=SG%3B&AwaitingReconsent=false; OptanonAlertBoxClosed=2026-03-26T09:48:23.657Z; _ga_R7TJPR2WQK=GS2.1.s1775579988$o3$g1$t1775579999$j49$l0$h0; _ga=GA1.1.157040827.1774518505; session-jwt=eyJ0eXAiOiJKV1QiLCJraWQiOiJvcGVuaWRtLWp3dHNlc3Npb25obWFjLWtleSIsImN0eSI6IkpXVCIsImFsZyI6IkhTMjU2In0.ZXlKMGVYQWlPaUpLVjFRaUxDSnJhV1FpT2lKdmNHVnVhV1J0TFhOcFoyNWxaQzFqWlhKMElpd2laVzVqSWpvaVFURXlPRU5DUXkxSVV6STFOaUlzSW1Gc1p5STZJbEpUUVRGZk5TSjkuTkV4dFMwSzFtUEgtck5JakMwR2FkU18yc1ZhMWhoNVh5RGJCUzZpdGo5b0dxSnh5WTZSSldlYVBjNF9kRTV4d3FoWjJDTFFkcEVmY1lPbVE5WEdiSVBNWjFUYU1LcWNDY2FHOXBSSDJDeHR2aUhuYzE4azFCejJGNGp5dkFlYTJleFd3SFRXRi1tb1BrcVVqNnRvMFFnNTVSVGVyOTNCQVVuaDNKdnJ1VVluckZDN1ZHX3VwQy1Dd3RVZ0d5eWJ6T3VUMkZIWENZTmllYXUya1RuV3Q3YUwwM0t0WG5TcXlRX3BnRU9hN041S0xrVUNNNEhkQjRlV1k4T2QyLUVQTmJIWGxqZFhHZnhYak1raEVNblh1eGl6ZE8wTTlTQkFRb2RrOWNpVXkxSDZoUmYtN0FaTThQN1dnS0d2ZGhLb0hZVEZFZnpXNHhRNzFIMGJZWmhTdmVBLmNlc2R5TUtJaGJicVVxWERNRnJjbmcuS1BpM2hDQTZ5SDE5cVJyaTdRMTloenF5SHFtSjRNcGZIOVRDRmJOenJUXy1vdmhFaVp3RkwtVE4yZzZOVHdTTVVQWUVqOHBCM0ZZMjJvUlgwdVI5VVJrazhLNHIyYXdwT3VTMEMzUmtBa0dMMDRfazI0RlhaWmVLOTl4Y0Yzb0EwZi1OT0FuLXlkaUNhd24yRVRiV2VaT1RnQzg2SGlSSGdhcy04S1dDZTFjemRGVXlZTW9JQWFnRlQ0d0ZsdWUtWUdhVUROdzFidUZINnZNZGMxQ3VMWjNES19QMlZ1V0gtTXlYRF8xekpLczB6QjNuaFJsV3Q4U1Q3Y0ZiR241VnFVdUUtV1F0SDJabVRTR2czWlBhZHlocmRxcm5GVDlFcWJ5ZUwxRnFKSWtSSXNuQVhibG5GZVFKVjhTQmxVRmZ4X0NaNDVFMHJkZlU3b3hFYzlXZFdFSmVUbDBrNkVlN3RpNjFVNmJhSkxteVoyTjFpN1JaTTQwWFVKUWtGQjFReDdyc00tLTljQ1RfRnNjRHU2bWJhTVV3UDBldjZZVWtYVUc5SW1XdnVwUFYyOEFJOHN0WjBYN0ppLWZCLWFvWGZtWUYwcVlfd0RfakphS2pMNlYxRVNmVHdmYlB3cWRjbTZQVUdEOXVDQ19JRUNMUjRTV3BVem16Q01wTmNpSFhZWFVZRThUU3k5ek5RLWNiaTlnY3BfWURwcGdRNzhMQjBvdk5HMnJWUmVfdnk5bEpXNU5oVV9tMmpzMk90N3NvVkVzTGtJR3ZOeC16ZE9wUW1jbVI4U0NOdzk1bEV6dXdLMl9wTU9wQU5SdTl1TmVTbWpsSkdqcEJvM0hZdjMzN3ZLbVBNTUhLX3NkVFQ2LXpGQ0VVWVEuSkRkamo2Q1ZqaGlDMnFqSGY5Z3g0dw.6KA3h3hjYc2U9dM3cNKlU4pKZSESyi46J2nW4tIOUgY; amlbcookie=ip-10-241-160-41.ec2.internal; sbcookie=ip-10-86-248-147.ec2.internal; routingRegion=US; ORIG_URL=/auth?realm=/pearson&service=InternalAzureSSOSocialAuthenticationService&login_hint=VP999YA%40pedev.com&goto=https%3A%2F%2Fiam-ppe.pearson.com%3A443%2Fauth%2Foauth2%2Fpearson%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3DPVS-Client%26redirect_uri%3Dhttps%3A%2F%2Ftest.connexus.com%2Fieslogin%26scope%3Dprofile%2520openid%2520federationID%2520pearsonUID%26state%3Db5fd6cb6-de8a-4e5d-9635-38b627ff28e9%26code_challenge%3DoT2bGcysMfqbmo0Fr5l9adXEzT9k26Zq7XY6Ia_4x8o%26code_challenge_method%3DS256%26service%3DAuthN%26poidata%3DVlA5OTlZQUBwZWRldi5jb20%253D&authIndexType=service&authIndexValue=InternalAzureSSOSocialAuthenticationService; NTID=txkeE2IwwHG5sMiPQNgOQetLcsP9mS8k; OAUTH_LOGOUT_URL=\"\"; PearsonExtPPESSOSession=U-lSXJwwPqVpsa-gSgti4CvdSDA.*AAJTSQACMDIAAlNLABxSU2daUHlMQmEvYWJ2Y1YrK1JSWmxSdFRORnM9AAR0eXBlAANDVFMAAlMxAAIxNA..*"}
+  Cookies  : {"JSESSIONID": "DA7EF0192DD2D9C850515C80F175BB7F", "AWSALB": "iybXWZf0UfhbbH+U8FL5YV3i4IUqVs9dswzKgez4O1UFdyAXj0n1bgMHol0plHC24WZCOE1+LvkyR6Dv29pi+Ws6SFaLnQNoq4oOlry0pwfxaP6a+I6zfUOH0lWT", "AWSALBCORS": "iybXWZf0UfhbbH+U8FL5YV3i4IUqVs9dswzKgez4O1UFdyAXj0n1bgMHol0plHC24WZCOE1+LvkyR6Dv29pi+Ws6SFaLnQNoq4oOlry0pwfxaP6a+I6zfUOH0lWT", "OptanonConsent": "isGpcEnabled=0&datestamp=Tue+Apr+07+2026+09%3A40%3A14+GMT-0700+(Pacific+Daylight+Time)&version=202601.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&genVendors=&consentId=c36baa57-7d23-4087-85ee-cff7662b0500&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0002%3A1%2CC0004%3A1&intType=1&crTime=1774518504831&geolocation=SG%3B&AwaitingReconsent=false", "OptanonAlertBoxClosed": "2026-03-26T09:48:23.657Z", "_ga_R7TJPR2WQK": "GS2.1.s1775579988$o3$g1$t1775579999$j49$l0$h0", "_ga": "GA1.1.157040827.1774518505", "session-jwt": "eyJ0eXAiOiJKV1QiLCJraWQiOiJvcGVuaWRtLWp3dHNlc3Npb25obWFjLWtleSIsImN0eSI6IkpXVCIsImFsZyI6IkhTMjU2In0.ZXlKMGVYQWlPaUpLVjFRaUxDSnJhV1FpT2lKdmNHVnVhV1J0TFhOcFoyNWxaQzFqWlhKMElpd2laVzVqSWpvaVFURXlPRU5DUXkxSVV6STFOaUlzSW1Gc1p5STZJbEpUUVRGZk5TSjkuTkV4dFMwSzFtUEgtck5JakMwR2FkU18yc1ZhMWhoNVh5RGJCUzZpdGo5b0dxSnh5WTZSSldlYVBjNF9kRTV4d3FoWjJDTFFkcEVmY1lPbVE5WEdiSVBNWjFUYU1LcWNDY2FHOXBSSDJDeHR2aUhuYzE4azFCejJGNGp5dkFlYTJleFd3SFRXRi1tb1BrcVVqNnRvMFFnNTVSVGVyOTNCQVVuaDNKdnJ1VVluckZDN1ZHX3VwQy1Dd3RVZ0d5eWJ6T3VUMkZIWENZTmllYXUya1RuV3Q3YUwwM0t0WG5TcXlRX3BnRU9hN041S0xrVUNNNEhkQjRlV1k4T2QyLUVQTmJIWGxqZFhHZnhYak1raEVNblh1eGl6ZE8wTTlTQkFRb2RrOWNpVXkxSDZoUmYtN0FaTThQN1dnS0d2ZGhLb0hZVEZFZnpXNHhRNzFIMGJZWmhTdmVBLmNlc2R5TUtJaGJicVVxWERNRnJjbmcuS1BpM2hDQTZ5SDE5cVJyaTdRMTloenF5SHFtSjRNcGZIOVRDRmJOenJUXy1vdmhFaVp3RkwtVE4yZzZOVHdTTVVQWUVqOHBCM0ZZMjJvUlgwdVI5VVJrazhLNHIyYXdwT3VTMEMzUmtBa0dMMDRfazI0RlhaWmVLOTl4Y0Yzb0EwZi1OT0FuLXlkaUNhd24yRVRiV2VaT1RnQzg2SGlSSGdhcy04S1dDZTFjemRGVXlZTW9JQWFnRlQ0d0ZsdWUtWUdhVUROdzFidUZINnZNZGMxQ3VMWjNES19QMlZ1V0gtTXlYRF8xekpLczB6QjNuaFJsV3Q4U1Q3Y0ZiR241VnFVdUUtV1F0SDJabVRTR2czWlBhZHlocmRxcm5GVDlFcWJ5ZUwxRnFKSWtSSXNuQVhibG5GZVFKVjhTQmxVRmZ4X0NaNDVFMHJkZlU3b3hFYzlXZFdFSmVUbDBrNkVlN3RpNjFVNmJhSkxteVoyTjFpN1JaTTQwWFVKUWtGQjFReDdyc00tLTljQ1RfRnNjRHU2bWJhTVV3UDBldjZZVWtYVUc5SW1XdnVwUFYyOEFJOHN0WjBYN0ppLWZCLWFvWGZtWUYwcVlfd0RfakphS2pMNlYxRVNmVHdmYlB3cWRjbTZQVUdEOXVDQ19JRUNMUjRTV3BVem16Q01wTmNpSFhZWFVZRThUU3k5ek5RLWNiaTlnY3BfWURwcGdRNzhMQjBvdk5HMnJWUmVfdnk5bEpXNU5oVV9tMmpzMk90N3NvVkVzTGtJR3ZOeC16ZE9wUW1jbVI4U0NOdzk1bEV6dXdLMl9wTU9wQU5SdTl1TmVTbWpsSkdqcEJvM0hZdjMzN3ZLbVBNTUhLX3NkVFQ2LXpGQ0VVWVEuSkRkamo2Q1ZqaGlDMnFqSGY5Z3g0dw.6KA3h3hjYc2U9dM3cNKlU4pKZSESyi46J2nW4tIOUgY", "amlbcookie": "ip-10-241-160-41.ec2.internal", "sbcookie": "ip-10-86-248-147.ec2.internal", "routingRegion": "US", "ORIG_URL": "/auth?realm=/pearson&service=InternalAzureSSOSocialAuthenticationService&login_hint=VP999YA%40pedev.com&goto=https%3A%2F%2Fiam-ppe.pearson.com%3A443%2Fauth%2Foauth2%2Fpearson%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3DPVS-Client%26redirect_uri%3Dhttps%3A%2F%2Ftest.connexus.com%2Fieslogin%26scope%3Dprofile%2520openid%2520federationID%2520pearsonUID%26state%3Db5fd6cb6-de8a-4e5d-9635-38b627ff28e9%26code_challenge%3DoT2bGcysMfqbmo0Fr5l9adXEzT9k26Zq7XY6Ia_4x8o%26code_challenge_method%3DS256%26service%3DAuthN%26poidata%3DVlA5OTlZQUBwZWRldi5jb20%253D&authIndexType=service&authIndexValue=InternalAzureSSOSocialAuthenticationService", "NTID": "txkeE2IwwHG5sMiPQNgOQetLcsP9mS8k", "OAUTH_LOGOUT_URL": "\"\"", "PearsonExtPPESSOSession": "U-lSXJwwPqVpsa-gSgti4CvdSDA.*AAJTSQACMDIAAlNLABxSU2daUHlMQmEvYWJ2Y1YrK1JSWmxSdFRORnM9AAR0eXBlAANDVFMAAlMxAAIxNA..*"}
+  Assert   : 302 Found
+
+--- [007] Login | 31 | GET /ieslogin ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /ieslogin
+  QParams  : {"code": "hb4YOGk0FAitobd8_PDHH0lvNlk", "iss": "https://iam-ppe.pearson.com:443/auth/oauth2/pearson", "state": "a9cf9e47-2109-4c26-9f6f-f271168c122a", "client_id": "PVS-Client", "x-routingregion": "US"}
+  Headers  : {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Referer": "https://test.connexus.com/", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront="}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": ""}
+  Assert   : 302 Found
+
+--- [008] Login | 32 | POST /SystemMessage.ashx ---
+  Method   : POST  Protocol : https  Server   : test.connexus.com:443
+  Path     : /SystemMessage.ashx
+  QParams  : {"overrideAllowDatabaseAccess": "false", "type": "idle"}
+  Headers  : {"Accept": "application/json, text/javascript, */*; q=0.01", "Referer": "https://test.connexus.com/login", "X-NewRelic-ID": "VgEFVlZTABABVFlVBwQCVVYF", "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjI3MjcwMDgiLCJhcCI6IjExMDMyNzY0OTAiLCJpZCI6ImRiNTVjZjlkMTk0MzZjNjIiLCJ0ciI6IjFkNzNiMDkwMTI5MDM2ZTJkOTA5NGIwOGYyYmMzYTU2IiwidGkiOjE3NzU2NDc4NDE4MTYsInRrIjoiNjkxODA3In19", "traceparent": "00-1d73b090129036e2d9094b08f2bc3a56-db55cf9d19436c62-01", "tracestate": "691807@nr=0-1-2727008-1103276490-db55cf9d19436c62----1775647841816", "Content-Type": "application/json; charset=utf-8", "X-Requested-With": "XMLHttpRequest", "Origin": "https://test.connexus.com", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront="}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": ""}
   Assert   : 200 OK
 
---- [022] Login | 145 | GET /cmd/getexternaldomainrights ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getexternaldomainrights
-  QParams  : {"limit": "10", "domainid": "12596142", "ignoreproxy": "true"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+--- [009] Login | 33 | GET /default.aspx ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /default.aspx
+  Headers  : {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Referer": "https://test.connexus.com/", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 302 Found
+
+--- [010] Login | 34 | GET /home/pages/employee.aspx ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /home/pages/employee.aspx
+  Headers  : {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Referer": "https://test.connexus.com/", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
   Assert   : 200 OK
 
---- [023] Login | 146 | GET /cmd/getdomainparentlist ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getdomainparentlist
-  QParams  : {"domainid": "12596144"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+--- [011] Login | 35 | GET /js/detectJavaScriptErrors.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/detectJavaScriptErrors.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [012] Login | 36 | GET /_control/validators/js/validation.3.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_control/validators/js/validation.3.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [013] Login | 37 | GET /js/popItMenu.1.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/popItMenu.1.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [014] Login | 38 | GET /js/connexusForms.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/connexusForms.js
+  QParams  : {"v": "i08"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [015] Login | 39 | GET /js/cxOverlay.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/cxOverlay.js
+  QParams  : {"v": "2024_PI3_6"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [016] Login | 40 | GET /js/cxButton.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/cxButton.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [017] Login | 43 | GET /js/feedbackOverlay.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/feedbackOverlay.js
+  QParams  : {"v": "2022_pi2i5"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [018] Login | 44 | GET /js/html5SupportChecker.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/html5SupportChecker.js
+  QParams  : {"v": "2020_i11"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [019] Login | 45 | GET /e2ecomms/js-e2e/js-e2e.js ---
+  Method   : GET  Protocol : https  Server   : e2e-comms-stg.pearson.com:443
+  Path     : /e2ecomms/js-e2e/js-e2e.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "Sec-Fetch-Storage-Access": "none"}
   Assert   : 200 OK
 
---- [024] Login | 147 | GET /cmd/getuserannouncementlist ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getuserannouncementlist
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+--- [020] Login | 46 | GET /js/moment.min.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/moment.min.js
+  QParams  : {"v": "2015_09"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [021] Login | 47 | GET /js/utils.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/utils.js
+  QParams  : {"v": "2015_i09"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [022] Login | 48 | GET /_control/page/js/iconBar.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_control/page/js/iconBar.js
+  QParams  : {"v": "2014_i21"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [023] Login | 49 | GET /js/compliantFunctions.2.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/compliantFunctions.2.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [024] Login | 50 | GET /js/ajax.2.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/ajax.2.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [025] Login | 51 | GET /js/FerantLib.2.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/FerantLib.2.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [026] Login | 52 | GET /js/newrelicBrowserMonitoring.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/newrelicBrowserMonitoring.js
+  QParams  : {"v": "2025_i16_3"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [027] Login | 53 | GET /js/systemMessageClient.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/systemMessageClient.js
+  QParams  : {"v": "2025_i1"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [028] Login | 54 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "41504", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/login", "ptid": "cc85a748c88fea9b"}
+  Body(text) : bel.6;e,'unload,w0u,2;5,'pageUrl,'https://test.connexus.com/login;8,'webdriverDetected;e,'pageHide,w0v,2;5,1,2;8,3;e,'inp,14,d;5,'metricId,'v4-1775647804981-3684138461920;5,'eventTarget,'#usernameInput;6,'eventTime,17278.;5,'interactionTarget,9;6,'interactionTime,17278.;5,'interactionType,'pointer;6,'inputDelay,15.;6,'nextPaintTime,17318.;6,'processingDuration,0.;6,'presentationDelay,25.;5,'loadState,'complete;5,1,2;8,3
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "Content-Type": "text/plain;charset=UTF-8", "Sec-Fetch-Storage-Access": "none", "Origin": "https://test.connexus.com"}
+  Assert   : 200 
+
+--- [029] Login | 55 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "41505", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/login", "ptid": "cc85a748c88fea9b"}
+  Body(json) : {"sm":[{"params":{"name":"Generic/LoaderType/spa/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/DistMethod/CDN/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/Runtime/Browser/Detected"},"stats":{"c":1}},{"params":{"name":"Framework/Jquery/Detected"},"stats":{"c":1}},{"params":{"name":"API/logging/error/called"},"stats":{"c":1}},{"params":{"name":"SoftNav/Interaction/InitialPageLoad/Duration/Ms"},"stats":{"t":1418}},{"params":{"name":"Config/SessionReplay/Enabled"},"stats":{"c":1}},{"params":{"name":"Config/SessionReplay/MaskTextSelector/Modified"},"stats":{"c":1}},{"params":{"name":"Config/SessionReplay/SamplingRate/Value"},"stats":{"t":10}},{"params":{"name":"Config/SessionReplay/ErrorSamplingRate/Value"},"stats":{"t":100}},{"params":{"name":"Ajax/Events/Excluded/Agent"},"stats":{"c":7}},{"params":{"name":"audit/page_view/hasReplay/true/negative"},"stats":{"c":1}},{"params":{"name":"audit/page_view/hasTrace/true/negative"},"stats":{"c":1}}]}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "Content-Type": "text/plain;charset=UTF-8", "Sec-Fetch-Storage-Access": "none", "Origin": "https://test.connexus.com"}
+  Assert   : 200 
+
+--- [030] Login | 56 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "41505", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/login", "ptid": "cc85a748c88fea9b"}
+  Body(json) : {"xhr":[{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/jserrors/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":786},"rxSize":{"t":24},"duration":{"t":239},"cbTime":{"t":0},"time":{"t":31894}}},{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/events/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":469},"rxSize":{"t":24},"duration":{"t":243},"cbTime":{"t":0},"time":{"t":31894}}},{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/ins/1/NRJS-22fee3f22eab14fe13b","status":204},"metrics":{"count":1,"txSize":{"t":2254},"duration":{"t":537},"cbTime":{"t":0},"time":{"t":31895}}},{"params":{"method":"POST","hostname":"test.connexus.com","port":"443","protocol":"https","host":"test.connexus.com:443","pathname":"/SystemMessage.ashx","status":200},"metrics":{"count":1,"rxSize":{"t":194},"duration":{"t":682},"cbTime":{"t":1},"time":{"t":38277}}}]}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "Content-Type": "text/plain;charset=UTF-8", "Sec-Fetch-Storage-Access": "none", "Origin": "https://test.connexus.com"}
+  Assert   : 200 
+
+--- [031] Login | 57 | GET /js/header.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/header.js
+  QParams  : {"v": "2016_i06"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [032] Login | 58 | GET /js/portallet.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/portallet.js
+  QParams  : {"v": "i01"}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [033] Login | 60 | GET /_stylesheets/main.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/main.css
+  QParams  : {"v": "2016_i07"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [034] Login | 62 | GET /_stylesheets/portallet.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/portallet.css
+  QParams  : {"v": "2014_i19"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [035] Login | 63 | GET /_stylesheets/footerCA.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/footerCA.css
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [036] Login | 64 | GET /_stylesheets/cxForms.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/cxForms.css
+  QParams  : {"v": "2024_i11"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [037] Login | 65 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "41505", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/login", "ptid": "cc85a748c88fea9b"}
+  Body(text) : bel.7;2,,tj9,ix,,,'POST,5k,'test.connexus.com:443,'/SystemMessage.ashx,,5e,,'0,'db55cf9d19436c62,'1d73b090129036e2d9094b08f2bc3a56,mnpyvnr7
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "Content-Type": "text/plain;charset=UTF-8", "Sec-Fetch-Storage-Access": "none", "Origin": "https://test.connexus.com"}
+  Assert   : 200 
+
+--- [038] Login | 66 | POST /ins/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /ins/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "41506", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/login", "ptid": "cc85a748c88fea9b", "at": "HRBUGwtLQQ8UTRATURZ7URsLEgJZAgJXAAhUVgVbCQdUVQVBGRw="}
+  Body(json) : {"ins":[{"timestamp":1775647835233,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"paste","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"html>body>div>div>div#loginContent>div>div>div>form>fieldset#adLoginForm>div>input#usernameInput:nth-of-type(1)","targetId":"usernameInput","targetClass":"field firstField valid","targetTag":"INPUT","targetType":"text","nearestId":"usernameInput","nearestClass":"field firstField","nearestTag":"INPUT","nearestType":"text"},{"timestamp":1775647838386,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"click","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"html>body>div>div>div#loginContent>div>div>div>form>fieldset#adLoginForm>div>button#signInButton:nth-of-type(1)","targetId":"signInButton","targetClass":"cxButton cxLoginBtn submit login-button-margin-fix","targetTag":"BUTTON","targetType":"submit","nearestId":"signInButton","nearestClass":"cxButton cxLoginBtn submit login-button-margin-fix","nearestTag":"BUTTON","nearestType":"submit"}]}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "Content-Type": "text/plain;charset=UTF-8", "Sec-Fetch-Storage-Access": "none", "Origin": "https://test.connexus.com"}
+  Assert   : 204 
+
+--- [039] Login | 67 | GET /_stylesheets/cxOverlay.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/cxOverlay.css
+  QParams  : {"v": "2020_i22"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [040] Login | 68 | GET /_stylesheets/feedback.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/feedback.css
+  QParams  : {"v": "2014_i19"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [041] Login | 69 | GET /home/pages/_stylesheets/home.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /home/pages/_stylesheets/home.css
+  QParams  : {"v": "2014_i19"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [042] Login | 70 | GET /_stylesheets/announcements.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/announcements.css
+  QParams  : {"v": "2015_i14"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [043] Login | 71 | GET /_stylesheets/cxHeader.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/cxHeader.css
+  QParams  : {"v": "2014_i19"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [044] Login | 72 | GET /_stylesheets/header.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/header.css
+  QParams  : {"v": "2015_i09"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [045] Login | 73 | GET /_stylesheets/headerCa.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/headerCa.css
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [046] Login | 74 | GET /js/analyticsId.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/analyticsId.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [047] Login | 75 | GET /js/appDashboardPopover.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/appDashboardPopover.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [048] Login | 76 | GET /_stylesheets/appDashboardPopover.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/appDashboardPopover.css
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [049] Login | 77 | GET /js/webComponents/app-tile.js ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /js/webComponents/app-tile.js
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [050] Login | 78 | GET /blank.html ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /blank.html
+  Headers  : {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [051] Login | 79 | GET /_stylesheets/pvs-design-tokens.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/pvs-design-tokens.css
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/_stylesheets/headerCa.css", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [052] Login | 80 | GET /content/media/2015125-8132020-125946-PM-853554975.png ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /content/media/2015125-8132020-125946-PM-853554975.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
   Assert   : 200 OK
 
---- [025] Login | 148 | GET /cmd/listdomains ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/listdomains
-  QParams  : {"domainid": "12596144"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+--- [053] Login | 81 | GET /images/logos/PearsonLogo.png ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/logos/PearsonLogo.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [054] Login | 82 | GET /images/icons/error_red.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/icons/error_red.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [055] Login | 83 | GET /content/media/4626651-272025-51648-PM-1172863941.png ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /content/media/4626651-272025-51648-PM-1172863941.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
   Assert   : 200 OK
 
---- [026] Login | 149 | GET /cmd/getexternaldomainrights ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getexternaldomainrights
-  QParams  : {"limit": "10", "domainid": "12596144", "ignoreproxy": "true"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+--- [056] Login | 84 | GET /images/icons/email_black_24dp.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/icons/email_black_24dp.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [057] Login | 85 | GET /images/icons/people_black_24dp.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/icons/people_black_24dp.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [058] Login | 86 | GET /e2ecomms/products/onlineclassroom/comms.json ---
+  Method   : GET  Protocol : https  Server   : e2e-comms-stg.pearson.com:443
+  Path     : /e2ecomms/products/onlineclassroom/comms.json
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "Origin": "https://test.connexus.com"}
   Assert   : 200 OK
 
---- [027] Login | 153 | GET /cmd/getexternaldomainrights ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd/getexternaldomainrights
-  QParams  : {"limit": "10", "domainid": "12596144", "ignoreproxy": "true"}
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+--- [059] Login | 87 | GET /images/headerIconSprites@1x.png ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/headerIconSprites@1x.png
+  QParams  : {"v": "i09_2015"}
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/_stylesheets/header.css?v=2015_i09", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [060] Login | 88 | GET /_control/_images/portalletEnhanced/portalletSprites.pn… ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_control/_images/portalletEnhanced/portalletSprites.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/_stylesheets/portallet.css?v=2014_i19", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [061] Login | 89 | GET /_control/_images/portalletEnhanced/portalletSpritesVer… ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_control/_images/portalletEnhanced/portalletSpritesVertical.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/_stylesheets/portallet.css?v=2014_i19", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [062] Login | 90 | GET /_stylesheets/print.css ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_stylesheets/print.css
+  QParams  : {"v": "2014_i19"}
+  Headers  : {"Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [063] Login | 91 | POST /1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "736", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/blank.html", "ptid": "4a52f1674964e974", "af": "err,spa,xhr,stn,ins", "be": "364", "fe": "260", "dc": "259", "at": "HRBUGwtLQQ8UTRATURZ7URsLElpRUFtcWV1TVwxfBVEAAARBGRw=", "fsh": "0", "perf": "{\"timing\":{\"of\":1775647846005,\"n\":0,\"rq\":190,\"rp\":364,\"rpe\":364,\"di\":617,\"ds\":623,\"de\":623,\"dc\":623,\"l\":623,\"le\":625},\"navigation\":{}}", "timestamp": "1775647847232"}
+  Body(json) : {"ja":{"webdriverDetected":false}}
+  Headers  : {"Accept": "*/*", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+
+--- [064] Login | 92 | GET /images/header/home.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/home.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [065] Login | 93 | GET /images/header/mail.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mail.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [066] Login | 94 | GET /images/header/message_boards.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/message_boards.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [067] Login | 95 | GET /images/header/gradebook.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/gradebook.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [068] Login | 96 | GET /images/header/issue_aware.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/issue_aware.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [069] Login | 97 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "1006", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/blank.html", "ptid": "4a52f1674964e974"}
+  Body(raw) : bel.6;e,'load,hd,2;5,'pageUrl,'https://test.connexus.com/blank.html;8,'webdriverDetected
+  Headers  : {"Accept": "*/*", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+
+--- [070] Login | 98 | GET /images/header/app_dashboard.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/app_dashboard.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [071] Login | 99 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "1007", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/blank.html", "ptid": "4a52f1674964e974"}
+  Body(json) : {"xhr":[{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":34},"rxSize":{"t":199},"duration":{"t":258},"cbTime":{"t":1},"time":{"t":736}}}]}
+  Headers  : {"Accept": "*/*", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+
+--- [072] Login | 100 | GET /images/icons/phone_black_24dp.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/icons/phone_black_24dp.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
+
+--- [073] Login | 101 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "1009", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/blank.html", "ptid": "4a52f1674964e974"}
+  Body(raw) : bel.7;1,2,,hd,,,'initialPageLoad,'https://test.connexus.com/blank.html,'https://test.connexus.com/home/pages/employee.aspx,1,,,,,!!'9953b2bd-8389-472f-88bf-2cd5932cb21c,'1,!!;8,'webdriverDetected;a,'HRBUGwtLQQ8UTRATURZ7URsLElpRUFtcWV1TVwxfBVEAAARBGRw=;b,!!!!!!!!!!5a,4u,,!71,6,,,,2
+  Headers  : {"Accept": "*/*", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+
+--- [074] Login | 102 | GET /content/media/2015125-8132020-10748-PM-1602876347.png ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /content/media/2015125-8132020-10748-PM-1602876347.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
   Assert   : 200 OK
 
---- [028] Login | 154 | GET /Resource/12596142/public/shadow/app/buzz/secureContent… ---
-  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /Resource/12596142/public/shadow/app/buzz/secureContentCookieFetcher.html
-  QParams  : {"token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzhi1"}
-  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Assert   : 200 OK
+--- [075] Login | 103 | GET /images/badge.png ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/badge.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [029] Login | 156 | GET /index.html ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
-  Path     : /index.html
-  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Assert   : 200 OK
+--- [076] Login | 104 | GET /images/icons/laptop.png ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/icons/laptop.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [030] Login | 162 | GET /lmu/migration/contentauth/lmscontentcookiehandler.ashx ---
-  Method   : GET  Protocol : https  Server   : testcurrent.connexus.com:443
-  Path     : /lmu/migration/contentauth/lmscontentcookiehandler.ashx
-  QParams  : {"pcxauthtoken": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzhi1"}
-  Headers  : {"Origin": "https://api.zebra.connexus.com", "Referer": "https://api.zebra.connexus.com/"}
-  Assert   : 204 No Content
+--- [077] Login | 105 | GET /images/icons/default_app_icon.png ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/icons/default_app_icon.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [031] Login | 163 | GET / ---
-  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
-  Path     : /
-  QParams  : {"TOKEN": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports", "USERID": "29774583", "ADMINDOMAINID": "12596144"}
-  Headers  : {"Referer": "https://test-smoketest.zebra-next.connexus.com/"}
-  Assert   : 200 OK
+--- [078] Login | 106 | GET /images/header/more.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/more.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [032] Login | 164 | GET /node_modules/@connections-education/domain-selector/di… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
-  Path     : /node_modules/@connections-education/domain-selector/dist/css/connections.domainselector.css
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
-  Assert   : 200 OK
+--- [079] Login | 107 | GET /_skin/supportFiles/1/572000-762022-104237-PM-530717406… ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /_skin/supportFiles/1/572000-762022-104237-PM-530717406.png
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [033] Login | 172 | GET /css/app-d93e524553.css ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
-  Path     : /css/app-d93e524553.css
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
-  Assert   : 200 OK
+--- [080] Login | 108 | GET /images/header/hamburger.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/hamburger.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [034] Login | 173 | GET /node_modules/ckeditor/ckeditor.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
-  Path     : /node_modules/ckeditor/ckeditor.js
-  QParams  : {"hash": "cda4a13925"}
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
-  Assert   : 200 OK
+--- [081] Login | 109 | GET /images/header/mobile_home.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_home.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [035] Login | 174 | GET /node_modules/@connections-education/domain-selector/co… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
-  Path     : /node_modules/@connections-education/domain-selector/connections.domainselector.js
-  QParams  : {"hash": "b9f80aa90b"}
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
-  Assert   : 200 OK
+--- [082] Login | 110 | GET /images/header/mobile_app_dashboard.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_app_dashboard.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [036] Login | 175 | GET /js/constants.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
-  Path     : /js/constants.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
-  Assert   : 200 OK
+--- [083] Login | 111 | GET /images/header/mobile_planner.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_planner.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [037] Login | 176 | GET /js/app-1dfb7091d5.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
-  Path     : /js/app-1dfb7091d5.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
-  Assert   : 200 OK
+--- [084] Login | 112 | GET /images/header/mobile_web_mail.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_web_mail.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [038] Login | 177 | GET /pkgs/angular/1.5.11/angular.min.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular/1.5.11/angular.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [085] Login | 113 | GET /images/header/mobile_message_boards.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_message_boards.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [039] Login | 178 | GET /pkgs/angular-animate/1.5.11/angular-animate.min.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-animate/1.5.11/angular-animate.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [086] Login | 114 | GET /images/header/mobile_gradebook.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_gradebook.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [040] Login | 179 | GET /pkgs/angular-dynamic-locale/0.1.37/tmhDynamicLocale.mi… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-dynamic-locale/0.1.37/tmhDynamicLocale.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [087] Login | 115 | GET /images/header/mobile_issue_aware.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_issue_aware.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [041] Login | 180 | GET /pkgs/angular-aria/1.5.11/angular-aria.min.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-aria/1.5.11/angular-aria.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [088] Login | 116 | GET /images/header/mobile_virtual_library.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_virtual_library.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [042] Login | 181 | GET /pkgs/angular-message-format/1.5.11/angular-message-for… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-message-format/1.5.11/angular-message-format.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [089] Login | 117 | GET /images/header/mobile_user_manager.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_user_manager.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [043] Login | 182 | GET /pkgs/moment/2.22.2/min/moment.min.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/moment/2.22.2/min/moment.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [090] Login | 118 | GET /images/header/mobile_role_manager.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_role_manager.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [044] Login | 183 | GET /pkgs/angular-moment/0.10.3/angular-moment.min.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-moment/0.10.3/angular-moment.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [091] Login | 119 | GET /images/header/mobile_location_manager.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_location_manager.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [045] Login | 184 | GET /pkgs/angular-sanitize/1.5.11/angular-sanitize.min.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-sanitize/1.5.11/angular-sanitize.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [092] Login | 120 | GET /images/header/mobile_section_manager.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_section_manager.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [046] Login | 185 | GET /pkgs/angular-smart-table/2.1.11/dist/smart-table.min.j… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-smart-table/2.1.11/dist/smart-table.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [093] Login | 121 | GET /images/header/mobile_school_directory.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_school_directory.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [047] Login | 186 | GET /pkgs/angular-toastr/2.1.1/dist/angular-toastr.tpls.min… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-toastr/2.1.1/dist/angular-toastr.tpls.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [094] Login | 122 | GET /images/header/CustomizationManager.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/CustomizationManager.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [048] Login | 187 | GET /pkgs/angular-translate/2.11.1/dist/angular-translate.m… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-translate/2.11.1/dist/angular-translate.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [095] Login | 123 | GET /images/header/mobile_feedback.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_feedback.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [049] Login | 188 | GET /pkgs/angular-translate-handler-log/2.11.1/angular-tran… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-translate-handler-log/2.11.1/angular-translate-handler-log.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [096] Login | 124 | GET /images/header/mobile_my_defaults.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_my_defaults.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [050] Login | 189 | GET /pkgs/angular-translate-loader-static-files/2.11.1/angu… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-translate-loader-static-files/2.11.1/angular-translate-loader-static-files.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [097] Login | 125 | GET /images/header/mobile_help.svg ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /images/header/mobile_help.svg
+  Headers  : {"Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test.connexus.com/home/pages/employee.aspx", "Cookie": "currentSkin=default; _ga_S8PBS9J56V=GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0; _ga=GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359; ASP.NET_SessionId=2e5v05ovwk3nllvwa4ja50og; isLoggedIn=; isLoggedInCloudfront=; isLoggedIn=; isLoggedInCloudfront=; idWebuserEncrypted=D35366C85BB9E4C4CF56B5471941BDFF"}
+  Cookies  : {"currentSkin": "default", "_ga_S8PBS9J56V": "GS2.1.s1775212334$o3$g1$t1775213891$j41$l0$h0", "_ga": "GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.GA1.1.1183244892.1775128359", "ASP.NET_SessionId": "2e5v05ovwk3nllvwa4ja50og", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "D35366C85BB9E4C4CF56B5471941BDFF"}
+  Assert   : 304 Not Modified
 
---- [051] Login | 190 | GET /pkgs/angular-ui-bootstrap/1.3.3/dist/ui-bootstrap-tpls… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-ui-bootstrap/1.3.3/dist/ui-bootstrap-tpls.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [098] Login | 126 | POST /1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHwsOCwZLEVkBV0YWVF0TDQkaAQQWB0FFQQ==", "rst": "10064", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/home/pages/employee.aspx", "ptid": "630a61257864fa03", "af": "err,spa,xhr,stn,ins", "ap": "2515", "be": "7121", "fe": "2915", "dc": "1577", "at": "HRBUGwtLQQ8UTRATURZ7URsLEldVA1pSB1pfUABfAgAAAFdBGRw=", "fsh": "0", "perf": "{\"timing\":{\"of\":1775647837908,\"n\":0,\"f\":4429,\"dn\":4429,\"dne\":4429,\"c\":4429,\"s\":4429,\"ce\":4429,\"rq\":4434,\"rp\":7121,\"rpe\":7122,\"di\":8629,\"ds\":8689,\"de\":8698,\"dc\":10034,\"l\":10034,\"le\":10036},\"navigation\":{}}", "fcp": "8672", "timestamp": "1775647848462"}
+  Body(json) : {"ja":{"enduser.id":"6117341","webdriverDetected":false}}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none"}
+  Assert   : 200 
 
---- [052] Login | 191 | GET /pkgs/angular-ui-router/0.2.15/release/angular-ui-route… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-ui-router/0.2.15/release/angular-ui-router.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [099] Login | 127 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHwsOCwZLEVkBV0YWVF0TDQkaAQQWB0FFQQ==", "rst": "10316", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/home/pages/employee.aspx", "ptid": "630a61257864fa03"}
+  Body(raw) : bel.6;e,'fcp,6ow,6;6,'timeToFirstByte,7121.;6,'firstByteToFCP,1551.;5,'loadState,'dom-interactive;5,'pageUrl,'https://test.connexus.com/home/pages/employee.aspx;5,'enduser.id,'6117341;8,'webdriverDetected;e,'load,7qs,3;5,5,6;5,7,8;8,9
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none"}
+  Assert   : 200 
 
---- [053] Login | 192 | GET /pkgs/ui-select/0.19.8/dist/select.min.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/ui-select/0.19.8/dist/select.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [100] Login | 128 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHwsOCwZLEVkBV0YWVF0TDQkaAQQWB0FFQQ==", "rst": "10317", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/home/pages/employee.aspx", "ptid": "630a61257864fa03"}
+  Body(json) : {"xhr":[{"params":{"method":"GET","hostname":"e2e-comms-stg.pearson.com","port":"443","protocol":"https","host":"e2e-comms-stg.pearson.com:443","pathname":"/e2ecomms/products/onlineclassroom/comms.json","status":200},"metrics":{"count":1,"duration":{"t":103},"cbTime":{"t":0},"time":{"t":8697}}},{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":57},"rxSize":{"t":199},"duration":{"t":238},"cbTime":{"t":0},"time":{"t":10064}}}]}
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none"}
+  Assert   : 200 
 
---- [054] Login | 193 | GET /pkgs/angular-uuid/0.0.4/angular-uuid.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/angular-uuid/0.0.4/angular-uuid.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [055] Login | 194 | GET /pkgs/applicationinsights-js/1.0.21/dist/ai.0.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/applicationinsights-js/1.0.21/dist/ai.0.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [056] Login | 195 | GET /pkgs/@connections-education/authentication/8.2.0/conne… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/@connections-education/authentication/8.2.0/connections.authentication.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [057] Login | 196 | GET /pkgs/@connections-education/common/7.3.1/connections.c… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/@connections-education/common/7.3.1/connections.common.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [058] Login | 197 | GET /pkgs/@connections-education/constants/9.1.0/connection… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/@connections-education/constants/9.1.0/connections.constants.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [059] Login | 198 | GET /pkgs/@connections-education/core/8.0.0/connections.cor… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/@connections-education/core/8.0.0/connections.core.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [060] Login | 199 | GET /pkgs/@connections-education/data-access/5.4.0/connecti… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/@connections-education/data-access/5.4.0/connections.dataaccess.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [061] Login | 200 | GET /pkgs/@connections-education/instrumentation/6.2.0/conn… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/@connections-education/instrumentation/6.2.0/connections.instrumentation.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [062] Login | 201 | GET /pkgs/@connections-education/i18n/5.2.1/extlib/messagef… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/@connections-education/i18n/5.2.1/extlib/messageformat/messageformat.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [063] Login | 202 | GET /pkgs/@connections-education/i18n/5.2.1/extlib/angular-… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/@connections-education/i18n/5.2.1/extlib/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [064] Login | 203 | GET /pkgs/@connections-education/i18n/5.2.1/connections.i18… ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/@connections-education/i18n/5.2.1/connections.i18n.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [065] Login | 204 | GET /static/js/main.ee8752d8.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
-  Path     : /static/js/main.ee8752d8.js
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports&USERID=29774583&ADMINDOMAINID=12596144"}
-  Assert   : 200 OK
-
---- [066] Login | 206 | GET /static/css/main.452a383f.css ---
-  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
-  Path     : /static/css/main.452a383f.css
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports&USERID=29774583&ADMINDOMAINID=12596144"}
-  Assert   : 200 OK
-
---- [067] Login | 207 | GET /pkgs/jquery/3.3.1/dist/jquery.min.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/jquery/3.3.1/dist/jquery.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [068] Login | 208 | GET /pkgs/signalr/2.3.0/jquery.signalR.min.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-common.v3test.connexus.com:443
-  Path     : /pkgs/signalr/2.3.0/jquery.signalR.min.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [069] Login | 211 | GET /Home/GetSettings ---
-  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
-  Path     : /Home/GetSettings
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports&USERID=29774583&ADMINDOMAINID=12596144", "Content-Type": "application/json"}
-  Assert   : 200 OK
-
---- [070] Login | 212 | GET /static/media/Roboto-Regular.64cfb66c866ea50cad47.64cfb… ---
-  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
-  Path     : /static/media/Roboto-Regular.64cfb66c866ea50cad47.64cfb66c866ea50cad47.woff2
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/static/css/main.452a383f.css"}
-  Assert   : 200 OK
-
---- [071] Login | 213 | GET /i18n/localizations/angular-locale_en-US.js ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
-  Path     : /i18n/localizations/angular-locale_en-US.js
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
-  Assert   : 200 OK
-
---- [072] Login | 214 | GET /i18n/translations/en-US.json ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
-  Path     : /i18n/translations/en-US.json
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/index.html"}
-  Assert   : 200 OK
-
---- [073] Login | 215 | GET /css/connexus.css ---
-  Method   : GET  Protocol : https  Server   : testpcx-cdn-uistyleguide.v3test.connexus.com:443
-  Path     : /css/connexus.css
-  Headers  : {"Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [074] Login | 224 | GET /Home/GetSettings ---
-  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
-  Path     : /Home/GetSettings
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports&USERID=29774583&ADMINDOMAINID=12596144", "Content-Type": "application/json"}
-  Assert   : 200 OK
-
---- [075] Login | 225 | POST /cmd ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd
-  Body(json) : {"request":{"userid":null,"select":"domain","cmd":"getuser2","_token":"~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports"}}
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
-  Assert   : 200 OK
-
---- [076] Login | 226 | POST /cmd ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd
-  Body(json) : {"request":{"userid":null,"select":"domain","cmd":"getuser2","_token":"~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports"}}
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
-  Assert   : 200 OK
-
---- [077] Login | 228 | POST /cmd ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd
-  Body(json) : {"request":{"entityid":"12596144","cmd":"geteffectiverights","_token":"~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports"}}
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
-  Assert   : 200 OK
-
---- [078] Login | 229 | POST /cmd ---
-  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
-  Path     : /cmd
-  Body(json) : {"request":{"entityid":"12596144","cmd":"geteffectiverights","_token":"~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports"}}
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
-  Assert   : 200 OK
-
---- [079] Login | 231 | GET /static/media/Roboto-Bold.92fbd4e93cf0a5dbebaa.92fbd4e9… ---
-  Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
-  Path     : /static/media/Roboto-Bold.92fbd4e93cf0a5dbebaa.92fbd4e93cf0a5dbebaa.woff2
-  Headers  : {"Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/static/css/main.452a383f.css"}
-  Assert   : 200 OK
-
---- [080] Login | 233 | GET /signalr/negotiate ---
-  Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443
-  Path     : /signalr/negotiate
-  QParams  : {"clientProtocol": "1.5", "_token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "connectionData": "[{\"name\":\"webmailhub\"}]", "_": "1775130480442"}
-  Headers  : {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
-
---- [081] Login | 234 | GET /v1/messages/getunreadmessagecount ---
-  Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443
-  Path     : /v1/messages/getunreadmessagecount
-  Headers  : {"Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "CurrentApplication": "Admin", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
-  Assert   : 200 OK
-
---- [082] Login | 236 | GET /signalr/connect ---
-  Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443
-  Path     : /signalr/connect
-  QParams  : {"transport": "webSockets", "clientProtocol": "1.5", "_token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "connectionToken": "UwO8M/5+MxyaU/Ov16/VAwSb0xugX9sm31CGqXphVlcq8zHexQ2iRTIjKkqqcgsjJ6/6hjDZTEU66ihxFJMuTnBRPHPMke7Wl1U1vchpai7uSnGmyUM6FG8aSOyUIVBQ", "connectionData": "[{\"name\":\"webmailhub\"}]", "tid": "0"}
-  Headers  : {"Sec-WebSocket-Version": "13", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Sec-WebSocket-Extensions": "permessage-deflate", "Sec-WebSocket-Key": "5MDK8GzM8v01IyRwOuOOTQ==", "Upgrade": "websocket"}
-  Assert   : 101 Switching Protocols
-
---- [083] Login | 237 | GET /signalr/start ---
-  Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443
-  Path     : /signalr/start
-  QParams  : {"transport": "webSockets", "clientProtocol": "1.5", "_token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "connectionToken": "UwO8M/5+MxyaU/Ov16/VAwSb0xugX9sm31CGqXphVlcq8zHexQ2iRTIjKkqqcgsjJ6/6hjDZTEU66ihxFJMuTnBRPHPMke7Wl1U1vchpai7uSnGmyUM6FG8aSOyUIVBQ", "connectionData": "[{\"name\":\"webmailhub\"}]", "_": "1775130480443"}
-  Headers  : {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
-  Assert   : 200 OK
+--- [101] Login | 129 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHwsOCwZLEVkBV0YWVF0TDQkaAQQWB0FFQQ==", "rst": "10319", "ck": "0", "s": "cec3a1e8eaac03f6", "ref": "https://test.connexus.com/home/pages/employee.aspx", "ptid": "630a61257864fa03"}
+  Body(raw) : bel.7;1,4,,7qs,,,'initialPageLoad,'https://test.connexus.com/home/pages/employee.aspx,'https://test.connexus.com/,1,,,,1xv,!!'d65a9ab0-9aec-4f87-8c5b-703f7611a60b,'1,!6ow;5,'enduser.id,'6117341;8,'webdriverDetected;a,'HRBUGwtLQQ8UTRATURZ7URsLEldVA1pSB1pfUABfAgAAAFdBGRw=;2,,6pl,2v,,,'GET,5k,'e2e-comms-stg.pearson.com:443,'/e2ecomms/products/onlineclassroom/comms.json,,,,'2,!!!;b,!!!!3f1,,,,,,5,22n,1,!15v,1o,9,114,,2
+  Headers  : {"Accept": "*/*", "Referer": "https://test.connexus.com/", "content-type": "text/plain", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none"}
+  Assert   : 200 

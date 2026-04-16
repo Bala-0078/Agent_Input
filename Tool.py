@@ -7,9 +7,10 @@ CrewAI tool that:
   3. Creates a new folder in the same GitHub repo and uploads every generated
      *_summary.txt file there.
 
-Secrets expected in AVASecret:
-  GITHUB_TOKEN  – personal access token with repo read/write scope.
+GitHub token is provided directly by the user at runtime.
 """
+
+from __future__ import annotations  # makes all type hints lazy strings – works on Python 3.7+
 
 import base64
 import gzip
@@ -39,11 +40,6 @@ import requests
 from pydantic import BaseModel, Field
 from crewai.tools import BaseTool
 
-try:
-    import AVASecret
-except ImportError:
-    AVASecret = None  # type: ignore
-
 
 # ══════════════════════════════════════════════════════════════════════════════
 # SCHEMA & TOOL CLASS  (must come first so the platform can read the schema)
@@ -65,6 +61,12 @@ class SazSummaryToolSchema(BaseModel):
             "https://github.com/owner/repo/blob/main/captures/run2.saz"
         ),
     )
+    github_token: str = Field(
+        ...,
+        description=(
+            "GitHub Personal Access Token with repo read and write scope, e.g. ghp_xxxxxxxxxxxx"
+        ),
+    )
     output_folder_name: str = Field(
         default="",
         description=(
@@ -84,15 +86,14 @@ class SazSummaryTool(BaseTool):
     name: str = "SAZ Summary Tool"
     description: str = (
         "Use this tool when you have two GitHub URLs pointing to .saz Fiddler capture files. "
-        "It requires exactly two inputs: "
-        "'saz_url_1' (GitHub URL of the FIRST .saz file) and "
-        "'saz_url_2' (GitHub URL of the SECOND .saz file). "
+        "It requires three inputs: "
+        "'saz_url_1' (GitHub URL of the FIRST .saz file), "
+        "'saz_url_2' (GitHub URL of the SECOND .saz file), and "
+        "'github_token' (GitHub Personal Access Token with repo read/write scope). "
         "Optionally provide 'output_folder_name' for the GitHub folder where summaries will be saved. "
         "The tool downloads the .saz files, runs the full SAZ → JSON → Grouping → "
         "JMeter Data → Correlation → Summary pipeline, and uploads the resulting "
-        "*_summary.txt files to a new folder in the same GitHub repository. "
-        "Input example: saz_url_1='https://github.com/owner/repo/blob/main/run1.saz', "
-        "saz_url_2='https://github.com/owner/repo/blob/main/run2.saz'"
+        "*_summary.txt files to a new folder in the same GitHub repository."
     )
     args_schema: Type[BaseModel] = SazSummaryToolSchema
 
@@ -100,12 +101,13 @@ class SazSummaryTool(BaseTool):
         self,
         saz_url_1: str,
         saz_url_2: str,
+        github_token: str,
         output_folder_name: str = "",
     ) -> str:
         try:
-            if AVASecret is None:
-                raise RuntimeError("AVASecret module is not available. Cannot retrieve GITHUB_TOKEN.")
-            token = AVASecret.getValue("GITHUB_TOKEN")
+            token = github_token.strip()
+            if not token:
+                return "Error: github_token is required and cannot be empty."
 
             info     = _parse_github_url(saz_url_1)
             api_base = info["api_base"]
@@ -240,9 +242,19 @@ def _upload_file_to_github(
     local_path: Path, token: str, commit_message: str,
 ) -> str:
     content_b64 = base64.b64encode(local_path.read_bytes()).decode("ascii")
-    url  = f"{api_base}/contents/{repo_path}"
-    body = {"message": commit_message, "branch": branch, "content": content_b64}
+    url     = f"{api_base}/contents/{repo_path}"
     headers = {"Authorization": f"token {token}", "Accept": "application/vnd.github+json"}
+
+    # Fetch existing file SHA (needed when updating an existing file)
+    sha = None
+    get_resp = requests.get(url, params={"ref": branch}, headers=headers, timeout=30)
+    if get_resp.status_code == 200:
+        sha = get_resp.json().get("sha")
+
+    body = {"message": commit_message, "branch": branch, "content": content_b64}
+    if sha:
+        body["sha"] = sha
+
     resp = requests.put(url, json=body, headers=headers, timeout=60)
     resp.raise_for_status()
     return resp.json().get("content", {}).get("html_url", repo_path)
@@ -1102,10 +1114,6 @@ def _run_modes(data, out_dir, stem, mode, chunk_size, body_limit,
     if mode in ("index", "all"):
         write_index(data, out_dir, stem)
 
-try:
-    import AVASecret
-except ImportError:
-    AVASecret = None  # type: ignore
 
 DEFAULT_GROUPED_ROOT = Path("json(.saz)_Files/grouped")
 DEFAULT_OUTPUT_ROOT  = Path("json(.saz)_Files/JMeter Specific Data")
@@ -3506,3 +3514,44 @@ def batch_convert_saz_files(input_folder='.saz_Files', output_folder='json(.saz)
 
     return stats
 
+
+# ══════════════════════════════════════════════════════════════════════════════
+# STANDALONE ENTRY POINT  –  python -X utf8 Tool.py
+# ══════════════════════════════════════════════════════════════════════════════
+
+if __name__ == "__main__":
+    import io as _io
+
+    # Fix Windows terminal UTF-8 encoding
+    sys.stdout = _io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = _io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+
+    print("=" * 60)
+    print("  SAZ SUMMARY TOOL")
+    print("=" * 60)
+
+    _url1   = input("\nEnter GitHub URL of the FIRST  .saz file       : ").strip()
+    _url2   = input("Enter GitHub URL of the SECOND .saz file       : ").strip()
+    _token  = input("Enter GitHub Personal Access Token             : ").strip()
+    _folder = input("Enter output folder name (blank = auto-generate): ").strip()
+
+    if not _url1 or not _url2 or not _token:
+        print("\n[ERROR] URL 1, URL 2, and GitHub Token are all required.")
+        sys.exit(1)
+
+    print("\n" + "-" * 60)
+    print("Running pipeline … this may take a few minutes.")
+    print("-" * 60 + "\n")
+
+    _tool   = SazSummaryTool()
+    _result = _tool._run(
+        saz_url_1=_url1,
+        saz_url_2=_url2,
+        github_token=_token,
+        output_folder_name=_folder,
+    )
+
+    print("\n" + "=" * 60)
+    print("RESULT:")
+    print("=" * 60)
+    print(_result)

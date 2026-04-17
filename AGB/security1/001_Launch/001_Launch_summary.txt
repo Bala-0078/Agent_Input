@@ -15,17 +15,17 @@ Header keys used    : Accept, Content-Type, DNT, Origin, Referer, Sec-Fetch-Stor
 ====================================================================
   CORRELATIONS NEEDED – extract these values and parameterize requests
 ====================================================================
-  [1] Variable     : ${token}
-      Captured value: 371749547
-      Extract from  : Session 2 | GET https://test.connexus.com/
-      Response field: response.headers.Location
-      JMeter hint   : Boundary/Regex Extractor (response header Location): token=([^& ]+)
-
-  [2] Variable     : ${ASP_NET_SessionId}
+  [1] Variable     : ${ASP_NET_SessionId}
       Captured value: uzb3ro3lr3f32dfxx5jxm5x0
       Extract from  : Session 2 | GET https://test.connexus.com/
       Response field: response.headers.Set-Cookie
       JMeter hint   : Regex Extractor (response header Set-Cookie): ASP\.NET_SessionId=([^;]+)
+
+  [2] Variable     : ${token}
+      Captured value: 371749547
+      Extract from  : Session 2 | GET https://test.connexus.com/
+      Response field: response.headers.Location
+      JMeter hint   : Boundary/Regex Extractor (response header Location): token=([^& ]+)
 
 ====================================================================
 
@@ -34,10 +34,10 @@ Header keys used    : Accept, Content-Type, DNT, Origin, Referer, Sec-Fetch-Stor
   Path     : /
   Headers  : {"sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Windows\"", "DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"}
   Assert   : 302 Found  →  Body contains: HTML title: "Object moved"
-  🔑 EXTRACT: ${token} ← response.headers.Location  [redirect_param[token]]
-             Boundary/Regex Extractor (response header Location): token=([^& ]+)
   🔑 EXTRACT: ${ASP_NET_SessionId} ← response.headers.Set-Cookie  [cookie[ASP.NET_SessionId]]
              Regex Extractor (response header Set-Cookie): ASP\.NET_SessionId=([^;]+)
+  🔑 EXTRACT: ${token} ← response.headers.Location  [redirect_param[token]]
+             Boundary/Regex Extractor (response header Location): token=([^& ]+)
 
 --- [002] Launch | 3 | GET /login ---
   Method   : GET  Protocol : https  Server   : test.connexus.com:443
@@ -46,8 +46,8 @@ Header keys used    : Accept, Content-Type, DNT, Origin, Referer, Sec-Fetch-Stor
   Headers  : {"DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Windows\""}
   Cookies  : {"ASP.NET_SessionId": "${ASP_NET_SessionId}"}
   Assert   : 200 OK  →  Body contains: HTML title: "Welcome to Pearson Online Classroom"
-  ⚡ PARAM  : 371749547 → ${token}  [in: request.url.query[token]]
   ⚡ PARAM  : uzb3ro3lr3f32dfxx5jxm5x0 → ${ASP_NET_SessionId}  [in: request.headers.Cookie]
+  ⚡ PARAM  : 371749547 → ${token}  [in: request.url.query[token]]
 
 --- [003] Launch | 35 | POST /SystemMessage.ashx ---
   Method   : POST  Protocol : https  Server   : test.connexus.com:443
@@ -56,8 +56,8 @@ Header keys used    : Accept, Content-Type, DNT, Origin, Referer, Sec-Fetch-Stor
   Headers  : {"X-NewRelic-ID": "VgEFVlZTABABVFlVBwQCVVYF", "sec-ch-ua-platform": "\"Windows\"", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjI3MjcwMDgiLCJhcCI6IjExMDMyNzY0OTAiLCJpZCI6ImZjMWIwMmI4YmEyNDhlYTgiLCJ0ciI6IjZlODBhMjNkMjc3Yjg2NDU3ZTViNzRkZWJlMGUwYTc2IiwidGkiOjE3NzYzMzI2ODc1ODYsInRrIjoiNjkxODA3In19", "sec-ch-ua-mobile": "?0", "traceparent": "00-6e80a23d277b86457e5b74debe0e0a76-fc1b02b8ba248ea8-01", "X-Requested-With": "XMLHttpRequest", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "application/json, text/javascript, */*; q=0.01", "DNT": "1", "Content-Type": "application/json; charset=utf-8", "tracestate": "691807@nr=0-1-2727008-1103276490-fc1b02b8ba248ea8----1776332687586", "Origin": "https://test.connexus.com", "Referer": "https://test.connexus.com/login?sendTo=%2fdefault.aspx&token=${token}"}
   Cookies  : {"ASP.NET_SessionId": "${ASP_NET_SessionId}"}
   Assert   : 200 OK  →  Body contains: JSON key: "systemMessage"
-  ⚡ PARAM  : 371749547 → ${token}  [in: request.headers.Referer]
   ⚡ PARAM  : uzb3ro3lr3f32dfxx5jxm5x0 → ${ASP_NET_SessionId}  [in: request.headers.Cookie]
+  ⚡ PARAM  : 371749547 → ${token}  [in: request.headers.Referer]
 
 --- [004] Launch | 37 | POST /1/NRJS-22fee3f22eab14fe13b ---
   Method   : POST  Protocol : https  Server   : bam.nr-data.net:443

@@ -1,0 +1,16 @@
+=== SCENARIO : run2_buzz_test / (no comment) ===
+Actionable requests : 1
+Methods used        : GET
+Has auth headers    : False
+Has cookies         : False
+Has POST body       : False
+Servers             :
+  - https://api.getfiddler.com:443
+Header keys used    : User-Agent
+
+--- [001]  | 1 | GET /fc/latest ---
+  Method   : GET  Protocol : https  Server   : api.getfiddler.com:443
+  Path     : /fc/latest
+  QParams  : {"ver": "5.0.20253.3311", "tele": "true", "meta": "true"}
+  Headers  : {"User-Agent": "Fiddler/5.0.20253.3311 (.NET 4.8; WinNT 10.0.26200.0; en-US; 8xAMD64; Auto Update; Full Instance; Extensions: APITesting, AutoSaveExt, EventLog, FiddlerOrchestraAddon, HostsFile, RulesTab2, SAZClipboardFactory, SimpleFilter, Timeline)"}
+  Assert   : 200 OK

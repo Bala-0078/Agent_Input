@@ -155,22 +155,15 @@ class SazSummaryTool(BaseTool):
             print(f"[SazSummaryTool] Generated {len(summary_files)} summary file(s).")
 
             uploaded_urls = []
-
-            def _upload(item):
-                rel_path, content_bytes = item
+            for rel_path, content_bytes in sorted(summary_files.items()):
                 rp  = f"{folder_name}/{rel_path}"
                 msg = f"Add SAZ summary: {Path(rel_path).name}"
                 print(f"[SazSummaryTool] Uploading → {rp}")
-                return _upload_file_to_github(
+                url = _upload_file_to_github(
                     api_base=api_base, branch=branch, repo_path=rp,
                     content_bytes=content_bytes, token=token, commit_message=msg,
                 )
-
-            with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-                futs = {pool.submit(_upload, item): item[0]
-                        for item in sorted(summary_files.items())}
-                for fut in concurrent.futures.as_completed(futs):
-                    uploaded_urls.append(fut.result())
+                uploaded_urls.append(url)
 
             result_lines = [
                 f"Successfully processed {len(uploaded_urls)} summary file(s).",

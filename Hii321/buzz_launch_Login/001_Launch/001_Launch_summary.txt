@@ -1,0 +1,99 @@
+=== SCENARIO : buzz_launch_Login / Launch ===
+Actionable requests : 9  (showing 8, skipped 1 static)
+Methods used        : GET, OPTIONS, POST
+Has auth headers    : False
+Has cookies         : False
+Has POST body       : True
+Servers             :
+  - https://api.zebra.connexus.com:443
+  - https://test-smoketest.zebra-next.connexus.com:443
+Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Request-Method, Content-Type, DNT, Origin, Referer, User-Agent, sec-ch-ua, sec-ch-ua-mobile, sec-ch-ua-platform
+
+--- [001] Launch | 2 | GET /login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-… ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports
+  Headers  : {"sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Windows\"", "DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"}
+  Assert   : 200 OK  →  Body contains: HTML title: "Buzz"
+
+--- [002] Launch | 5 | POST /dlap.ashx ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getdomainsettings", "domainid": "//test-smoketest", "path": "public/shadow/app/buzz/settings.xml", "includesource": "true"}
+  Body(xml) : <settings>
+  <activity-template-list key="id" />
+  <activity-toolbarbutton-list key="id" />
+  <autobadge-list key="id" />
+  <avatar-list key="path" />
+  <bookmark-list key="url" />
+  <clipboardtab-list key="id" />
+  <content-list key="id" />
+  <communitypages-list key="id" />
+  <coursemetadata-list key="id" />
+  <customtype-list key="id" />
+  <domainmetadata-list key="id" />
+  <editor>
+      <foldertemplate-list key="id" />
+  </editor>
+  <help-list key="id" />
+  <itemmetadata-list key="id" />
+  <library-list key="id" />
+  <menuentry-list key="id" />
+  <override-list key="id" />
+  <privatetheme-list key="id" />
+  <prohibited-file-list key="extension" />
+  <questionmetadata-list key="id" />
+  <redirect-list key="id" />
+  <rubric-list key="title" />
+  <schoolyear-list key="id" />
+  <scoring-objective-list key="guid" />
+  <string-list key="id" />
+  <style>
+      <file-list key="path" />
+  </style>
+  <toolbarbutton-list key="id" />
+  <template-list key="id" />
+  <usermetadata-list key="id" />
+</settings>
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "application/json", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "Content-Type": "text/plain;charset=UTF-8", "DNT": "1", "sec-ch-ua-mobile": "?0", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK  →  Body contains: JSON key: "response"
+
+--- [003] Launch | 7 | OPTIONS /report ---
+  Method   : OPTIONS  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /report
+  Headers  : {"Accept": "*/*", "Access-Control-Request-Method": "POST", "Access-Control-Request-Headers": "content-type", "Origin": "https://test-smoketest.zebra-next.connexus.com", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 204 No Content
+
+--- [004] Launch | 8 | POST /report ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /report
+  Body(json) : [{"type":"Buzz","level":"Info","usage":"page","page":"login","service":"BuzzPearson3","referer":"https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports","requestedHost":"test-smoketest.zebra-next.connexus.com","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36","language":"en"}]
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "application/json", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "Content-Type": "application/json", "DNT": "1", "sec-ch-ua-mobile": "?0", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200 OK
+
+--- [005] Launch | 12 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/main.css"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "text/css,*/*;q=0.1", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 304 Not Modified
+
+--- [006] Launch | 13 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/student-notes.css"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "text/css,*/*;q=0.1", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 304 Not Modified
+
+--- [007] Launch | 14 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/calendar-hide-folder-completion-count.css"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "text/css,*/*;q=0.1", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 304 Not Modified
+
+--- [008] Launch | 15 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/pearson-connexus-login-logo.png"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 304 Not Modified

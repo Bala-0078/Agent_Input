@@ -1,0 +1,15 @@
+=== SCENARIO : run2_buzz_test / Launch ===
+Actionable requests : 1
+Methods used        : GET
+Has auth headers    : False
+Has cookies         : False
+Has POST body       : False
+Servers             :
+  - https://test-smoketest.zebra-next.connexus.com:443
+Header keys used    : Accept, DNT, User-Agent, sec-ch-ua, sec-ch-ua-mobile, sec-ch-ua-platform
+
+--- [001] Launch | 3 | GET /login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-… ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports
+  Headers  : {"sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Windows\"", "DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"}
+  Assert   : 200 OK  →  Body contains: HTML title: "Buzz"

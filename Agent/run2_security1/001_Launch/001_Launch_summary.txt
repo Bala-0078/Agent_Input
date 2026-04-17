@@ -1,0 +1,107 @@
+=== SCENARIO : run2_security1 / Launch ===
+Actionable requests : 37  (showing 11, skipped 26 static)
+Methods used        : GET, POST
+Has auth headers    : False
+Has cookies         : True
+Has POST body       : True
+Servers             :
+  - https://bam.nr-data.net:443
+  - https://int-resources.cdn.connexus.com:443
+  - https://test.connexus.com:443
+  - https://www.connexus.com:443
+Header keys used    : Accept, Content-Type, DNT, Origin, Referer, Sec-Fetch-Storage-Access, User-Agent, X-NewRelic-ID, X-Requested-With, content-type, newrelic, sec-ch-ua, sec-ch-ua-mobile, sec-ch-ua-platform, traceparent, tracestate
+⚠ EXCLUDE FROM JMETER (browser-auto-generated, do NOT add to Header Manager): X-NewRelic-ID, newrelic, traceparent, tracestate
+
+--- [001] Launch | 2 | GET / ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /
+  Headers  : {"sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Windows\"", "DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"}
+  Assert   : 302 Found  →  Body contains: HTML title: "Object moved"
+
+--- [002] Launch | 3 | GET /login ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /login
+  QParams  : {"sendTo": "/default.aspx", "token": "371749547"}
+  Headers  : {"DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Windows\""}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0"}
+  Assert   : 200 OK  →  Body contains: HTML title: "Welcome to Pearson Online Classroom"
+
+--- [003] Launch | 35 | POST /SystemMessage.ashx ---
+  Method   : POST  Protocol : https  Server   : test.connexus.com:443
+  Path     : /SystemMessage.ashx
+  QParams  : {"overrideAllowDatabaseAccess": "false", "type": "pageload"}
+  Headers  : {"X-NewRelic-ID": "VgEFVlZTABABVFlVBwQCVVYF", "sec-ch-ua-platform": "\"Windows\"", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjI3MjcwMDgiLCJhcCI6IjExMDMyNzY0OTAiLCJpZCI6ImZjMWIwMmI4YmEyNDhlYTgiLCJ0ciI6IjZlODBhMjNkMjc3Yjg2NDU3ZTViNzRkZWJlMGUwYTc2IiwidGkiOjE3NzYzMzI2ODc1ODYsInRrIjoiNjkxODA3In19", "sec-ch-ua-mobile": "?0", "traceparent": "00-6e80a23d277b86457e5b74debe0e0a76-fc1b02b8ba248ea8-01", "X-Requested-With": "XMLHttpRequest", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "application/json, text/javascript, */*; q=0.01", "DNT": "1", "Content-Type": "application/json; charset=utf-8", "tracestate": "691807@nr=0-1-2727008-1103276490-fc1b02b8ba248ea8----1776332687586", "Origin": "https://test.connexus.com", "Referer": "https://test.connexus.com/login?sendTo=%2fdefault.aspx&token=371749547"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0"}
+  Assert   : 200 OK  →  Body contains: JSON key: "systemMessage"
+
+--- [004] Launch | 37 | POST /1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "3322", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/login", "ptid": "bd25a0a330eb3aef", "af": "err,spa,xhr,stn,ins", "ap": "23", "be": "868", "fe": "2189", "dc": "1046", "at": "HRBUGwtLQQ8UTRATURZ7URsLElJVB1NVUA5UUFYBUFYAUlNBGU0aExAPQhNAFRIjDRAITB9tXF0TCkEXVDwHD0ARV1cbTE0=", "fsh": "1", "perf": "{\"timing\":{\"of\":1776332685659,\"n\":0,\"r\":1,\"re\":523,\"f\":523,\"dn\":523,\"dne\":523,\"c\":523,\"s\":523,\"ce\":523,\"rq\":524,\"rp\":869,\"rpe\":869,\"di\":1914,\"ds\":1914,\"de\":1914,\"dc\":3054,\"l\":3054,\"le\":3057},\"navigation\":{\"rc\":1}}", "fp": "1896", "fcp": "1896"}
+  Body(json) : {"ja":{"webdriverDetected":false}}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200   →  Body contains: JSON key: "stn"
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [005] Launch | 39 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "3987", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/login", "ptid": "bd25a0a330eb3aef"}
+  Body(raw) : bel.6;e,'fp,1go,6;5,'pageUrl,'https://test.connexus.com/login;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.35;6,'cls,0.005704951811257477;8,'webdriverDetected;e,'fcp,1go,9;6,'timeToFirstByte,868.6000000014901;6,'firstByteToFCP,1027.3999999985099;5,'loadState,'loading;5,1,2;5,3,4;6,5,100.;6,6,1.35;6,7,0.005704951811257477;8,8;e,'load,2cw,6;5,1,2;5,3,4;6,5,100.;6,6,1.35;6,7,0.005704951811257477;8,8
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [006] Launch | 40 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "3988", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/login", "ptid": "bd25a0a330eb3aef"}
+  Body(json) : {"xhr":[{"params":{"method":"POST","hostname":"test.connexus.com","port":"443","protocol":"https","host":"test.connexus.com:443","pathname":"/SystemMessage.ashx","status":200},"metrics":{"count":1,"rxSize":{"t":20},"duration":{"t":184},"cbTime":{"t":2},"time":{"t":1928}}},{"params":{"method":"GET","hostname":"d2fnipwtuk1iu0.cloudfront.net","port":"443","protocol":"https","host":"d2fnipwtuk1iu0.cloudfront.net:443","pathname":"/lex-web-ui-loader-config.json","status":0},"metrics":{"count":1,"duration":{"t":561},"rxSize":{"t":4},"cbTime":{"t":0},"time":{"t":1913}}},{"params":{"method":"GET","hostname":"e2e-comms-stg.pearson.com","port":"443","protocol":"https","host":"e2e-comms-stg.pearson.com:443","pathname":"/e2ecomms/products/onlineclassroom/comms.json","status":200},"metrics":{"count":1,"duration":{"t":49},"cbTime":{"t":0},"time":{"t":3056}}},{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":34},"rxSize":{"t":199},"duration":{"t":416},"cbTime":{"t":0},"time":{"t":3323}}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [007] Launch | 41 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "3991", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/login", "ptid": "bd25a0a330eb3aef"}
+  Body(raw) : bel.7;1,5,,2cw,,,'initialPageLoad,'https://test.connexus.com/login,,1,,,,n,!!'8b016ae0-b649-4513-88fd-bb843934e74e,'1,1go,1go;7,'isFirstOfSession;8,'webdriverDetected;a,'HRBUGwtLQQ8UTRATURZ7URsLElJVB1NVUA5UUFYBUFYAUlNBGU0aExAPQhNAFRIjDRAITB9tXF0TCkEXVDwHD0ARV1cbTE0=;2,,1hk,52,,,'POST,5k,'test.connexus.com:443,'/SystemMessage.ashx,,k,,'2,'fc1b02b8ba248ea8,'6e80a23d277b86457e5b74debe0e0a76,mo1am9tn;2,,1h5,fl,,,'GET,,'d2fnipwtuk1iu0.cloudfront.net:443,'/lex-web-ui-loader-config.json,,4,,'3,!!!;b,!1,!ei,,,,,,,1,9l,,!t1,,,vo,,3
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [008] Launch | 42 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "3992", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/login", "ptid": "bd25a0a330eb3aef"}
+  Body(raw) : bel.7;2,,2cw,1d,,,'GET,5k,'e2e-comms-stg.pearson.com:443,'/e2ecomms/products/onlineclassroom/comms.json,,,,'0,!!!
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [009] Launch | 43 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "3998", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/login", "ptid": "bd25a0a330eb3aef"}
+  Body(text) : bel.6;e,'cls,5,a;5,'metricId,'v4-1776332688980-4719393656897;5,'largestShiftTarget,'#loginContent>div.loginWrapper>div.loginContent>div.loginSupport;6,'largestShiftTime,1952.7000000029802;6,'largestShiftValue,0.005704951811257477;5,'loadState,'dom-content-loaded;5,'pageUrl,'https://test.connexus.com/login;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.35;8,'webdriverDetected;e,'pageHide,32z,6;5,9,a;5,b,c;6,d,100.;6,e,1.35;6,0,0.005704951811257477;8,f;e,'lcp,1j8,f;6,'timeToFirstByte,868.6000000014901;6,'resourceLoadDelay,0.;6,'resourceLoadDuration,0.;6,'resourceLoadTime,0.;6,'elementRenderDelay,1119.3999999985099;6,'size,17502.;5,'eid;5,'elTag,'H1;5,'element,'#loginContent>div.loginWrapper>div.loginContent>div.loginMain>div.loginMessaging>h1.welcomeTitle;5,9,a;5,b,c;6,d,100.;6,e,1.35;6,0,0.005704951811257477;8,f
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [010] Launch | 44 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "3999", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/login", "ptid": "bd25a0a330eb3aef"}
+  Body(json) : {"sm":[{"params":{"name":"Generic/LoaderType/spa/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/DistMethod/CDN/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/Runtime/Browser/Detected"},"stats":{"c":1}},{"params":{"name":"Framework/Jquery/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/IFrame/Added"},"stats":{"t":2,"min":1,"max":1,"sos":2,"c":2}},{"params":{"name":"API/logging/error/called"},"stats":{"c":1}},{"params":{"name":"SoftNav/Interaction/InitialPageLoad/Duration/Ms"},"stats":{"t":3056}},{"params":{"name":"Config/SessionReplay/Enabled"},"stats":{"c":1}},{"params":{"name":"Config/SessionReplay/MaskTextSelector/Modified"},"stats":{"c":1}},{"params":{"name":"Config/SessionReplay/SamplingRate/Value"},"stats":{"t":10}},{"params":{"name":"Config/SessionReplay/ErrorSamplingRate/Value"},"stats":{"t":100}},{"params":{"name":"Ajax/Events/Excluded/Agent"},"stats":{"c":1}},{"params":{"name":"audit/page_view/hasReplay/true/negative"},"stats":{"c":1}},{"params":{"name":"audit/page_view/hasTrace/true/negative"},"stats":{"c":1}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [011] Launch | 45 | POST /ins/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /ins/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "3999", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/login", "ptid": "bd25a0a330eb3aef", "at": "HRBUGwtLQQ8UTRATURZ7URsLElJVB1NVUA5UUFYBUFYAUlNBGU0aExAPQhNAFRIjDRAITB9tXF0TCkEXVDwHD0ARV1cbTE0="}
+  Body(json) : {"ins":[{"timestamp":1776332689730,"pageUrl":"https://test.connexus.com/login","currentUrl":"https://test.connexus.com/login","eventType":"UserAction","action":"blur","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"window"}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 204 
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}

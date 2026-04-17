@@ -1,0 +1,18 @@
+=== SCENARIO : security2 / (no comment) ===
+Actionable requests : 1
+Methods used        : POST
+Has auth headers    : False
+Has cookies         : False
+Has POST body       : True
+Servers             :
+  - https://bam.nr-data.net:443
+Header keys used    : Accept, DNT, Origin, Referer, Sec-Fetch-Storage-Access, User-Agent, content-type, sec-ch-ua, sec-ch-ua-mobile, sec-ch-ua-platform
+
+--- [001]  | 378 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdeG9yHyoEFS8LBlEIcVpXRUIMDQoGFk50CVNRdVBeBwgIBDQAXwM=", "rst": "33829", "ck": "0", "s": "ffe11081226dfc7f", "ref": "https://test.connexus.com/login", "ptid": "2194d220b60115e7"}
+  Body(raw) : bel.6;e,'lcp,1kk,g;6,'timeToFirstByte,1784.3000000000466;6,'resourceLoadDelay,0.;6,'resourceLoadDuration,0.;6,'resourceLoadTime,0.;6,'elementRenderDelay,251.69999999995343;6,'size,17502.;5,'eid;5,'elTag,'H1;5,'element,'#loginContent>div.loginWrapper>div.loginContent>div.loginMain>div.loginMessaging>h1.welcomeTitle;5,'pageUrl,'https://test.connexus.com/login;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.35;6,'cls,0.00005323127870470678;5,'enduser.id,'6141903;8,'webdriverDetected
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200 
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}

@@ -13,17 +13,17 @@ Header keys used    : Accept, Content-Type, DNT, Origin, Referer, Sec-Fetch-Stor
 ====================================================================
   CORRELATIONS NEEDED – extract these values and parameterize requests
 ====================================================================
-  [1] Variable     : ${ASP_NET_SessionId}
-      Captured value: ayxanhn3nr0r4wp3wtlp0elq
-      Extract from  : Session 359 | GET https://test.connexus.com/logout
-      Response field: response.headers.Set-Cookie
-      JMeter hint   : Regex Extractor (response header Set-Cookie): ASP\.NET_SessionId=([^;]+)
-
-  [2] Variable     : ${id_token_hint}
+  [1] Variable     : ${id_token_hint}
       Captured value: eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMy
       Extract from  : Session 359 | GET https://test.connexus.com/logout
       Response field: response.headers.Location
       JMeter hint   : Boundary/Regex Extractor (response header Location): id_token_hint=([^& ]+)
+
+  [2] Variable     : ${ASP_NET_SessionId}
+      Captured value: ayxanhn3nr0r4wp3wtlp0elq
+      Extract from  : Session 359 | GET https://test.connexus.com/logout
+      Response field: response.headers.Set-Cookie
+      JMeter hint   : Regex Extractor (response header Set-Cookie): ASP\.NET_SessionId=([^;]+)
 
   [3] Variable     : ${token}
       Captured value: 52573380
@@ -55,10 +55,10 @@ Header keys used    : Accept, Content-Type, DNT, Origin, Referer, Sec-Fetch-Stor
   Headers  : {"DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Windows\"", "Referer": "https://test.connexus.com/security/permissionVisibility.aspx?idPermission=Course_View_Self"}
   Cookies  : {"ASP.NET_SessionId": "sroelmapyy3dyl54bof03etj", "currentSkin": "default"}
   Assert   : 302 Found  →  Body contains: HTML title: "Object moved"
-  🔑 EXTRACT: ${ASP_NET_SessionId} ← response.headers.Set-Cookie  [cookie[ASP.NET_SessionId]]
-             Regex Extractor (response header Set-Cookie): ASP\.NET_SessionId=([^;]+)
   🔑 EXTRACT: ${id_token_hint} ← response.headers.Location  [redirect_param[id_token_hint]]
              Boundary/Regex Extractor (response header Location): id_token_hint=([^& ]+)
+  🔑 EXTRACT: ${ASP_NET_SessionId} ← response.headers.Set-Cookie  [cookie[ASP.NET_SessionId]]
+             Regex Extractor (response header Set-Cookie): ASP\.NET_SessionId=([^;]+)
 
 --- [004] Logout | 360 | GET /auth/oauth2/pearson/connect/endSession ---
   Method   : GET  Protocol : https  Server   : iam-ppe.pearson.com:443

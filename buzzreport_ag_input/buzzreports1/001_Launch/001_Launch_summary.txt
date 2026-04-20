@@ -1,0 +1,160 @@
+=== SCENARIO : buzzreports1 / Launch ===
+Actionable requests : 16
+Methods used        : GET, OPTIONS, POST
+Has auth headers    : False
+Has cookies         : False
+Has POST body       : True
+Servers             :
+  - https://api.zebra.connexus.com:443
+  - https://fonts.googleapis.com:443
+  - https://fonts.gstatic.com:443
+  - https://incoming.telemetry.mozilla.org:443
+  - https://mozilla-ohttp.fastly-edge.com:443
+  - https://test-smoketest.zebra-next.connexus.com:443
+  - https://testpcx-cdn-uistyleguide.v3test.connexus.com:443
+  - https://www.google.com:443
+  - https://www.googletagmanager.com:443
+Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Request-Method, Content-Type, Origin, Referer, Sec-Fetch-Storage-Access, User-Agent, content-encoding, content-type, date, x-telemetry-agent
+
+--- [001] Launch | 2 | GET /complete/search ---
+  Method   : GET  Protocol : https  Server   : www.google.com:443
+  Path     : /complete/search
+  QParams  : {"client": "firefox", "channel": "ftr", "q": ""}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*"}
+  Assert   : 200
+
+--- [002] Launch | 4 | GET /login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-… ---
+  Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
+  Path     : /login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
+  Assert   : 200
+
+--- [003] Launch | 5 | POST /submit/firefox-desktop/newtab/1/44cc41cc-c63e-4554-99a… ---
+  Method   : POST  Protocol : https  Server   : incoming.telemetry.mozilla.org:443
+  Path     : /submit/firefox-desktop/newtab/1/44cc41cc-c63e-4554-99a5-6e65db7b337e
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "content-type": "application/json; charset=utf-8", "content-encoding": "gzip", "date": "Thu, 02 Apr 2026 11:47:03 GMT", "x-telemetry-agent": "Glean/67.0.0 (Rust on Windows)"}
+  Assert   : 200
+
+--- [004] Launch | 28 | POST /dlap.ashx ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getdomainsettings", "domainid": "//test-smoketest", "path": "public/shadow/app/buzz/settings.xml", "includesource": "true"}
+  Body(xml) : <settings>
+  <activity-template-list key="id" />
+  <activity-toolbarbutton-list key="id" />
+  <autobadge-list key="id" />
+  <avatar-list key="path" />
+  <bookmark-list key="url" />
+  <clipboardtab-list key="id" />
+  <content-list key="id" />
+  <communitypages-list key="id" />
+  <coursemetadata-list key="id" />
+  <customtype-list key="id" />
+  <domainmetadata-list key="id" />
+  <editor>
+      <foldertemplate-list key="id" />
+  </editor>
+  <help-list key="id" />
+  <itemmetadata-list key="id" />
+  <library-list key="id" />
+  <menuentry-list key="id" />
+  <override-list key="id" />
+  <privatetheme-list key="id" />
+  <prohibited-file-list key="extension" />
+  <questionmetadata-list key="id" />
+  <redirect-list key="id" />
+  <rubric-list key="title" />
+  <schoolyear-list key="id" />
+  <scoring-objective-list key="guid" />
+  <string-list key="id" />
+  <style>
+      <file-list key="path" />
+  </style>
+  <toolbarbutton-list key="id" />
+  <template-list key="id" />
+  <usermetadata-list key="id" />
+</settings>
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Content-Type": "text/plain;charset=UTF-8", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200
+
+--- [005] Launch | 38 | OPTIONS /report ---
+  Method   : OPTIONS  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /report
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Access-Control-Request-Method": "POST", "Access-Control-Request-Headers": "content-type", "Referer": "https://test-smoketest.zebra-next.connexus.com/", "Origin": "https://test-smoketest.zebra-next.connexus.com"}
+  Assert   : 204
+
+--- [006] Launch | 44 | GET /css ---
+  Method   : GET  Protocol : https  Server   : fonts.googleapis.com:443
+  Path     : /css
+  QParams  : {"family": "Open Sans:300,400,400i,600,700,700i|Playfair Display", "subset": "latin-ext"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "text/css,*/*;q=0.1", "Sec-Fetch-Storage-Access": "none", "Referer": "https://testpcx-cdn-uistyleguide.v3test.connexus.com/"}
+  Assert   : 200
+
+--- [007] Launch | 45 | GET /icon ---
+  Method   : GET  Protocol : https  Server   : fonts.googleapis.com:443
+  Path     : /icon
+  QParams  : {"family": "Material Icons"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "text/css,*/*;q=0.1", "Sec-Fetch-Storage-Access": "none", "Referer": "https://testpcx-cdn-uistyleguide.v3test.connexus.com/"}
+  Assert   : 200
+
+--- [008] Launch | 62 | POST /report ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /report
+  Body(json) : [{"type":"Buzz","level":"Info","usage":"page","page":"login","service":"BuzzPearson3","referer":"https://test-smoketest.zebra-next.connexus.com/login;url=%2Fadmin%2F12596144%2Fcustom%2Ffaster-other-reports","requestedHost":"test-smoketest.zebra-next.connexus.com","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","language":"en"}]
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200
+
+--- [009] Launch | 71 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/main.css"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "text/css,*/*;q=0.1", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200
+
+--- [010] Launch | 72 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/student-notes.css"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "text/css,*/*;q=0.1", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200
+
+--- [011] Launch | 73 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/calendar-hide-folder-completion-count.css"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "text/css,*/*;q=0.1", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200
+
+--- [012] Launch | 84 | GET /css ---
+  Method   : GET  Protocol : https  Server   : fonts.googleapis.com:443
+  Path     : /css
+  QParams  : {"family": "Lato:300,400,700,300italic,400italic,700italic|Source Sans Pro:300,400,600,700,300italic,400italic,600italic,700italic"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "text/css,*/*;q=0.1", "Sec-Fetch-Storage-Access": "none", "Referer": "https://testpcx-cdn-uistyleguide.v3test.connexus.com/"}
+  Assert   : 200
+
+--- [013] Launch | 86 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/pearson-connexus-login-logo.png"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200
+
+--- [014] Launch | 90 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/pearson-touch-icon.png"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200
+
+--- [015] Launch | 91 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"cmd": "getresource", "entityid": "//test-smoketest", "path": "public/shadow/app/buzz/pearson-connexus-icon.png"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Assert   : 200
+
+--- [016] Launch | 92 | POST / ---
+  Method   : POST  Protocol : https  Server   : mozilla-ohttp.fastly-edge.com:443
+  Path     : /
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "content-type": "message/ohttp-req"}
+  Assert   : 200

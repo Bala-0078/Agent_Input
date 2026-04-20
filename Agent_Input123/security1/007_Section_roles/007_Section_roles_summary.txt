@@ -1,0 +1,285 @@
+=== SCENARIO : security1 / Section_roles ===
+Actionable requests : 31
+Methods used        : GET, POST
+Has auth headers    : False
+Has cookies         : True
+Has POST body       : True
+Servers             :
+  - https://bam.nr-data.net:443
+  - https://test.connexus.com:443
+Header keys used    : Accept, Content-Type, DNT, Origin, Referer, Sec-Fetch-Storage-Access, User-Agent, content-type, sec-ch-ua, sec-ch-ua-mobile, sec-ch-ua-platform
+
+--- [001] Section_roles | 290 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9KCV5QSm5fDwVIAhcRQA==", "rst": "31520", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionRoles.aspx", "ptid": "4954c280b4105598"}
+  Body(raw) : bel.6;e,'lcp,sc,g;6,'timeToFirstByte,387.80000000074506;6,'resourceLoadDelay,0.;6,'resourceLoadDuration,0.;6,'resourceLoadTime,0.;6,'elementRenderDelay,632.1999999992549;6,'size,13445.;5,'eid;5,'elTag,'TD;5,'element,'#roles__row>td;5,'pageUrl,'https://test.connexus.com/security/permissionRoles.aspx;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.55;6,'cls,0.00937505021364082;5,'enduser.id,'6141903;8,'webdriverDetected
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [002] Section_roles | 291 | GET /security/permissionSectionRoles.aspx ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /security/permissionSectionRoles.aspx
+  QParams  : {"idPermission": "Course_View_Self"}
+  Headers  : {"sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "sec-ch-ua-mobile": "?0", "sec-ch-ua-platform": "\"Windows\"", "DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Referer": "https://test.connexus.com/security/permissionRoles.aspx?idPermission=Course_View_Self"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "F10AC1A145E18F3579D450FE9544FA31", "currentSkin": "default"}
+  Assert   : 200
+
+--- [003] Section_roles | 292 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9KCV5QSm5fDwVIAhcRQA==", "rst": "48230", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionRoles.aspx", "ptid": "4954c280b4105598"}
+  Body(text) : bel.6;e,'unload,117o,7;5,'pageUrl,'https://test.connexus.com/security/permissionRoles.aspx;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.55;6,'cls,0.00937505021364082;5,'enduser.id,'6141903;8,'webdriverDetected;e,'fi,ped,a;5,'type,'pointerdown;5,'eventTarget,'a;5,'loadState,'complete;5,1,2;5,3,4;6,5,100.;6,6,1.55;6,7,0.00937505021364082;5,8,9;8,a;e,7,9,b;5,'metricId,'v4-1776333038385-4699375135513;5,'largestShiftTarget;6,'largestShiftTime,636.;6,'largestShiftValue,0.007704481630431404;5,g,'loading;5,1,2;5,3,4;6,5,100.;6,6,1.55;5,8,9;8,a
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [004] Section_roles | 293 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9KCV5QSm5fDwVIAhcRQA==", "rst": "48231", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionRoles.aspx", "ptid": "4954c280b4105598"}
+  Body(json) : {"sm":[{"params":{"name":"session_trace/Harvest/Early/Seen"},"stats":{"t":510081,"min":17766,"max":19779,"sos":9645965601,"c":27}},{"params":{"name":"Ajax/Events/Excluded/Agent"},"stats":{"c":1}},{"params":{"name":"rrweb/node/4/bytes"},"stats":{"t":166}},{"params":{"name":"rrweb/node/2/bytes"},"stats":{"t":368359}},{"params":{"name":"rrweb/node/3/bytes"},"stats":{"t":44154,"min":75,"max":8269,"sos":177842460,"c":77}},{"params":{"name":"UserAction/DeadClick/Seen"},"stats":{"c":1}},{"params":{"name":"audit/page_view/hasReplay/true/negative"},"stats":{"c":1}},{"params":{"name":"audit/page_view/hasTrace/true/negative"},"stats":{"c":1}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [005] Section_roles | 294 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "47797", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/blank.html", "ptid": "99ae7f8b4ddaa07a"}
+  Body(text) : bel.6;e,'unload,10vo,6;5,'pageUrl,'https://test.connexus.com/blank.html;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.55;5,'enduser.id,'6141903;8,'webdriverDetected
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [006] Section_roles | 295 | POST /ins/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /ins/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9KCV5QSm5fDwVIAhcRQA==", "rst": "48231", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionRoles.aspx", "ptid": "4954c280b4105598", "at": "HRBUGwtLQQ8UTRATURZ7URsLEgUEAwUBAFpSVwRaAQgHBARBGU0aExAPQhNAFRIjDRAITB9tXF0TCkEXVDwHD0ARV1cbTE0="}
+  Body(json) : {"ins":[{"enduser.id":"6141903","timestamp":1776333069430,"pageUrl":"https://test.connexus.com/security/permissionRoles.aspx","currentUrl":"https://test.connexus.com/security/permissionRoles.aspx","eventType":"UserAction","action":"focus","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"window"},{"enduser.id":"6141903","timestamp":1776333070625,"pageUrl":"https://test.connexus.com/security/permissionRoles.aspx","currentUrl":"https://test.connexus.com/security/permissionRoles.aspx","eventType":"UserAction","action":"click","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"html>body>div>div>div>div>table#steps_steps>tbody>tr>td>a:nth-of-type(1)","targetTag":"A","nearestId":"steps_steps","nearestClass":"stepIndicator","nearestTag":"A","deadClick":true},{"enduser.id":"6141903","timestamp":1776333081017,"pageUrl":"https://test.connexus.com/security/permissionRoles.aspx","currentUrl":"https://test.connexus.com/security/permissionRoles.aspx","eventType":"UserAction","action":"scrollend","actionCount":2,"actionDuration":868,"actionMs":"[0,868]","target":"document"}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 204
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [007] Section_roles | 296 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9KCV5QSm5fDwVIAhcRQA==", "rst": "48231", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionRoles.aspx", "ptid": "4954c280b4105598"}
+  Body(json) : {"xhr":[{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/events/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":421},"rxSize":{"t":24},"duration":{"t":259},"cbTime":{"t":0},"time":{"t":31521}}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [008] Section_roles | 297 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "47797", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/blank.html", "ptid": "99ae7f8b4ddaa07a"}
+  Body(json) : {"sm":[{"params":{"name":"rrweb/node/4/bytes"},"stats":{"t":112}},{"params":{"name":"rrweb/node/2/bytes"},"stats":{"t":743}},{"params":{"name":"audit/page_view/hasReplay/true/negative"},"stats":{"c":1}},{"params":{"name":"audit/page_view/hasTrace/true/negative"},"stats":{"c":1}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [009] Section_roles | 302 | GET /Telerik.Web.UI.WebResource.axd ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /Telerik.Web.UI.WebResource.axd
+  QParams  : {"_TSM_HiddenField_": "radScriptManager_TSM", "compress": "1", "_TSM_CombinedScripts_": ";;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:en-US:a8328cc8-0a99-4e41-8fe3-b58afac64e45:ea597d4b:b25378d2;Telerik.Web.UI, Version=2012.2.912.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:6aabe639-e731-432d-8e00-1a2e36f6eee0:16e4e7cd:ed16cbdc:f7645509:24ee1bba:f46195d3:1e771326:4cacbc31:58366029:e330518b:2003d0b8:c8618e41:e4f8f289"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Referer": "https://test.connexus.com/security/permissionSectionRoles.aspx?idPermission=Course_View_Self"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "F10AC1A145E18F3579D450FE9544FA31", "currentSkin": "default"}
+  Assert   : 200
+
+--- [010] Section_roles | 305 | GET /Telerik.Web.UI.WebResource.axd ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /Telerik.Web.UI.WebResource.axd
+  QParams  : {"compress": "1", "_TSM_CombinedScripts_": ";;Telerik.Web.UI, Version=2012.2.912.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:6aabe639-e731-432d-8e00-1a2e36f6eee0:5951aeec:9e1572d6:ed2942d4;Telerik.Web.UI.Skins, Version=2012.2.912.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:b0377b55-749e-4497-8000-b9ed5bce0744:85069d69:a7a9ab12:a70a238f"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "text/css,*/*;q=0.1", "Referer": "https://test.connexus.com/security/permissionSectionRoles.aspx?idPermission=Course_View_Self"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "F10AC1A145E18F3579D450FE9544FA31", "currentSkin": "default"}
+  Assert   : 200
+
+--- [011] Section_roles | 306 | POST /1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "27", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/blank.html", "ptid": "72413c5ed5788fc5", "af": "err,spa,xhr,stn,ins", "be": "2", "fe": "0", "dc": "8", "at": "HRBUGwtLQQ8UTRATURZ7URsLEgUCAAEHA1pUBldfBVRbWFFBGRw=", "fsh": "0", "perf": "{\"timing\":{\"of\":1776333086027,\"n\":0,\"f\":2,\"dn\":2,\"dne\":2,\"c\":2,\"s\":2,\"ce\":2,\"rq\":3,\"rp\":3,\"rpe\":3,\"di\":11,\"ds\":11,\"de\":11,\"dc\":25,\"l\":25,\"le\":27},\"navigation\":{}}", "timestamp": "1776333086143"}
+  Body(json) : {"ja":{"enduser.id":"6141903","webdriverDetected":false}}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [012] Section_roles | 307 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "311", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/blank.html", "ptid": "72413c5ed5788fc5"}
+  Body(raw) : bel.6;e,'load,,6;5,'pageUrl,'https://test.connexus.com/blank.html;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.55;5,'enduser.id,'6141903;8,'webdriverDetected
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [013] Section_roles | 308 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "311", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/blank.html", "ptid": "72413c5ed5788fc5"}
+  Body(json) : {"xhr":[{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":57},"rxSize":{"t":199},"duration":{"t":277},"cbTime":{"t":0},"time":{"t":28}}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [014] Section_roles | 309 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "312", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/blank.html", "ptid": "72413c5ed5788fc5"}
+  Body(raw) : bel.7;1,3,,q,,,'initialPageLoad,'https://test.connexus.com/blank.html,'https://test.connexus.com/security/permissionSectionRoles.aspx,1,,,,,!!'8d5b0dc3-01a0-406f-a431-5496aa5188ae,'1,!!;5,'enduser.id,'6141903;8,'webdriverDetected;a,'HRBUGwtLQQ8UTRATURZ7URsLEgUCAAEHA1pUBldfBVRbWFFBGRw=;b,!!!!2,,,,,,1,,,!8,,,e,,2
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [015] Section_roles | 310 | GET /WebResource.axd ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /WebResource.axd
+  QParams  : {"d": "UKPH7T3wzGTp2D7epEFd_LUdxDV4TU5l1qyXZBN1IPPHcsAArejOOE0ZuMdqCzKv083ff-_K4Nzj6lHfqFrYMi1nTlTq4zbQCm4s1ewB8HFJKSfjQC_ayzlXmwD8WmdqrDISRSsIBHqGZ0PuV2pMlDvjtmeRCrot3tc3Q3e1pVE1", "t": "638491204800000000"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Referer": "https://test.connexus.com/Telerik.Web.UI.WebResource.axd?compress=1&_TSM_CombinedScripts_=%3b%3bTelerik.Web.UI%2c+Version%3d2012.2.912.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a6aabe639-e731-432d-8e00-1a2e36f6eee0%3a5951aeec%3a9e1572d6%3aed2942d4%3bTelerik.Web.UI.Skins%2c+Version%3d2012.2.912.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3ab0377b55-749e-4497-8000-b9ed5bce0744%3a85069d69%3aa7a9ab12%3aa70a238f"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "F10AC1A145E18F3579D450FE9544FA31", "currentSkin": "default"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 't': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [016] Section_roles | 311 | GET /WebResource.axd ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /WebResource.axd
+  QParams  : {"d": "48uKhy0RZj1XWOeQ0JXxRUOt4tRHwSTHRn0pn-L9MU3doFB66zqwPMKlRWDQhwWOootYo3P37KLy5RjQtcsT1uIRD4zU027g3HyMyXfOg0RImtK5uRds6Jhhyy_4qyd6jYjtk4S6xCz1zgQRLW9vIA2", "t": "638491204800000000"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Referer": "https://test.connexus.com/security/permissionSectionRoles.aspx?idPermission=Course_View_Self"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "F10AC1A145E18F3579D450FE9544FA31", "currentSkin": "default"}
+  Assert   : 302
+  ⚠ TIMESTAMP PARAM 't': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [017] Section_roles | 312 | GET /WebResource.axd ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /WebResource.axd
+  QParams  : {"d": "GGZuOoGk3rktUs6hQ4y52U4OL_LnG7BxxN40gJW-Wx9OR-43e9mYjVl1HYnGkW7PVLYKKV9ORMpa0WVtODMIGOLxE5XKc52HzgPwyTdy2dpTvQ2dT1nJFHB8qLbC5cxhuNx3VEBzhXu6oFIBbMi4O6ZsWWa9LAxndZ6UwGytSiY1", "t": "638491204800000000"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Referer": "https://test.connexus.com/Telerik.Web.UI.WebResource.axd?compress=1&_TSM_CombinedScripts_=%3b%3bTelerik.Web.UI%2c+Version%3d2012.2.912.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a6aabe639-e731-432d-8e00-1a2e36f6eee0%3a5951aeec%3a9e1572d6%3aed2942d4%3bTelerik.Web.UI.Skins%2c+Version%3d2012.2.912.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3ab0377b55-749e-4497-8000-b9ed5bce0744%3a85069d69%3aa7a9ab12%3aa70a238f"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "F10AC1A145E18F3579D450FE9544FA31", "currentSkin": "default"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 't': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [018] Section_roles | 314 | GET /WebResource.axd ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /WebResource.axd
+  QParams  : {"d": "hPIpIgJ9qWbUeTK2zAAPX9B6QAi3oXuovgkO3NG6VxuFawdkdGWGmjHvvvqt1rLVeuB8nhAoURkmiy_2AcNX5DOGCIN9xEYligXRr4uZ_jtG6UwMzE7A6elDeH7dfa2mYnurOZaJ_y0T2G6Ko7tgGT1rc5foaZoCznrwkRsJJIQ1", "t": "638491204800000000"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Referer": "https://test.connexus.com/Telerik.Web.UI.WebResource.axd?compress=1&_TSM_CombinedScripts_=%3b%3bTelerik.Web.UI%2c+Version%3d2012.2.912.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a6aabe639-e731-432d-8e00-1a2e36f6eee0%3a5951aeec%3a9e1572d6%3aed2942d4%3bTelerik.Web.UI.Skins%2c+Version%3d2012.2.912.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3ab0377b55-749e-4497-8000-b9ed5bce0744%3a85069d69%3aa7a9ab12%3aa70a238f"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "F10AC1A145E18F3579D450FE9544FA31", "currentSkin": "default"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 't': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [019] Section_roles | 315 | GET /WebResource.axd ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /WebResource.axd
+  QParams  : {"d": "yWK1vtrmnsd3adxcUiESfTiIxi1L4urRlSAzAh_9YsFIoDkuqX0BvGXsyLFmGXj-oK1PrB69Zww4vRw__4eigKm_NWbRmWPDvxYYQcZWkndx84elQkOz4zLWqsTNXQpIKpUedjdZTC_8hw6RM-krl78hgWFxs2aYR1RTs4NWZy41", "t": "638491204800000000"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Referer": "https://test.connexus.com/Telerik.Web.UI.WebResource.axd?compress=1&_TSM_CombinedScripts_=%3b%3bTelerik.Web.UI%2c+Version%3d2012.2.912.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3a6aabe639-e731-432d-8e00-1a2e36f6eee0%3a5951aeec%3a9e1572d6%3aed2942d4%3bTelerik.Web.UI.Skins%2c+Version%3d2012.2.912.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3ab0377b55-749e-4497-8000-b9ed5bce0744%3a85069d69%3aa7a9ab12%3aa70a238f"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "F10AC1A145E18F3579D450FE9544FA31", "currentSkin": "default"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 't': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [020] Section_roles | 316 | GET /errors/404.aspx ---
+  Method   : GET  Protocol : https  Server   : test.connexus.com:443
+  Path     : /errors/404.aspx
+  QParams  : {"aspxerrorpath": "/WebResource.axd"}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "sec-ch-ua-mobile": "?0", "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8", "Referer": "https://test.connexus.com/security/permissionSectionRoles.aspx?idPermission=Course_View_Self"}
+  Cookies  : {"ASP.NET_SessionId": "uzb3ro3lr3f32dfxx5jxm5x0", "isLoggedIn": "", "isLoggedInCloudfront": "", "idWebuserEncrypted": "F10AC1A145E18F3579D450FE9544FA31", "currentSkin": "default"}
+  Assert   : 404
+
+--- [021] Section_roles | 317 | POST /1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9LA1FBUF5eEQ4KBhc+VwpWG1hCQBs=", "rst": "17036", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionSectionRoles.aspx", "ptid": "52331e39373b98b4", "af": "err,spa,xhr,stn,ins", "ap": "14890", "be": "15064", "fe": "1969", "dc": "1423", "at": "HRBUGwtLQQ8UTRATURZ7URsLEgJQUlYHA1pTBgUJUlRSUV9BGU0aExAPQhNAFRIjDRAITB9tXF0TCkEXVDwHD0ARV1cbTE0=", "fsh": "0", "perf": "{\"timing\":{\"of\":1776333070540,\"n\":0,\"u\":15072,\"ue\":15073,\"f\":7,\"dn\":7,\"dne\":7,\"c\":7,\"s\":7,\"ce\":7,\"rq\":9,\"rp\":15064,\"rpe\":15066,\"di\":16381,\"ds\":16382,\"de\":16487,\"dc\":17030,\"l\":17030,\"le\":17033},\"navigation\":{}}", "fp": "15856", "fcp": "15856", "timestamp": "1776333087665"}
+  Body(json) : {"ja":{"enduser.id":"6141903","webdriverDetected":false}}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [022] Section_roles | 318 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9LA1FBUF5eEQ4KBhc+VwpWG1hCQBs=", "rst": "17326", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionSectionRoles.aspx", "ptid": "52331e39373b98b4"}
+  Body(raw) : bel.6;e,'fp,c8g,7;5,'pageUrl,'https://test.connexus.com/security/permissionSectionRoles.aspx;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.55;6,'cls,0.00937505021364082;5,'enduser.id,'6141903;8,'webdriverDetected;e,'fcp,c8g,a;6,'timeToFirstByte,15064.10000000149;6,'firstByteToFCP,791.8999999985099;5,'loadState,'loading;5,1,2;5,3,4;6,5,100.;6,6,1.55;6,7,0.00937505021364082;5,8,9;8,a;e,'load,,7;5,1,2;5,3,4;6,5,100.;6,6,1.55;6,7,0.00937505021364082;5,8,9;8,a
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [023] Section_roles | 319 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9LA1FBUF5eEQ4KBhc+VwpWG1hCQBs=", "rst": "17327", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionSectionRoles.aspx", "ptid": "52331e39373b98b4"}
+  Body(json) : {"xhr":[{"params":{"method":"GET","hostname":"e2e-comms-stg.pearson.com","port":"443","protocol":"https","host":"e2e-comms-stg.pearson.com:443","pathname":"/e2ecomms/products/onlineclassroom/comms.json","status":200},"metrics":{"count":1,"duration":{"t":48},"cbTime":{"t":1},"time":{"t":16457}}},{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":57},"rxSize":{"t":199},"duration":{"t":276},"cbTime":{"t":0},"time":{"t":17036}}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [024] Section_roles | 320 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9LA1FBUF5eEQ4KBhc+VwpWG1hCQBs=", "rst": "17327", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionSectionRoles.aspx", "ptid": "52331e39373b98b4"}
+  Body(raw) : bel.7;1,4,,d54,,,'initialPageLoad,'https://test.connexus.com/security/permissionSectionRoles.aspx,'https://test.connexus.com/security/permissionRoles.aspx,1,,,,bhm,!!'63869a05-532d-4dd9-97cc-f7ed4e1e8982,'1,c8g,c8g;5,'enduser.id,'6141903;8,'webdriverDetected;a,'HRBUGwtLQQ8UTRATURZ7URsLEgJQUlYHA1pTBgUJUlRSUV9BGU0aExAPQhNAFRIjDRAITB9tXF0TCkEXVDwHD0ARV1cbTE0=;2,,cp5,1b,,,'GET,5k,'e2e-comms-stg.pearson.com:443,'/e2ecomms/products/onlineclassroom/comms.json,,,,'2,!!!;b,bmo,!1,!-bmi,,,,,,2,bm7,2,!10j,1,2x,f3,,3
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "content-type": "text/plain", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [025] Section_roles | 321 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9LA1FBUF5eEQ4KBhc+VwpWG1hCQBs=", "rst": "20552", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionSectionRoles.aspx", "ptid": "52331e39373b98b4"}
+  Body(text) : bel.6;e,'cls,9,b;5,'metricId,'v4-1776333087575-2654694680786;5,'largestShiftTarget;6,'largestShiftTime,15855.900000002235;6,'largestShiftValue,0.007704481630431404;5,'loadState,'loading;5,'pageUrl,'https://test.connexus.com/security/permissionSectionRoles.aspx;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.55;5,'enduser.id,'6141903;8,'webdriverDetected;e,'pageHide,fut,7;5,8,9;5,a,b;6,c,100.;6,d,1.55;6,0,0.00937505021364082;5,e,f;8,g
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [026] Section_roles | 322 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9LA1FBUF5eEQ4KBhc+VwpWG1hCQBs=", "rst": "20552", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionSectionRoles.aspx", "ptid": "52331e39373b98b4"}
+  Body(json) : {"sm":[{"params":{"name":"Generic/LoaderType/spa/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/DistMethod/CDN/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/Runtime/Browser/Detected"},"stats":{"c":1}},{"params":{"name":"Framework/Jquery/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/IFrame/Added"},"stats":{"t":1}},{"params":{"name":"API/setUserId/called"},"stats":{"c":1}},{"params":{"name":"SoftNav/Interaction/InitialPageLoad/Duration/Ms"},"stats":{"t":0}},{"params":{"name":"Config/SessionReplay/Enabled"},"stats":{"c":1}},{"params":{"name":"Config/SessionReplay/MaskTextSelector/Modified"},"stats":{"c":1}},{"params":{"name":"Config/SessionReplay/SamplingRate/Value"},"stats":{"t":10}},{"params":{"name":"Config/SessionReplay/ErrorSamplingRate/Value"},"stats":{"t":100}},{"params":{"name":"Ajax/Events/Excluded/Agent"},"stats":{"c":4}},{"params":{"name":"session_trace/Harvest/Early/Seen"},"stats":{"t":451954,"min":16041,"max":18575,"sos":7873399702,"c":26}},{"params":{"name":"rrweb/node/0/bytes"},"stats":{"t":46}},{"params":{"name":"rrweb/node/4/bytes"},"stats":{"t":346,"min":173,"max":173,"sos":59858,"c":2}},{"params":{"name":"rrweb/node/2/bytes"},"stats":{"t":1015568,"min":500145,"max":515423,"sos":515805889954,"c":2}},{"params":{"name":"rrweb/node/3/bytes"},"stats":{"t":103692,"min":80,"max":13194,"sos":536056184,"c":145}},{"params":{"name":"rrweb/node/1/bytes"},"stats":{"t":46}},{"params":{"name":"SessionReplay/Payload/Missing-Inline-Css/Failed"},"stats":{"t":0}},{"params":{"name":"SessionReplay/Payload/Missing-Inline-Css/Fixed"},"stats":{"t":1}},{"params":{"name":"audit/page_view/hasReplay/true/negative"},"stats":{"c":1}},{"params":{"name":"audit/page_view/hasTrace/true/negative"},"stats":{"c":1}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [027] Section_roles | 323 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9LA1FBUF5eEQ4KBhc+VwpWG1hCQBs=", "rst": "20553", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionSectionRoles.aspx", "ptid": "52331e39373b98b4"}
+  Body(json) : {"xhr":[{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/jserrors/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":586},"rxSize":{"t":24},"duration":{"t":247},"cbTime":{"t":0},"time":{"t":17327}}},{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/events/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":2,"txSize":{"t":971,"min":461,"max":510,"sos":472621,"c":2},"rxSize":{"t":48,"min":24,"max":24,"sos":1152,"c":2},"duration":{"t":515,"min":257,"max":258,"sos":132613,"c":2},"cbTime":{"t":0,"min":0,"max":0,"sos":0,"c":2},"time":{"t":34654,"min":17326,"max":17328,"sos":600449860,"c":2}}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [028] Section_roles | 324 | POST /ins/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /ins/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgddGphHxAEBRYWCEwfHUVcQ10KEhUKCw9LA1FBUF5eEQ4KBhc+VwpWG1hCQBs=", "rst": "20553", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/security/permissionSectionRoles.aspx", "ptid": "52331e39373b98b4", "at": "HRBUGwtLQQ8UTRATURZ7URsLEgJQUlYHA1pTBgUJUlRSUV9BGU0aExAPQhNAFRIjDRAITB9tXF0TCkEXVDwHD0ARV1cbTE0="}
+  Body(json) : {"ins":[{"enduser.id":"6141903","timestamp":1776333091148,"pageUrl":"https://test.connexus.com/security/permissionSectionRoles.aspx","currentUrl":"https://test.connexus.com/security/permissionSectionRoles.aspx","eventType":"UserAction","action":"blur","actionCount":1,"actionDuration":0,"actionMs":"[0]","target":"window"}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 204
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [029] Section_roles | 325 | POST /events/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /events/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "5068", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/blank.html", "ptid": "72413c5ed5788fc5"}
+  Body(text) : bel.6;e,'pageHide,3ws,6;5,'pageUrl,'https://test.connexus.com/blank.html;5,'net-etype,'4g;6,'net-rtt,100.;6,'net-dlink,1.55;5,'enduser.id,'6141903;8,'webdriverDetected
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [030] Section_roles | 326 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "5069", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/blank.html", "ptid": "72413c5ed5788fc5"}
+  Body(json) : {"sm":[{"params":{"name":"Generic/LoaderType/spa/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/DistMethod/CDN/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/Runtime/Browser/Detected"},"stats":{"c":1}},{"params":{"name":"Generic/Runtime/IFrame/Detected"},"stats":{"c":1}},{"params":{"name":"SoftNav/Interaction/InitialPageLoad/Duration/Ms"},"stats":{"t":0}},{"params":{"name":"Config/SessionReplay/Enabled"},"stats":{"c":1}},{"params":{"name":"Config/SessionReplay/MaskTextSelector/Modified"},"stats":{"c":1}},{"params":{"name":"Config/SessionReplay/SamplingRate/Value"},"stats":{"t":10}},{"params":{"name":"Config/SessionReplay/ErrorSamplingRate/Value"},"stats":{"t":100}},{"params":{"name":"Ajax/Events/Excluded/Agent"},"stats":{"c":4}},{"params":{"name":"rrweb/node/4/bytes"},"stats":{"t":112}},{"params":{"name":"rrweb/node/2/bytes"},"stats":{"t":659}},{"params":{"name":"audit/page_view/hasReplay/true/negative"},"stats":{"c":1}},{"params":{"name":"audit/page_view/hasTrace/true/negative"},"stats":{"c":1}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}
+
+--- [031] Section_roles | 327 | POST /jserrors/1/NRJS-22fee3f22eab14fe13b ---
+  Method   : POST  Protocol : https  Server   : bam.nr-data.net:443
+  Path     : /jserrors/1/NRJS-22fee3f22eab14fe13b
+  QParams  : {"a": "1087055324", "v": "1.312.1", "to": "MVdXbUNRDRIHABAIVwgdYEtYHwENBw0PT1ASX1k=", "rst": "5069", "ck": "0", "s": "c8e9c4df8c4670a4", "ref": "https://test.connexus.com/blank.html", "ptid": "72413c5ed5788fc5"}
+  Body(json) : {"xhr":[{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/events/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":2,"txSize":{"t":472,"min":160,"max":312,"sos":122944,"c":2},"rxSize":{"t":48,"min":24,"max":24,"sos":1152,"c":2},"duration":{"t":515,"min":244,"max":271,"sos":132977,"c":2},"cbTime":{"t":0,"min":0,"max":0,"sos":0,"c":2},"time":{"t":623,"min":311,"max":312,"sos":194065,"c":2}}},{"params":{"method":"POST","hostname":"bam.nr-data.net","port":"443","protocol":"https","host":"bam.nr-data.net:443","pathname":"/jserrors/1/NRJS-22fee3f22eab14fe13b","status":200},"metrics":{"count":1,"txSize":{"t":295},"rxSize":{"t":24},"duration":{"t":248},"cbTime":{"t":0},"time":{"t":311}}}]}
+  Headers  : {"sec-ch-ua-platform": "\"Windows\"", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36", "sec-ch-ua": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"", "DNT": "1", "Content-Type": "text/plain;charset=UTF-8", "sec-ch-ua-mobile": "?0", "Accept": "*/*", "Origin": "https://test.connexus.com", "Sec-Fetch-Storage-Access": "none", "Referer": "https://test.connexus.com/"}
+  Assert   : 200
+  ⚠ TIMESTAMP PARAM 'v': value changes every run. In JMeter use: ${__time()} (ms) or ${__Random(1,9999999999,)}

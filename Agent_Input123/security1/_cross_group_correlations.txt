@@ -1,5 +1,5 @@
 === CROSS-GROUP CORRELATIONS : security1 ===
-Generated              : 2026-04-20 17:49:13
+Generated              : 2026-04-20 17:57:47
 Cross-group entries    : 12
 Groups affected        : ?, Launch, Login, Logout, Roles, Section_roles, Section_roles_search, permission
 
@@ -9,9 +9,9 @@ Groups affected        : ?, Launch, Login, Logout, Roles, Section_roles, Section
 
   #     |  Variable                      |  Captured Value                        |  Source Group        |  Sess   |  Method  |  Source URL                                            |  Resp Field                      |  Extractor Hint                                          
   -----+------------------------------+--------------------------------------+--------------------+-------+--------+------------------------------------------------------+--------------------------------+---------------------------------------------------------
-  1     |  ${ASP_NET_SessionId}          |  uzb3ro3lr3f32dfxx5jxm5x0              |  Launch              |  2      |  GET     |  https://test.connexus.com/                            |  response.headers.Set-Cookie     |  Regex Extractor (response header Set-Cookie): ASP\.NET_S
-  2     |  ${sendTo}                     |  /default.aspx                         |  Launch              |  3      |  GET     |  https://test.connexus.com/login?sendTo=%2fdefault.as  |  response.body                   |  Boundary/Regex Extractor (response header Location): sen
-  3     |  ${token}                      |  371749547                             |  Launch              |  2      |  GET     |  https://test.connexus.com/                            |  response.headers.Location       |  Boundary/Regex Extractor (response header Location): tok
+  1     |  ${sendTo}                     |  /default.aspx                         |  Launch              |  3      |  GET     |  https://test.connexus.com/login?sendTo=%2fdefault.as  |  response.body @ https://test.c  |  Boundary/Regex Extractor (response header Location): sen
+  2     |  ${token}                      |  371749547                             |  Launch              |  2      |  GET     |  https://test.connexus.com/                            |  response.headers.Location       |  Boundary/Regex Extractor (response header Location): tok
+  3     |  ${ASP_NET_SessionId}          |  uzb3ro3lr3f32dfxx5jxm5x0              |  Launch              |  2      |  GET     |  https://test.connexus.com/                            |  response.headers.Set-Cookie     |  Regex Extractor (response header Set-Cookie): ASP\.NET_S
   4     |  ${a_href}                     |  /login?sendTo=%2fdefault.aspx&token=  |  Launch              |  2      |  GET     |  https://test.connexus.com/                            |  response.headers.Location       |  JSON Path Extractor (response body): $.html.body.h2.a[@h
   5     |  ${client_id}                  |  PVS-Client                            |  Login               |  49     |  GET     |  https://test.connexus.com/login/IesLogin/IesAuthenti  |  response.headers.Location       |  Boundary/Regex Extractor (response header Location): cli
   6     |  ${redirect_uri}               |  https://test.connexus.com/ieslogin    |  Login               |  50     |  GET     |  https://iam-ppe.pearson.com/auth/oauth2/realms/pears  |  response.headers.Location       |  Boundary/Regex Extractor (response header Location): red
@@ -29,6 +29,9 @@ Groups affected        : ?, Launch, Login, Logout, Roles, Section_roles, Section
 
   Variable                    |  Source Group        |  Dst Group           |  Dst Sess  |  Dst Method  |  Destination URL                                             |  Destination Field                     
   ---------------------------+--------------------+--------------------+----------+------------+------------------------------------------------------------+---------------------------------------
+  ${sendTo}                   |  Launch              |  Login               |  78        |  GET         |  https://test.connexus.com/default.aspx                      |  request.url.path                      
+  ${token}                    |  Launch              |  Login               |  48        |  POST        |  https://test.connexus.com/login/IesLogin/DetermineLandingP  |  request.headers.Referer               
+  ${token}                    |  Launch              |  Login               |  49        |  GET         |  https://test.connexus.com/login/IesLogin/IesAuthentication  |  request.headers.Referer               
   ${ASP_NET_SessionId}        |  Launch              |  Login               |  48        |  POST        |  https://test.connexus.com/login/IesLogin/DetermineLandingP  |  request.headers.Cookie                
   ${ASP_NET_SessionId}        |  Launch              |  Login               |  49        |  GET         |  https://test.connexus.com/login/IesLogin/IesAuthentication  |  request.headers.Cookie                
   ${ASP_NET_SessionId}        |  Launch              |  Login               |  77        |  GET         |  https://test.connexus.com/ieslogin?code=puZ7nx0excoBt3F9pQ  |  request.headers.Cookie                
@@ -155,9 +158,6 @@ Groups affected        : ?, Launch, Login, Logout, Roles, Section_roles, Section
   ${ASP_NET_SessionId}        |  Launch              |  ?                   |  340       |  GET         |  https://test.connexus.com/images/inheritance/selectedInher  |  request.headers.Cookie                
   ${ASP_NET_SessionId}        |  Launch              |  Logout              |  358       |  GET         |  https://test.connexus.com/logoff.aspx                       |  request.headers.Cookie                
   ${ASP_NET_SessionId}        |  Launch              |  Logout              |  359       |  GET         |  https://test.connexus.com/logout                            |  request.headers.Cookie                
-  ${sendTo}                   |  Launch              |  Login               |  78        |  GET         |  https://test.connexus.com/default.aspx                      |  request.url.path                      
-  ${token}                    |  Launch              |  Login               |  48        |  POST        |  https://test.connexus.com/login/IesLogin/DetermineLandingP  |  request.headers.Referer               
-  ${token}                    |  Launch              |  Login               |  49        |  GET         |  https://test.connexus.com/login/IesLogin/IesAuthentication  |  request.headers.Referer               
   ${a_href}                   |  Launch              |  Login               |  48        |  POST        |  https://test.connexus.com/login/IesLogin/DetermineLandingP  |  request.headers.Referer               
   ${a_href}                   |  Launch              |  Login               |  49        |  GET         |  https://test.connexus.com/login/IesLogin/IesAuthentication  |  request.headers.Referer               
   ${client_id}                |  Login               |  Logout              |  360       |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/connect/en  |  request.headers.Cookie                

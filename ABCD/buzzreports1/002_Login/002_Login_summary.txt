@@ -49,23 +49,23 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
       Response field: response.headers.NEL
       JMeter hint   : JSON Path Extractor (response body): $.request.select
 
-  [5] Variable     : ${domainid}
+  [5] Variable     : ${id}
       Captured value: 12596144
       Extract from  : Session 96 | POST https://api.zebra.connexus.com/cmd
       Response field: response.body.response.user.domainid @ https://api.zebra.connexus.com/cmd
-      JMeter hint   : JSON Path Extractor (response body): $.response.user.domainid
+      JMeter hint   : JSON Path Extractor (response body): $.response.user.domain.id
 
-  [6] Variable     : ${userspace}
-      Captured value: test-smoketest
-      Extract from  : Session 96 | POST https://api.zebra.connexus.com/cmd
-      Response field: response.headers.Access-Control-Allow-Origin
-      JMeter hint   : JSON Path Extractor (response body): $.response.user.domain.userspace
-
-  [7] Variable     : ${parentid}
+  [6] Variable     : ${parentid}
       Captured value: 12596142
       Extract from  : Session 128 | GET https://api.zebra.connexus.com/cmd/getdomain2?select=data&domainid=125
       Response field: response.body.response.domain.parentid @ https://api.zebra.connexus.com/cmd/getdomain2?select=data&domainid=12596144
       JMeter hint   : JSON Path Extractor (response body): $.response.user.domain.parentid
+
+  [7] Variable     : ${userspace}
+      Captured value: test-smoketest
+      Extract from  : Session 96 | POST https://api.zebra.connexus.com/cmd
+      Response field: response.headers.Access-Control-Allow-Origin
+      JMeter hint   : JSON Path Extractor (response body): $.response.user.domain.userspace
 
 ====================================================================
 
@@ -104,8 +104,8 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
              JSON Path Extractor (response body): $.response.user.token @ https://api.zebra.connexus.com/cmd
   🔑 EXTRACT: ${userid} ← response.body.response.user.userid @ https://api.zebra.connexus.com/cmd  [body_field[response.session.userid]]
              JSON Path Extractor (response body): $.response.session.userid
-  🔑 EXTRACT: ${domainid} ← response.body.response.user.domainid @ https://api.zebra.connexus.com/cmd  [body_field[response.user.domainid]]
-             JSON Path Extractor (response body): $.response.user.domainid
+  🔑 EXTRACT: ${id} ← response.body.response.user.domainid @ https://api.zebra.connexus.com/cmd  [body_field[response.user.domain.id]]
+             JSON Path Extractor (response body): $.response.user.domain.id
   🔑 EXTRACT: ${userspace} ← response.headers.Access-Control-Allow-Origin  [body_field[response.user.domain.userspace]]
              JSON Path Extractor (response body): $.response.user.domain.userspace
 
@@ -172,10 +172,10 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
 --- [011] Login | 108 | GET /status.json ---
   Method   : GET  Protocol : https  Server   : test-smoketest.zebra-next.connexus.com:443
   Path     : /status.json
-  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json, text/plain, */*", "Referer": "${Origin}/login;url=%2Fadmin%2F${domainid}%2Fcustom%2Ffaster-other-reports"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json, text/plain, */*", "Referer": "${Origin}/login;url=%2Fadmin%2F${id}%2Fcustom%2Ffaster-other-reports"}
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.url]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.headers.Referer]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.headers.Referer]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.url.host]
 
 --- [012] Login | 109 | OPTIONS /cmd/getresource ---
@@ -251,13 +251,13 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
 --- [020] Login | 118 | GET /cmd/getdomainfeatures ---
   Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/getdomainfeatures
-  QParams  : {"domainid": "${domainid}"}
+  QParams  : {"domainid": "${id}"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[domainid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [021] Login | 119 | GET /cmd/geteffectiverights ---
@@ -281,7 +281,7 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
 --- [023] Login | 121 | POST /cmd/getdomainsettings ---
   Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/getdomainsettings
-  QParams  : {"domainid": "${domainid}", "path": "public/shadow/app/xli/settings.xml"}
+  QParams  : {"domainid": "${id}", "path": "public/shadow/app/xli/settings.xml"}
   Body(xml) : <settings>
   <blackoutdate-list key="start" />
   <creator-upload-filter-list key="filetype" />
@@ -295,7 +295,7 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[domainid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [024] Login | 122 | OPTIONS /cmd/geteffectiverights ---
@@ -347,7 +347,7 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
 --- [030] Login | 128 | GET /cmd/getdomain2 ---
   Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/getdomain2
-  QParams  : {"select": "data", "domainid": "${domainid}"}
+  QParams  : {"select": "data", "domainid": "${id}"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
@@ -357,55 +357,55 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
              JSON Path Extractor (response body): $.response.user.domain.parentid
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[domainid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [031] Login | 129 | GET /cmd/listroles ---
   Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/listroles
-  QParams  : {"domainid": "${domainid}"}
+  QParams  : {"domainid": "${id}"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[domainid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [032] Login | 130 | GET /cmd/getsystemlicense ---
   Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/getsystemlicense
-  QParams  : {"domainid": "${domainid}"}
+  QParams  : {"domainid": "${id}"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[domainid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [033] Login | 131 | GET /cmd/geteffectiverights ---
   Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/geteffectiverights
-  QParams  : {"entityid": "${domainid}"}
+  QParams  : {"entityid": "${id}"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[entityid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[entityid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [034] Login | 132 | POST /report ---
   Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /report
-  Body(json) : [{"type":"Buzz","level":"Info","usage":"page","appMode":"admin","page":"admin/:domainId/custom/faster-other-reports","service":"BuzzPearson3","referer":"${Origin}/admin/${domainid}/custom/faster-other-reports","requestedHost":"${userspace}.zebra-next.connexus.com","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","language":"en"}]
+  Body(json) : [{"type":"Buzz","level":"Info","usage":"page","appMode":"admin","page":"admin/:domainId/custom/faster-other-reports","service":"BuzzPearson3","referer":"${Origin}/admin/${id}/custom/faster-other-reports","requestedHost":"${userspace}.zebra-next.connexus.com","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0","language":"en"}]
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Content-Type": "application/json", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.body[0].referer]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.body[0].referer]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [035] Login | 133 | OPTIONS /cmd/getexternaldomainrights ---
@@ -479,19 +479,19 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
   ⚡ PARAM  : 12596142 → ${parentid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [044] Login | 146 | GET /cmd/getdomainparentlist ---
   Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/getdomainparentlist
-  QParams  : {"domainid": "${domainid}"}
+  QParams  : {"domainid": "${id}"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[domainid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [045] Login | 147 | GET /cmd/getuserannouncementlist ---
@@ -507,25 +507,25 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
 --- [046] Login | 148 | GET /cmd/listdomains ---
   Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/listdomains
-  QParams  : {"domainid": "${domainid}"}
+  QParams  : {"domainid": "${id}"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[domainid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [047] Login | 149 | GET /cmd/getexternaldomainrights ---
   Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/getexternaldomainrights
-  QParams  : {"limit": "10", "domainid": "${domainid}", "ignoreproxy": "true"}
+  QParams  : {"limit": "10", "domainid": "${id}", "ignoreproxy": "true"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[domainid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [048] Login | 150 | GET /compose/22aeee19-b3b0-420c-bffa-6e18237da9ad ---
@@ -548,13 +548,13 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
 --- [050] Login | 153 | GET /cmd/getexternaldomainrights ---
   Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd/getexternaldomainrights
-  QParams  : {"limit": "10", "domainid": "${domainid}", "ignoreproxy": "true"}
+  QParams  : {"limit": "10", "domainid": "${id}", "ignoreproxy": "true"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ${bearer_token}", "Origin": "${Origin}", "Referer": "${Origin}/"}
   Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Origin]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Authorization]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[domainid]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[domainid]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Origin]
 
 --- [051] Login | 162 | GET /lmu/migration/contentauth/lmscontentcookiehandler.ashx ---
@@ -568,23 +568,23 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
 --- [052] Login | 163 | GET / ---
   Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
   Path     : /
-  QParams  : {"TOKEN": "${bearer_token}~bzcpfaster-other-reports", "USERID": "${userid}", "ADMINDOMAINID": "${domainid}"}
+  QParams  : {"TOKEN": "${bearer_token}~bzcpfaster-other-reports", "USERID": "${userid}", "ADMINDOMAINID": "${id}"}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Referer": "${Origin}/"}
   Assert   : 200
   ⚡ PARAM  : https://test-smoketest.zebra-next.connexus.com → ${Origin}  [in: request.headers.Referer]
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.url.query[TOKEN]]
   ⚡ PARAM  : 29774583 → ${userid}  [in: request.url.query[USERID]]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.url.query[ADMINDOMAINID]]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.url.query[ADMINDOMAINID]]
   ⚡ PARAM  : test-smoketest → ${userspace}  [in: request.headers.Referer]
 
 --- [053] Login | 211 | GET /Home/GetSettings ---
   Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
   Path     : /Home/GetSettings
-  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=${bearer_token}~bzcpfaster-other-reports&USERID=${userid}&ADMINDOMAINID=${domainid}", "Content-Type": "application/json"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=${bearer_token}~bzcpfaster-other-reports&USERID=${userid}&ADMINDOMAINID=${id}", "Content-Type": "application/json"}
   Assert   : 200
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Referer]
   ⚡ PARAM  : 29774583 → ${userid}  [in: request.headers.Referer]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.headers.Referer]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.headers.Referer]
 
 --- [054] Login | 214 | GET /i18n/translations/en-US.json ---
   Method   : GET  Protocol : https  Server   : testpcx-cdn-webmail.v3test.connexus.com:443
@@ -601,11 +601,11 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
 --- [056] Login | 224 | GET /Home/GetSettings ---
   Method   : GET  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
   Path     : /Home/GetSettings
-  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=${bearer_token}~bzcpfaster-other-reports&USERID=${userid}&ADMINDOMAINID=${domainid}", "Content-Type": "application/json"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/?TOKEN=${bearer_token}~bzcpfaster-other-reports&USERID=${userid}&ADMINDOMAINID=${id}", "Content-Type": "application/json"}
   Assert   : 200
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.headers.Referer]
   ⚡ PARAM  : 29774583 → ${userid}  [in: request.headers.Referer]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.headers.Referer]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.headers.Referer]
 
 --- [057] Login | 225 | POST /cmd ---
   Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
@@ -634,20 +634,20 @@ Header keys used    : Accept, Access-Control-Request-Headers, Access-Control-Req
 --- [060] Login | 228 | POST /cmd ---
   Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd
-  Body(json) : {"request":{"entityid":"${domainid}","cmd":"geteffectiverights","_token":"${bearer_token}~bzcpfaster-other-reports"}}
+  Body(json) : {"request":{"entityid":"${id}","cmd":"geteffectiverights","_token":"${bearer_token}~bzcpfaster-other-reports"}}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
   Assert   : 200
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.body.request._token]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.body.request.entityid]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.body.request.entityid]
 
 --- [061] Login | 229 | POST /cmd ---
   Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
   Path     : /cmd
-  Body(json) : {"request":{"entityid":"${domainid}","cmd":"geteffectiverights","_token":"${bearer_token}~bzcpfaster-other-reports"}}
+  Body(json) : {"request":{"entityid":"${id}","cmd":"geteffectiverights","_token":"${bearer_token}~bzcpfaster-other-reports"}}
   Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/", "Content-Type": "application/json", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
   Assert   : 200
   ⚡ PARAM  : ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF → ${bearer_token}  [in: request.body.request._token]
-  ⚡ PARAM  : 12596144 → ${domainid}  [in: request.body.request.entityid]
+  ⚡ PARAM  : 12596144 → ${id}  [in: request.body.request.entityid]
 
 --- [062] Login | 233 | GET /signalr/negotiate ---
   Method   : GET  Protocol : https  Server   : testpcx-webmailservice.v3test.connexus.com:443

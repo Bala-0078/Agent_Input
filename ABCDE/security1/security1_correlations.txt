@@ -1,0 +1,249 @@
+=== COMBINED CORRELATIONS : security1 ===
+Generated              : 2026-04-22 07:34:10
+Groups with correlations: 4
+Total dynamic variables : 14
+Total destination links : 214
+
+==================================================================================================================================
+  TABLE 1 — DYNAMIC VARIABLES  (what to extract and from where)
+==================================================================================================================================
+
+  #     |  Group                 |  Variable                      |  Captured Value                        |  Sess   |  Method  |  Source URL                                            |  Response Field                    |  Extractor Hint                                            
+  -----+----------------------+------------------------------+--------------------------------------+-------+--------+------------------------------------------------------+----------------------------------+-----------------------------------------------------------
+  1     |  Launch                |  ${token}                      |  371749547                             |  2      |  GET     |  https://test.connexus.com/                            |  response.headers.Location         |  Boundary/Regex Extractor (response header Location): token
+  2     |  Launch                |  ${ASP_NET_SessionId}          |  uzb3ro3lr3f32dfxx5jxm5x0              |  2      |  GET     |  https://test.connexus.com/                            |  response.headers.Set-Cookie       |  Regex Extractor (response header Set-Cookie): ASP\.NET_Ses
+  3     |  Login                 |  ${response_type}              |  code                                  |  49     |  GET     |  https://test.connexus.com/login/IesLogin/IesAuthenti  |  response.headers.Location         |  Boundary/Regex Extractor (response header Location): respo
+  4     |  Login                 |  ${client_id}                  |  PVS-Client                            |  49     |  GET     |  https://test.connexus.com/login/IesLogin/IesAuthenti  |  response.headers.Location         |  Boundary/Regex Extractor (response header Location): clien
+  5     |  Login                 |  ${redirect_uri}               |  https://test.connexus.com/ieslogin    |  50     |  GET     |  https://iam-ppe.pearson.com/auth/oauth2/realms/pears  |  response.headers.Location         |  Boundary/Regex Extractor (response header Location): redir
+  6     |  Login                 |  ${state}                      |  6addfd08-6723-433c-ac82-a45872d63d42  |  49     |  GET     |  https://test.connexus.com/login/IesLogin/IesAuthenti  |  response.headers.Location         |  Boundary/Regex Extractor (response header Location): state
+  7     |  Login                 |  ${code_challenge}             |  LNcV8fj0umEKAFd0EiaatJD-A7GW5qxCOeHK  |  49     |  GET     |  https://test.connexus.com/login/IesLogin/IesAuthenti  |  response.headers.Location         |  Boundary/Regex Extractor (response header Location): code_
+  8     |  Login                 |  ${idWebuserEncrypted}         |  F10AC1A145E18F3579D450FE9544FA31      |  77     |  GET     |  https://test.connexus.com/ieslogin?code=puZ7nx0excoB  |  response.headers.Set-Cookie       |  Regex Extractor (response header Set-Cookie): idWebuserEnc
+  9     |  Section_roles_search  |  ${EVENTTARGET}                |  permissions$searchButton              |  -      |  GET     |  https://test.connexus.com/security/                   |  response.body(html)[name=__EVENT  |  Regex Extractor (response body HTML): name="__EVENTTARGET"
+  10    |  Section_roles_search  |  ${VIEWSTATE}                  |  LW9Clr8z8CEFgmRV19etdbDQbWZMgotuWeNC  |  -      |  GET     |  https://test.connexus.com/security/                   |  response.body(html)[name=__VIEWS  |  Regex Extractor (response body HTML): name="__VIEWSTATE"[^
+  11    |  Section_roles_search  |  ${VIEWSTATEGENERATOR}         |  92C27389                              |  -      |  GET     |  https://test.connexus.com/security/                   |  response.body(html)[name=__VIEWS  |  Regex Extractor (response body HTML): name="__VIEWSTATEGEN
+  12    |  Logout                |  ${id_token_hint}              |  eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJ  |  359    |  GET     |  https://test.connexus.com/logout                      |  response.headers.Location         |  Boundary/Regex Extractor (response header Location): id_to
+  13    |  Logout                |  ${ASP_NET_SessionId}          |  ayxanhn3nr0r4wp3wtlp0elq              |  359    |  GET     |  https://test.connexus.com/logout                      |  response.headers.Set-Cookie       |  Regex Extractor (response header Set-Cookie): ASP\.NET_Ses
+  14    |  Logout                |  ${token}                      |  52573380                              |  361    |  GET     |  https://test.connexus.com/                            |  response.headers.Location         |  Boundary/Regex Extractor (response header Location): token
+
+
+==================================================================================================================================
+  TABLE 2 — CORRELATION MAP  (where each variable is consumed)
+==================================================================================================================================
+
+  Group                 |  Variable                      |  Src Sess  |  Dst Sess  |  Dst Method  |  Destination URL                                             |  Destination Field                       
+  ---------------------+------------------------------+----------+----------+------------+------------------------------------------------------------+-----------------------------------------
+  Launch                |  ${token}                      |  2         |  3         |  GET         |  https://test.connexus.com/login?sendTo=%2fdefault.aspx&tok  |  request.url.query[token]                
+  Launch                |  ${token}                      |  2         |  5         |  GET         |  https://test.connexus.com/js/jquery.validate.min.js         |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  12        |  GET         |  https://test.connexus.com/_stylesheets/debugHide.css        |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  13        |  GET         |  https://test.connexus.com/content/_stylesheets/login.min.c  |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  14        |  GET         |  https://test.connexus.com/_stylesheets/cxForms.css          |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  15        |  GET         |  https://test.connexus.com/_stylesheets/cxOverlay.css        |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  16        |  GET         |  https://test.connexus.com/_stylesheets/feedback.css         |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  17        |  GET         |  https://test.connexus.com/_control/page/iconBar/_styleshee  |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  18        |  GET         |  https://test.connexus.com/js/jquery.validate.unobtrusive.j  |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  19        |  GET         |  https://test.connexus.com/js/moment.min.js                  |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  20        |  GET         |  https://test.connexus.com/js/utils.js                       |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  21        |  GET         |  https://test.connexus.com/js/connexusForms.js               |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  22        |  GET         |  https://test.connexus.com/js/cxoverlay.js                   |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  23        |  GET         |  https://test.connexus.com/js/cxHandlers.js                  |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  24        |  GET         |  https://test.connexus.com/_control/page/js/iconBar.js       |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  25        |  GET         |  https://test.connexus.com/js/header.js                      |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  26        |  GET         |  https://test.connexus.com/js/feedbackOverlay.js             |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  27        |  GET         |  https://test.connexus.com/js/systemMessageClient.js         |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  28        |  GET         |  https://test.connexus.com/js/newRelicBrowserMonitoring.js   |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  29        |  GET         |  https://test.connexus.com/js/loginChatBotBalloon.js         |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  30        |  GET         |  https://test.connexus.com/_skin/supportFiles/1/572000-7620  |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  31        |  GET         |  https://test.connexus.com/js/pearsonStatusMessageHandler.j  |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  34        |  GET         |  https://test.connexus.com/_skin/supportFiles/1/1170370-101  |  request.headers.Referer                 
+  Launch                |  ${token}                      |  2         |  35        |  POST        |  https://test.connexus.com/SystemMessage.ashx?overrideAllow  |  request.headers.Referer                 
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  3         |  GET         |  https://test.connexus.com/login?sendTo=%2fdefault.aspx&tok  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  5         |  GET         |  https://test.connexus.com/js/jquery.validate.min.js         |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  12        |  GET         |  https://test.connexus.com/_stylesheets/debugHide.css        |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  13        |  GET         |  https://test.connexus.com/content/_stylesheets/login.min.c  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  14        |  GET         |  https://test.connexus.com/_stylesheets/cxForms.css          |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  15        |  GET         |  https://test.connexus.com/_stylesheets/cxOverlay.css        |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  16        |  GET         |  https://test.connexus.com/_stylesheets/feedback.css         |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  17        |  GET         |  https://test.connexus.com/_control/page/iconBar/_styleshee  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  18        |  GET         |  https://test.connexus.com/js/jquery.validate.unobtrusive.j  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  19        |  GET         |  https://test.connexus.com/js/moment.min.js                  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  20        |  GET         |  https://test.connexus.com/js/utils.js                       |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  21        |  GET         |  https://test.connexus.com/js/connexusForms.js               |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  22        |  GET         |  https://test.connexus.com/js/cxoverlay.js                   |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  23        |  GET         |  https://test.connexus.com/js/cxHandlers.js                  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  24        |  GET         |  https://test.connexus.com/_control/page/js/iconBar.js       |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  25        |  GET         |  https://test.connexus.com/js/header.js                      |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  26        |  GET         |  https://test.connexus.com/js/feedbackOverlay.js             |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  27        |  GET         |  https://test.connexus.com/js/systemMessageClient.js         |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  28        |  GET         |  https://test.connexus.com/js/newRelicBrowserMonitoring.js   |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  29        |  GET         |  https://test.connexus.com/js/loginChatBotBalloon.js         |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  30        |  GET         |  https://test.connexus.com/_skin/supportFiles/1/572000-7620  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  31        |  GET         |  https://test.connexus.com/js/pearsonStatusMessageHandler.j  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  32        |  GET         |  https://test.connexus.com/images/iconSprites.png?v=i14_201  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  33        |  GET         |  https://test.connexus.com/images/loginIconSprites.png       |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  34        |  GET         |  https://test.connexus.com/_skin/supportFiles/1/1170370-101  |  request.headers.Cookie                  
+  Launch                |  ${ASP_NET_SessionId}          |  2         |  35        |  POST        |  https://test.connexus.com/SystemMessage.ashx?overrideAllow  |  request.headers.Cookie                  
+  Login                 |  ${response_type}              |  49        |  50        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/realms/pearson/aut  |  request.url.query[response_type]        
+  Login                 |  ${response_type}              |  49        |  67        |  GET         |  https://iam-ppe.pearson.com/auth?realm=/pearson&service=In  |  request.url.query[goto]                 
+  Login                 |  ${response_type}              |  49        |  68        |  GET         |  https://iam-ppe.pearson.com/auth/?realm=/pearson&service=I  |  request.url.query[goto]                 
+  Login                 |  ${response_type}              |  49        |  69        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&s  |  request.url.query[goto]                 
+  Login                 |  ${response_type}              |  49        |  70        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&servi  |  request.url.query[goto]                 
+  Login                 |  ${response_type}              |  49        |  71        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${response_type}              |  49        |  72        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[response_type]        
+  Login                 |  ${response_type}              |  49        |  73        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&a  |  request.url.query[goto]                 
+  Login                 |  ${response_type}              |  49        |  74        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&authI  |  request.url.query[goto]                 
+  Login                 |  ${response_type}              |  49        |  76        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[response_type]        
+  Login                 |  ${response_type}              |  49        |  77        |  GET         |  https://test.connexus.com/ieslogin?code=puZ7nx0excoBt3F9pQ  |  request.url                             
+  Login                 |  ${client_id}                  |  49        |  50        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/realms/pearson/aut  |  request.url.query[client_id]            
+  Login                 |  ${client_id}                  |  49        |  51        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&a  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  52        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&authI  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  57        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  58        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  59        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  60        |  POST        |  https://www.google-analytics.com/g/collect?v=2&tid=G-R7TJP  |  request.url.query[dl]                   
+  Login                 |  ${client_id}                  |  49        |  61        |  GET         |  https://iam-ppe.pearson.com/auth/idpredirect.jsp?serviceNa  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  62        |  GET         |  https://iam-ppe.pearson.com/auth/UI/?realm=/pearson&servic  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  63        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&servi  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  64        |  POST        |  https://www.google-analytics.com/g/collect?v=2&tid=G-R7TJP  |  request.url.query[dl]                   
+  Login                 |  ${client_id}                  |  49        |  65        |  POST        |  https://www.google-analytics.com/g/collect?v=2&tid=G-R7TJP  |  request.url.query[dl]                   
+  Login                 |  ${client_id}                  |  49        |  66        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  67        |  GET         |  https://iam-ppe.pearson.com/auth?realm=/pearson&service=In  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  68        |  GET         |  https://iam-ppe.pearson.com/auth/?realm=/pearson&service=I  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  69        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&s  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  70        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&servi  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  71        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  72        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[client_id]            
+  Login                 |  ${client_id}                  |  49        |  73        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&a  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  74        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&authI  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  75        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${client_id}                  |  49        |  76        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[client_id]            
+  Login                 |  ${client_id}                  |  49        |  77        |  GET         |  https://test.connexus.com/ieslogin?code=puZ7nx0excoBt3F9pQ  |  request.url.query[client_id]            
+  Login                 |  ${redirect_uri}               |  50        |  51        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&a  |  request.url.query[goto]                 
+  Login                 |  ${redirect_uri}               |  50        |  52        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&authI  |  request.url.query[goto]                 
+  Login                 |  ${redirect_uri}               |  50        |  57        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${redirect_uri}               |  50        |  58        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${redirect_uri}               |  50        |  59        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${redirect_uri}               |  50        |  61        |  GET         |  https://iam-ppe.pearson.com/auth/idpredirect.jsp?serviceNa  |  request.headers.Referer                 
+  Login                 |  ${redirect_uri}               |  50        |  62        |  GET         |  https://iam-ppe.pearson.com/auth/UI/?realm=/pearson&servic  |  request.headers.Referer                 
+  Login                 |  ${redirect_uri}               |  50        |  63        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&servi  |  request.headers.Referer                 
+  Login                 |  ${redirect_uri}               |  50        |  66        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.headers.Cookie                  
+  Login                 |  ${redirect_uri}               |  50        |  67        |  GET         |  https://iam-ppe.pearson.com/auth?realm=/pearson&service=In  |  request.headers.Cookie                  
+  Login                 |  ${redirect_uri}               |  50        |  68        |  GET         |  https://iam-ppe.pearson.com/auth/?realm=/pearson&service=I  |  request.headers.Cookie                  
+  Login                 |  ${redirect_uri}               |  50        |  69        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&s  |  request.headers.Cookie                  
+  Login                 |  ${redirect_uri}               |  50        |  70        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&servi  |  request.headers.Cookie                  
+  Login                 |  ${redirect_uri}               |  50        |  71        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.headers.Cookie                  
+  Login                 |  ${redirect_uri}               |  50        |  72        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[redirect_uri]         
+  Login                 |  ${redirect_uri}               |  50        |  73        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&a  |  request.url.query[goto]                 
+  Login                 |  ${redirect_uri}               |  50        |  74        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&authI  |  request.url.query[goto]                 
+  Login                 |  ${redirect_uri}               |  50        |  75        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${redirect_uri}               |  50        |  76        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[redirect_uri]         
+  Login                 |  ${redirect_uri}               |  50        |  77        |  GET         |  https://test.connexus.com/ieslogin?code=puZ7nx0excoBt3F9pQ  |  request.url                             
+  Login                 |  ${state}                      |  49        |  50        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/realms/pearson/aut  |  request.url.query[state]                
+  Login                 |  ${state}                      |  49        |  51        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&a  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  52        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&authI  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  57        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  58        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  59        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  60        |  POST        |  https://www.google-analytics.com/g/collect?v=2&tid=G-R7TJP  |  request.url.query[dl]                   
+  Login                 |  ${state}                      |  49        |  61        |  GET         |  https://iam-ppe.pearson.com/auth/idpredirect.jsp?serviceNa  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  62        |  GET         |  https://iam-ppe.pearson.com/auth/UI/?realm=/pearson&servic  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  63        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&servi  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  64        |  POST        |  https://www.google-analytics.com/g/collect?v=2&tid=G-R7TJP  |  request.url.query[dl]                   
+  Login                 |  ${state}                      |  49        |  65        |  POST        |  https://www.google-analytics.com/g/collect?v=2&tid=G-R7TJP  |  request.url.query[dl]                   
+  Login                 |  ${state}                      |  49        |  66        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  67        |  GET         |  https://iam-ppe.pearson.com/auth?realm=/pearson&service=In  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  68        |  GET         |  https://iam-ppe.pearson.com/auth/?realm=/pearson&service=I  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  69        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&s  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  70        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&servi  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  71        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  72        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[state]                
+  Login                 |  ${state}                      |  49        |  73        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&a  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  74        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&authI  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  75        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${state}                      |  49        |  76        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[state]                
+  Login                 |  ${state}                      |  49        |  77        |  GET         |  https://test.connexus.com/ieslogin?code=puZ7nx0excoBt3F9pQ  |  request.url.query[state]                
+  Login                 |  ${code_challenge}             |  49        |  50        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/realms/pearson/aut  |  request.url.query[code_challenge]       
+  Login                 |  ${code_challenge}             |  49        |  51        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&a  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  52        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&authI  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  57        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  58        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  59        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  60        |  POST        |  https://www.google-analytics.com/g/collect?v=2&tid=G-R7TJP  |  request.url.query[dl]                   
+  Login                 |  ${code_challenge}             |  49        |  61        |  GET         |  https://iam-ppe.pearson.com/auth/idpredirect.jsp?serviceNa  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  62        |  GET         |  https://iam-ppe.pearson.com/auth/UI/?realm=/pearson&servic  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  63        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&servi  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  64        |  POST        |  https://www.google-analytics.com/g/collect?v=2&tid=G-R7TJP  |  request.url.query[dl]                   
+  Login                 |  ${code_challenge}             |  49        |  65        |  POST        |  https://www.google-analytics.com/g/collect?v=2&tid=G-R7TJP  |  request.url.query[dl]                   
+  Login                 |  ${code_challenge}             |  49        |  66        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  67        |  GET         |  https://iam-ppe.pearson.com/auth?realm=/pearson&service=In  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  68        |  GET         |  https://iam-ppe.pearson.com/auth/?realm=/pearson&service=I  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  69        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&s  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  70        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&servi  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  71        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  72        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[code_challenge]       
+  Login                 |  ${code_challenge}             |  49        |  73        |  GET         |  https://iam-ppe.pearson.com/auth/UI/Login?realm=/pearson&a  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  74        |  GET         |  https://iam-ppe.pearson.com/auth/XUI/?realm=/pearson&authI  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  75        |  POST        |  https://iam-ppe.pearson.com/auth/json/realms/root/realms/p  |  request.url.query[goto]                 
+  Login                 |  ${code_challenge}             |  49        |  76        |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/authorize?  |  request.url.query[code_challenge]       
+  Login                 |  ${idWebuserEncrypted}         |  77        |  78        |  GET         |  https://test.connexus.com/default.aspx                      |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  79        |  GET         |  https://test.connexus.com/home/pages/employee.aspx          |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  81        |  GET         |  https://test.connexus.com/js/detectJavaScriptErrors.js      |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  82        |  GET         |  https://test.connexus.com/_control/validators/js/validatio  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  83        |  GET         |  https://test.connexus.com/_stylesheets/main.css?v=2016_i07  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  84        |  GET         |  https://test.connexus.com/_stylesheets/portallet.css?v=201  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  86        |  GET         |  https://test.connexus.com/_stylesheets/footerCA.css         |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  88        |  GET         |  https://test.connexus.com/_stylesheets/cxForms.css?v=2024_  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  89        |  GET         |  https://test.connexus.com/_stylesheets/cxOverlay.css?v=202  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  90        |  GET         |  https://test.connexus.com/_stylesheets/feedback.css?v=2014  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  91        |  GET         |  https://test.connexus.com/home/pages/_stylesheets/home.css  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  92        |  GET         |  https://test.connexus.com/_stylesheets/announcements.css?v  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  93        |  GET         |  https://test.connexus.com/_stylesheets/cxHeader.css?v=2014  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  94        |  GET         |  https://test.connexus.com/_stylesheets/header.css?v=2015_i  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  95        |  GET         |  https://test.connexus.com/_stylesheets/headerCa.css         |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  96        |  GET         |  https://test.connexus.com/_stylesheets/appDashboardPopover  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  97        |  GET         |  https://test.connexus.com/js/popItMenu.1.js                 |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  99        |  GET         |  https://test.connexus.com/js/connexusForms.js?v=i08         |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  100       |  GET         |  https://test.connexus.com/js/cxOverlay.js?v=2024_PI3_6      |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  101       |  GET         |  https://test.connexus.com/js/cxButton.js                    |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  102       |  GET         |  https://test.connexus.com/js/feedbackOverlay.js?v=2022_pi2  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  103       |  GET         |  https://test.connexus.com/js/html5SupportChecker.js?v=2020  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  104       |  GET         |  https://test.connexus.com/js/moment.min.js?v=2015_09        |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  105       |  GET         |  https://test.connexus.com/js/utils.js?v=2015_i09            |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  106       |  GET         |  https://test.connexus.com/_control/page/js/iconBar.js?v=20  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  107       |  GET         |  https://test.connexus.com/js/compliantFunctions.2.js        |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  108       |  GET         |  https://test.connexus.com/js/ajax.2.js                      |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  109       |  GET         |  https://test.connexus.com/js/FerantLib.2.js                 |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  110       |  GET         |  https://test.connexus.com/js/newrelicBrowserMonitoring.js?  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  111       |  GET         |  https://test.connexus.com/js/systemMessageClient.js?v=2025  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  112       |  GET         |  https://test.connexus.com/js/header.js?v=2016_i06           |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  113       |  GET         |  https://test.connexus.com/js/portallet.js?v=i01             |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  114       |  GET         |  https://test.connexus.com/js/analyticsId.js                 |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  115       |  GET         |  https://test.connexus.com/js/appDashboardPopover.js         |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  116       |  GET         |  https://test.connexus.com/js/webComponents/app-tile.js      |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  117       |  GET         |  https://test.connexus.com/images/icons/error_red.svg        |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  118       |  GET         |  https://test.connexus.com/WebResource.axd?d=pynGkmcFUV13He  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  119       |  GET         |  https://test.connexus.com/blank.html                        |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  120       |  GET         |  https://test.connexus.com/_stylesheets/pvs-design-tokens.c  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  121       |  GET         |  https://test.connexus.com/Telerik.Web.UI.WebResource.axd?_  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  122       |  GET         |  https://test.connexus.com/content/media/4626651-272025-516  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  123       |  GET         |  https://test.connexus.com/content/media/2015125-8132020-10  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  124       |  GET         |  https://test.connexus.com/_control/_images/portalletEnhanc  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  125       |  GET         |  https://test.connexus.com/_control/_images/portalletEnhanc  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  126       |  GET         |  https://test.connexus.com/images/headerIconSprites@1x.png?  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  127       |  GET         |  https://test.connexus.com/content/media/2015125-8132020-12  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  128       |  GET         |  https://test.connexus.com/images/logos/PearsonLogo.png      |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  130       |  GET         |  https://test.connexus.com/images/icons/email_black_24dp.sv  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  131       |  GET         |  https://test.connexus.com/images/icons/phone_black_24dp.sv  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  132       |  GET         |  https://test.connexus.com/images/icons/people_black_24dp.s  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  133       |  GET         |  https://test.connexus.com/images/badge.png                  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  135       |  GET         |  https://test.connexus.com/images/icons/laptop.png           |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  138       |  GET         |  https://test.connexus.com/images/icons/default_app_icon.pn  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  140       |  GET         |  https://test.connexus.com/_stylesheets/print.css?v=2014_i1  |  request.headers.Cookie                  
+  Login                 |  ${idWebuserEncrypted}         |  77        |  142       |  GET         |  https://test.connexus.com/connexus_favicon.ico              |  request.headers.Cookie                  
+  Section_roles_search  |  ${EVENTTARGET}                |  None      |  209       |  POST        |  https://test.connexus.com/security/                         |  request.body(form).__EVENTTARGET        
+  Section_roles_search  |  ${VIEWSTATE}                  |  None      |  209       |  POST        |  https://test.connexus.com/security/                         |  request.body(form).__VIEWSTATE          
+  Section_roles_search  |  ${VIEWSTATEGENERATOR}         |  None      |  209       |  POST        |  https://test.connexus.com/security/                         |  request.body(form).__VIEWSTATEGENERATOR 
+  Logout                |  ${id_token_hint}              |  359       |  360       |  GET         |  https://iam-ppe.pearson.com/auth/oauth2/pearson/connect/en  |  request.url.query[id_token_hint]        
+  Logout                |  ${ASP_NET_SessionId}          |  359       |  361       |  GET         |  https://test.connexus.com/                                  |  request.headers.Cookie                  
+  Logout                |  ${ASP_NET_SessionId}          |  359       |  362       |  GET         |  https://test.connexus.com/login?sendTo=%2fdefault.aspx&tok  |  request.headers.Cookie                  
+  Logout                |  ${token}                      |  361       |  362       |  GET         |  https://test.connexus.com/login?sendTo=%2fdefault.aspx&tok  |  request.url.query[token]                
+

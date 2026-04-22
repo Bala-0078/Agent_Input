@@ -1,0 +1,34 @@
+=== SCENARIO : buzzreports1 / Overall Usage ===
+Actionable requests : 3
+Methods used        : GET, POST
+Has auth headers    : True
+Has cookies         : False
+Has POST body       : True
+Servers             :
+  - https://api.zebra.connexus.com:443
+  - https://testpcx-buzzotherreports-ui.v3test.connexus.com:443
+Header keys used    : Accept, Authorization, Content-Type, Origin, Referer, User-Agent
+
+--- [001] Overall Usage | 238 | POST /cmd ---
+  Method   : POST  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /cmd
+  Body(json) : {"request":{"cmd":"extendsession"}}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json", "Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88", "Content-Type": "application/json", "Origin": "https://test-smoketest.zebra-next.connexus.com", "Referer": "https://test-smoketest.zebra-next.connexus.com/"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200
+
+--- [002] Overall Usage | 240 | POST /ReportParameters/DomainTreeElementsCount ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /ReportParameters/DomainTreeElementsCount
+  Body(json) : {"domainId":12596144,"searchQuery":"","userId":"29774583"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200
+
+--- [003] Overall Usage | 241 | POST /ReportParameters/DomainTreeElements ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /ReportParameters/DomainTreeElements
+  Body(json) : {"domainId":12596144,"offset":0,"count":50,"searchQuery":"","userId":"29774583"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200

@@ -1,5 +1,5 @@
 === COMBINED CORRELATIONS : buzzreports1 ===
-Generated              : 2026-04-22 07:32:30
+Generated              : 2026-04-22 07:32:44
 Groups with correlations: 1
 Total dynamic variables : 7
 Total destination links : 132
@@ -14,9 +14,9 @@ Total destination links : 132
   2     |  Login                 |  ${bearer_token}               |  ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNp  |  96     |  POST    |  https://api.zebra.connexus.com/cmd                    |  response.body.response.user.toke  |  JSON Path Extractor (response body): $.response.user.token
   3     |  Login                 |  ${userid}                     |  29774583                              |  96     |  POST    |  https://api.zebra.connexus.com/cmd                    |  response.body.response.user.user  |  JSON Path Extractor (response body): $.response.session.us
   4     |  Login                 |  ${select}                     |  domain                                |  128    |  GET     |  https://api.zebra.connexus.com/cmd/getdomain2?select  |  response.headers.NEL              |  JSON Path Extractor (response body): $.request.select     
-  5     |  Login                 |  ${domainid}                   |  12596144                              |  96     |  POST    |  https://api.zebra.connexus.com/cmd                    |  response.body.response.user.doma  |  JSON Path Extractor (response body): $.response.user.domai
-  6     |  Login                 |  ${userspace}                  |  test-smoketest                        |  96     |  POST    |  https://api.zebra.connexus.com/cmd                    |  response.headers.Access-Control-  |  JSON Path Extractor (response body): $.response.user.domai
-  7     |  Login                 |  ${parentid}                   |  12596142                              |  128    |  GET     |  https://api.zebra.connexus.com/cmd/getdomain2?select  |  response.body.response.domain.pa  |  JSON Path Extractor (response body): $.response.user.domai
+  5     |  Login                 |  ${id}                         |  12596144                              |  96     |  POST    |  https://api.zebra.connexus.com/cmd                    |  response.body.response.user.doma  |  JSON Path Extractor (response body): $.response.user.domai
+  6     |  Login                 |  ${parentid}                   |  12596142                              |  128    |  GET     |  https://api.zebra.connexus.com/cmd/getdomain2?select  |  response.body.response.domain.pa  |  JSON Path Extractor (response body): $.response.user.domai
+  7     |  Login                 |  ${userspace}                  |  test-smoketest                        |  96     |  POST    |  https://api.zebra.connexus.com/cmd                    |  response.headers.Access-Control-  |  JSON Path Extractor (response body): $.response.user.domai
 
 
 ==================================================================================================================================
@@ -104,25 +104,27 @@ Total destination links : 132
   Login                 |  ${userid}                     |  96        |  224       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/Ho  |  request.headers.Referer                 
   Login                 |  ${select}                     |  128       |  225       |  POST        |  https://api.zebra.connexus.com/cmd                          |  request.body.request.select             
   Login                 |  ${select}                     |  128       |  226       |  POST        |  https://api.zebra.connexus.com/cmd                          |  request.body.request.select             
-  Login                 |  ${domainid}                   |  96        |  108       |  GET         |  https://test-smoketest.zebra-next.connexus.com/status.json  |  request.headers.Referer                 
-  Login                 |  ${domainid}                   |  96        |  118       |  GET         |  https://api.zebra.connexus.com/cmd/getdomainfeatures?domai  |  request.url.query[domainid]             
-  Login                 |  ${domainid}                   |  96        |  121       |  POST        |  https://api.zebra.connexus.com/cmd/getdomainsettings?domai  |  request.url.query[domainid]             
-  Login                 |  ${domainid}                   |  96        |  128       |  GET         |  https://api.zebra.connexus.com/cmd/getdomain2?select=data&  |  request.url.query[domainid]             
-  Login                 |  ${domainid}                   |  96        |  129       |  GET         |  https://api.zebra.connexus.com/cmd/listroles?domainid=1259  |  request.url.query[domainid]             
-  Login                 |  ${domainid}                   |  96        |  130       |  GET         |  https://api.zebra.connexus.com/cmd/getsystemlicense?domain  |  request.url.query[domainid]             
-  Login                 |  ${domainid}                   |  96        |  131       |  GET         |  https://api.zebra.connexus.com/cmd/geteffectiverights?enti  |  request.url.query[entityid]             
-  Login                 |  ${domainid}                   |  96        |  132       |  POST        |  https://api.zebra.connexus.com/report                       |  request.body[0].referer                 
-  Login                 |  ${domainid}                   |  96        |  146       |  GET         |  https://api.zebra.connexus.com/cmd/getdomainparentlist?dom  |  request.url.query[domainid]             
-  Login                 |  ${domainid}                   |  96        |  148       |  GET         |  https://api.zebra.connexus.com/cmd/listdomains?domainid=12  |  request.url.query[domainid]             
-  Login                 |  ${domainid}                   |  96        |  149       |  GET         |  https://api.zebra.connexus.com/cmd/getexternaldomainrights  |  request.url.query[domainid]             
-  Login                 |  ${domainid}                   |  96        |  153       |  GET         |  https://api.zebra.connexus.com/cmd/getexternaldomainrights  |  request.url.query[domainid]             
-  Login                 |  ${domainid}                   |  96        |  163       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/?T  |  request.url.query[ADMINDOMAINID]        
-  Login                 |  ${domainid}                   |  96        |  204       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/st  |  request.headers.Referer                 
-  Login                 |  ${domainid}                   |  96        |  206       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/st  |  request.headers.Referer                 
-  Login                 |  ${domainid}                   |  96        |  211       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/Ho  |  request.headers.Referer                 
-  Login                 |  ${domainid}                   |  96        |  224       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/Ho  |  request.headers.Referer                 
-  Login                 |  ${domainid}                   |  96        |  228       |  POST        |  https://api.zebra.connexus.com/cmd                          |  request.body.request.entityid           
-  Login                 |  ${domainid}                   |  96        |  229       |  POST        |  https://api.zebra.connexus.com/cmd                          |  request.body.request.entityid           
+  Login                 |  ${id}                         |  96        |  108       |  GET         |  https://test-smoketest.zebra-next.connexus.com/status.json  |  request.headers.Referer                 
+  Login                 |  ${id}                         |  96        |  118       |  GET         |  https://api.zebra.connexus.com/cmd/getdomainfeatures?domai  |  request.url.query[domainid]             
+  Login                 |  ${id}                         |  96        |  121       |  POST        |  https://api.zebra.connexus.com/cmd/getdomainsettings?domai  |  request.url.query[domainid]             
+  Login                 |  ${id}                         |  96        |  128       |  GET         |  https://api.zebra.connexus.com/cmd/getdomain2?select=data&  |  request.url.query[domainid]             
+  Login                 |  ${id}                         |  96        |  129       |  GET         |  https://api.zebra.connexus.com/cmd/listroles?domainid=1259  |  request.url.query[domainid]             
+  Login                 |  ${id}                         |  96        |  130       |  GET         |  https://api.zebra.connexus.com/cmd/getsystemlicense?domain  |  request.url.query[domainid]             
+  Login                 |  ${id}                         |  96        |  131       |  GET         |  https://api.zebra.connexus.com/cmd/geteffectiverights?enti  |  request.url.query[entityid]             
+  Login                 |  ${id}                         |  96        |  132       |  POST        |  https://api.zebra.connexus.com/report                       |  request.body[0].referer                 
+  Login                 |  ${id}                         |  96        |  146       |  GET         |  https://api.zebra.connexus.com/cmd/getdomainparentlist?dom  |  request.url.query[domainid]             
+  Login                 |  ${id}                         |  96        |  148       |  GET         |  https://api.zebra.connexus.com/cmd/listdomains?domainid=12  |  request.url.query[domainid]             
+  Login                 |  ${id}                         |  96        |  149       |  GET         |  https://api.zebra.connexus.com/cmd/getexternaldomainrights  |  request.url.query[domainid]             
+  Login                 |  ${id}                         |  96        |  153       |  GET         |  https://api.zebra.connexus.com/cmd/getexternaldomainrights  |  request.url.query[domainid]             
+  Login                 |  ${id}                         |  96        |  163       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/?T  |  request.url.query[ADMINDOMAINID]        
+  Login                 |  ${id}                         |  96        |  204       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/st  |  request.headers.Referer                 
+  Login                 |  ${id}                         |  96        |  206       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/st  |  request.headers.Referer                 
+  Login                 |  ${id}                         |  96        |  211       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/Ho  |  request.headers.Referer                 
+  Login                 |  ${id}                         |  96        |  224       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/Ho  |  request.headers.Referer                 
+  Login                 |  ${id}                         |  96        |  228       |  POST        |  https://api.zebra.connexus.com/cmd                          |  request.body.request.entityid           
+  Login                 |  ${id}                         |  96        |  229       |  POST        |  https://api.zebra.connexus.com/cmd                          |  request.body.request.entityid           
+  Login                 |  ${parentid}                   |  128       |  145       |  GET         |  https://api.zebra.connexus.com/cmd/getexternaldomainrights  |  request.url.query[domainid]             
+  Login                 |  ${parentid}                   |  128       |  154       |  GET         |  https://api.zebra.connexus.com/Resource/12596142/public/sh  |  request.url.path                        
   Login                 |  ${userspace}                  |  96        |  99        |  POST        |  https://api.zebra.connexus.com/cmd/setsessionapplication?a  |  request.headers.Origin                  
   Login                 |  ${userspace}                  |  96        |  101       |  POST        |  https://api.zebra.connexus.com/cmd/createscopedtoken        |  request.headers.Origin                  
   Login                 |  ${userspace}                  |  96        |  106       |  GET         |  https://api.zebra.connexus.com/cmd/getuser2?select=data(fe  |  request.headers.Origin                  
@@ -155,6 +157,4 @@ Total destination links : 132
   Login                 |  ${userspace}                  |  96        |  154       |  GET         |  https://api.zebra.connexus.com/Resource/12596142/public/sh  |  request.headers.Referer                 
   Login                 |  ${userspace}                  |  96        |  156       |  GET         |  https://testpcx-cdn-webmail.v3test.connexus.com/index.html  |  request.headers.Referer                 
   Login                 |  ${userspace}                  |  96        |  163       |  GET         |  https://testpcx-buzzotherreports-ui.v3test.connexus.com/?T  |  request.headers.Referer                 
-  Login                 |  ${parentid}                   |  128       |  145       |  GET         |  https://api.zebra.connexus.com/cmd/getexternaldomainrights  |  request.url.query[domainid]             
-  Login                 |  ${parentid}                   |  128       |  154       |  GET         |  https://api.zebra.connexus.com/Resource/12596142/public/sh  |  request.url.path                        
 

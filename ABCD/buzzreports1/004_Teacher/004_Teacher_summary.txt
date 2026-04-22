@@ -1,0 +1,50 @@
+=== SCENARIO : buzzreports1 / Teacher ===
+Actionable requests : 4
+Methods used        : GET, POST
+Has auth headers    : True
+Has cookies         : False
+Has POST body       : True
+Servers             :
+  - https://api.zebra.connexus.com:443
+  - https://testpcx-buzzotherreports-ui.v3test.connexus.com:443
+Header keys used    : Accept, Authorization, Content-Type, Origin, Referer, User-Agent
+
+====================================================================
+  ⚠ TOKEN SUFFIX VARIANTS – important for correct parameterization
+====================================================================
+  The bearer_token is used with different application suffixes.
+  Each suffix targets a different sub-application. Use EXACTLY as shown:
+    ${bearer_token}~bzcbwebMailMiniClient
+  Do NOT mix suffixes between requests.
+
+--- [001] Teacher | 242 | GET /dlap.ashx ---
+  Method   : GET  Protocol : https  Server   : api.zebra.connexus.com:443
+  Path     : /dlap.ashx
+  QParams  : {"_token": "~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcbwebMailMiniClient", "cmd": "extendsession"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "application/json, text/plain, */*", "Origin": "https://testpcx-cdn-webmail.v3test.connexus.com", "Referer": "https://testpcx-cdn-webmail.v3test.connexus.com/"}
+  Assert   : 200
+  ⚠ UNCORRELATED '_token': '~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…' is hardcoded. This is likely a scoped token from POST /cmd/createscopedtoken. Extract it with a JSON Path Extractor: $.response.token  → Variable: scoped_token, then use here.
+
+--- [002] Teacher | 243 | POST /ReportParameters/DomainTreeElementsCount ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /ReportParameters/DomainTreeElementsCount
+  Body(json) : {"domainId":12596144,"searchQuery":"elm","userId":"29774583"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200
+
+--- [003] Teacher | 244 | POST /ReportParameters/DomainTreeElements ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /ReportParameters/DomainTreeElements
+  Body(json) : {"domainId":12596144,"offset":0,"count":50,"searchQuery":"elm","userId":"29774583"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200
+
+--- [004] Teacher | 245 | POST /ReportParameters/EnrolledDomainUsers ---
+  Method   : POST  Protocol : https  Server   : testpcx-buzzotherreports-ui.v3test.connexus.com:443
+  Path     : /ReportParameters/EnrolledDomainUsers
+  Body(json) : {"domainId":12596144,"userId":"29774583"}
+  Headers  : {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:149.0) Gecko/20100101 Firefox/149.0", "Accept": "*/*", "Referer": "https://testpcx-buzzotherreports-ui.v3test.connexus.com/OverallUsage", "Content-Type": "application/json", "Authorization": "Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4zxyZs_2AZBnR2xY1BeXjF7_M88~bzcpfaster-other-reports", "Origin": "https://testpcx-buzzotherreports-ui.v3test.connexus.com"}
+  Auth     : Bearer ~0.oIbgQC1itDs3LlxB.A.VlajFlhURYsPNphA4z…
+  Assert   : 200
